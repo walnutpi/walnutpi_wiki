@@ -1,0 +1,8 @@
+{
+  "label": "常见设备使用",
+  "position": 6,
+  "link": {
+    "type": "generated-index",
+    "description": "一些常见设备模块的使用方法，如显示屏，USB摄像头。"
+  }
+}

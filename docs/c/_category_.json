@@ -1,0 +1,8 @@
+{
+  "label": "C嵌入式编程",
+  "position": 5,
+  "link": {
+    "type": "generated-index",
+    "description": "使用WiringPi进行C嵌入式编程"
+  }
+}
