@@ -1,41 +1,35 @@
-# Website
+# 核桃派教程文档
 
-This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
+## 官方网站
 
-### Installation
+[https://www.walnutpi.com](https://www.walnutpi.com)
 
-```
-$ yarn
-```
+## 贡献说明
 
-### Local Development
+本项目使用 [Docusaurus 2](https://docusaurus.io/) 构建。主要内容放在 `walnutpi_wiki/docs` 目录下，大家可以遵循我们的文档格式提交教程贡献。
 
-```
-$ yarn start
-```
+### 安装Node.js
 
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+* [Node.js](https://nodejs.org/en/download/)版本 16.14 或更高版本：
+  * 安装 Node.js 时，建议您选中所有与依赖项相关的复选框。
 
-### Build
+### 下载项目
 
 ```
-$ yarn build
+git clone https://github.com/walnutpi/walnutpi_wiki.git
 ```
 
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
-
-### Deployment
-
-Using SSH:
+### 运行
 
 ```
-$ USE_SSH=true yarn deploy
+cd walnutpi_wiki
+npm run start
 ```
 
-Not using SSH:
+`npm run start` 命令在本地构建您的网站并通过开发服务器提供服务，供您在 http://localhost:3000/ 上查看。
 
-```
-$ GIT_USER=<Your GitHub username> yarn deploy
-```
+![readme1](./static/img/readme1.png)
 
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+![readme2](./static/img/readme2.png)
+
+详细教程请看官方文档：[https://tutorial.docusaurus.io/docs/intro/](https://tutorial.docusaurus.io/docs/intro/)
