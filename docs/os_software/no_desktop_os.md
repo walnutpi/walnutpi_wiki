@@ -108,6 +108,8 @@ nmcli dev wifi
 :::
 <br></br>
 
+按**Ctrl+C或Ctrl+Z**中断上面指令。
+
 接下来通过下面指令连接指定的WiFi(需要加sudo管理员权限)。下方 "walnutpi" 为wifi账号，"88888888" 为密码。你需要替换成你自己的WiFi账号密码。
 ```bash
 sudo nmcli dev wifi connect walnutpi password 12345678

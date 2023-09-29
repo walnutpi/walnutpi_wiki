@@ -60,7 +60,7 @@ sudo reboot
 开启VNC以后就一直开机启动了，如想关闭VNC服务，可以通过下面指令，配置后重启核桃派生效。
 
 ```bash
-set-vnc enable
+set-vnc disable
 ```
 
 ## 设置密码
