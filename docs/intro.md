@@ -25,6 +25,13 @@ sidebar_position: 1
 - 百度网盘链接：https://pan.baidu.com/s/1k3dHC86ZZVwdvBa5J9Q0dw?pwd=WPKJ 
 - 提取码：**WPKJ**
 
+:::tip 提示
+
+镜像在百度网盘下载较慢的话可以加下面QQ群到群文件下载。**在Q群将群文件转发给自己设备或其它QQ即可高速下载。**
+
+:::
+
+
 ### 开发软件资料包
 
 核桃派教程配套软件、代码、原理图、芯片手册等。
@@ -32,11 +39,6 @@ sidebar_position: 1
 - 百度网盘链接：https://pan.baidu.com/s/1Wu5De2rlShyz3wBCtZshPA?pwd=WPKJ 
 - 提取码：**WPKJ**
 
-:::tip 提示
-
-以上资料在百度网盘下载较慢的话可以加下面QQ群到群文件下载。
-
-:::
 
 ### QQ群
 核桃派开源互助群:  **677173708**

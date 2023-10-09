@@ -12,7 +12,7 @@ sidebar_position: 1
 
 打开核桃派终端,使用nano编辑器新建一个python文件：
 ```bash
-nano hello_world
+nano hello_walnutpi.py
 ```
 ![terminal1](./img/python_run/terminal1.png)
 

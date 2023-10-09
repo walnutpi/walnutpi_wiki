@@ -26,7 +26,7 @@ sidebar_position: 1
 
 ## digitalio对象
 
-在CircuitPython中可以直接使用 digitalio（数字 IO）模块编程实现IO输入从而实现按键的输入电平检测。具体介绍如下表：
+在CircuitPython中可以直接使用 digitalio（数字 IO）模块编程实现IO输入从而实现按键的输入电平检测。具体介绍如下：
 
 ### 构造函数
 ```python
