@@ -85,6 +85,11 @@ const config = {
             label: '教程',
           },
           {
+            href: 'https://forum.walnutpi.com',
+            label: '论坛',
+            position: 'left',
+          },
+          {
             href: 'https://walnutpi.taobao.com',
             label: '购买',
             position: 'right',
@@ -124,8 +129,8 @@ const config = {
                 to: '/docs/intro',
               },
               {
-                label: '论坛（即将开放）',
-                to: '/',
+                label: '论坛',
+                href: 'https://forum.walnutpi.com',
               },
               {
                 label: 'GitHub',

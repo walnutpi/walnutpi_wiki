@@ -41,17 +41,22 @@ sidebar_position: 1
 
 
 ### QQ群
+
 核桃派开源互助群:  **677173708**
 
 ![qq_group](./img/qq_group.jpg)
 
+### 论坛
+
+- [https://forum.walnutpi.com](https://forum.walnutpi.com/) 
+
+核桃派和Linux相关技术交流分享。
+
 ### Github
+
 - [https://www.github.com/walnutpi](https://www.github.com/walnutpi/) 
 
 包含核桃派Linux内核代码、镜像编译和相关软件应用等开源代码。
-
-### 论坛
-- 即将开放。
 
 ## 联系我们
 
