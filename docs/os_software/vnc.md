@@ -1,5 +1,5 @@
 ---
-sidebar_position: 4
+sidebar_position: 9
 ---
 
 # VNC远程桌面
@@ -39,7 +39,7 @@ sudo reboot
 
 ![vnc2](./img/vnc/vnc2.png)
 
-安装完打开该软件，在上方输入核桃派的IP地址，[IP地址获取方法](../python/network/ip_get) 。**这里可以不用输入端口号，因为核桃派预装VNC服务器使用默认的5900端口**
+安装完打开该软件，在上方输入核桃派的IP地址，[IP地址获取方法](../os_software/ip_get) 。**这里可以不用输入端口号，因为核桃派预装VNC服务器使用默认的5900端口**
 
 ![vnc3](./img/vnc/vnc3.png)
 

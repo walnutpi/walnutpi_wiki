@@ -24,7 +24,7 @@ os.popen(command[, mode[, bufsize]])
 ## 使用例子
 
 ### 获取CPU温度
-在终端下我们可以通过下面指令或者CPU温度。详见： [主控温度信息章节内容](../../device/core_temp)。
+在终端下我们可以通过下面指令或者CPU温度。详见： [主控温度信息章节内容](../../os_software/core_temp.md)。
 **得到结果除以1000为实际温度值。**
 
 ```bash

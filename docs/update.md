@@ -1,14 +1,22 @@
 ---
-sidebar_position: 8
+sidebar_position: 12
 ---
 
 # 更新说明
+
+## 2023-10-16
+
+- 重构文档目录 ;
+- 增加 **GPIO应用** ：
+    - [GPIO介绍](./gpio/gpio_intro.md)
+    - [GPIO指令操作](./gpio/gpio_command.md)
+    - [GPIO设备配置](./gpio/gpio_config.md)
 
 ## 2023-10-11
 
 - 增加 **常见设备使用 / 核桃派3.5寸显示屏** ：
 
-    - [在树莓派上使用](../docs/device/3.5_LCD#在树莓派上使用)
+    - [在树莓派上使用](./os_software/3.5_LCD#在树莓派上使用)
 
 ## 2023-10-9
 

@@ -22,7 +22,7 @@ sidebar_position: 1
 
 核桃派桌面版（Desktop版）和非桌面版（Server版）Linux系统镜像下载。
 
-- 百度网盘链接：https://pan.baidu.com/s/1k3dHC86ZZVwdvBa5J9Q0dw?pwd=WPKJ 
+- 百度网盘链接：https://pan.baidu.com/s/1-ytTK-KI1RP2KsoZpjFSrA?pwd=WPKJ
 - 提取码：**WPKJ**
 
 :::tip 提示

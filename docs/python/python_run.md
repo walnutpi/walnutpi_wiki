@@ -86,6 +86,14 @@ print('hello walnutpi!')
 
 ![thonny13](./img/python_run/thonny13.png)
 
+可以在Thonny菜单栏 **工具--选项**勾选**在编辑器中使用Tab键补全**功能，方便开发。
+
+![thonny14](./img/python_run/thonny14.png)
+
+下方在输入**led.**后按键盘tab键补全：
+
+![thonny15](./img/python_run/thonny15.png)
+
 ## Thonny 远程连接（基于Windows）
 上面使用核桃派系统里面的Thonny IDE编程，同样我们可以使用Windows上的Thonny IDE远程到核桃派进行Python编程。核桃派系统出厂已经预装ssh服务，可以通过ssh远程控制。这个方法适合使用自己电脑远程开发。
 
@@ -146,6 +154,15 @@ Thonny ide Windows版本下载地址：https://thonny.org/
 可以在左侧文件目录通过**右键**上传/下载文件实现核桃派和Windows本地文件互传。
 ![win_thonny10](./img/python_run/win_thonny10.png)
 ![win_thonny11](./img/python_run/win_thonny11.png)
+
+可以在Thonny菜单栏 **工具--选项**勾选**在编辑器中使用Tab键补全**功能，方便开发。**补全内容为解释器连接的设备，这里远程那么补全的就是核桃派上的Python库**
+
+![thonny14](./img/python_run/thonny14.png)
+
+下方在输入**led.**后按键盘tab键补全：
+
+![thonny15](./img/python_run/thonny15.png)
+
 
 ## VSCode 远程连接（基于Windows）
 
