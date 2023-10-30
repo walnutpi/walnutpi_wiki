@@ -19,9 +19,8 @@ WalnutPi OS是一款基于Debian的免费操作系统，针对核桃派硬件进
 
 ## 镜像下载地址：
 
-百度网盘链接：https://pan.baidu.com/s/1k3dHC86ZZVwdvBa5J9Q0dw?pwd=WPKJ
-
-提取码：WPKJ
+- 百度网盘链接：https://pan.baidu.com/s/1-ytTK-KI1RP2KsoZpjFSrA?pwd=WPKJ
+- 提取码：**WPKJ**
 
 更新说明可以看里面的**说明文档.txt**。觉得百度网盘下载慢的话可以到QQ群文件下载：677173708
 

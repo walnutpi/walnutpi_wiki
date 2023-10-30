@@ -4,6 +4,15 @@ sidebar_position: 12
 
 # 更新说明
 
+## 2023-10-23
+
+- 增加 **pyQT5** ：
+    [绘图教程](./pyQT5/paint/paint_intro.md)
+
+## 2023-10-20
+
+- 增加[pyQT5教程](./pyQT5/pyqt5_intro)（请使用v1.2以上核桃派系统版本）。
+
 ## 2023-10-16
 
 - 重构文档目录 ;
