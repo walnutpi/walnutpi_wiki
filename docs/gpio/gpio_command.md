@@ -6,7 +6,7 @@ sidebar_position: 2
 
 本节借助系统移植好的WiringPi相关指令对GPIO进行操作，帮助用户快速熟悉核桃派GIPO。
 
-WiringPi对核桃派的物理引脚进行了封装，定义了一套自己的引脚编号，为了保证代码兼容性，目前核桃派的WiringPi引脚定义和树莓派一致。[WiringPi介绍](../c/wiringpi_intro.md)
+WiringPi对核桃派的物理引脚进行了封装，定义了一套自己的引脚编号，为了保证代码兼容性，目前核桃派的WiringPi引脚定义和树莓派一致。[WiringPi介绍](../c/io_wiringpi#wiringpi简介)
 
 ## 查看所有引脚状态
 

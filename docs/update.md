@@ -4,6 +4,13 @@ sidebar_position: 12
 
 # 更新说明
 
+## 2023-11-2
+
+- 增加 **C嵌入式编程**  ：
+    - [I2C](./c/i2c.md)
+    - [SPI](./c/spi.md)
+    - [UART(串口)](./c/uart.md)
+
 ## 2023-10-23
 
 - 增加 **pyQT5** ：

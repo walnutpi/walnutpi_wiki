@@ -3,6 +3,6 @@
   "position": 6,
   "link": {
     "type": "generated-index",
-    "description": "使用WiringPi进行C嵌入式编程"
+    "description": "核桃派C语言嵌入式编程"
   }
 }
