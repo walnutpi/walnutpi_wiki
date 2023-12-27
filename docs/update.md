@@ -4,6 +4,11 @@ sidebar_position: 12
 
 # 更新说明
 
+## 2023-11-27
+
+- 增加 [目录](./directory)
+- 增加 [资料下载](./intro/download.md) 
+
 ## 2023-11-2
 
 - 增加 **C嵌入式编程**  ：

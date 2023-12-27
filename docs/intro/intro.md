@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # 核桃派简介
 
-![walnutpi](./img/walnutpi.png)
+![walnutpi](./img/intro/walnutpi.png)
 
 ## 核桃派是什么
 
@@ -16,35 +16,11 @@ sidebar_position: 1
 
 **目标：打造方便、便宜、好玩的Linux开发板**
 
-## 开发者资源
-
-### 系统镜像
-
-核桃派桌面版（Desktop版）和非桌面版（Server版）Linux系统镜像下载。
-
-- 百度网盘链接：https://pan.baidu.com/s/1-ytTK-KI1RP2KsoZpjFSrA?pwd=WPKJ
-- 提取码：**WPKJ**
-
-:::tip 提示
-
-镜像在百度网盘下载较慢的话可以加下面QQ群到群文件下载。**在Q群将群文件转发给自己设备或其它QQ即可高速下载。**
-
-:::
-
-
-### 开发软件资料包
-
-核桃派教程配套软件、代码、原理图、芯片手册等。
-
-- 百度网盘链接：https://pan.baidu.com/s/1Wu5De2rlShyz3wBCtZshPA?pwd=WPKJ 
-- 提取码：**WPKJ**
-
-
 ### QQ群
 
 核桃派开源互助群:  **677173708**
 
-![qq_group](./img/qq_group.jpg)
+![qq_group](./img/intro/qq_group.jpg)
 
 ### 论坛
 
@@ -69,4 +45,4 @@ sidebar_position: 1
 ### 微信公众号
 - 最新动态发布
 
-![wechat_official](./img/wechat_official.jpg)
+![wechat_official](./img/intro/wechat_official.jpg)

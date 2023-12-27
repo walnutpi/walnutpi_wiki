@@ -26,9 +26,20 @@ WalnutPi OS是一款基于Debian的免费操作系统，针对核桃派硬件进
 
 ![0](./img/os-install/0.png)
 
+## 使用rufus烧录（推荐）
+
+镜像下载完后我们还需要一个镜像烧录软件，这里推荐轻量级镜像烧录软件rufus。下载地址：https://rufus.ie/zh/#google_vignette
+
+![9](./img/os-install/9.png)
+
+下载后直接打开软件，选择U盘盘符和要烧写的镜像即可：
+
+![10](./img/os-install/10.png)
+
+
 ## 使用balenaEtcher烧录
 
-镜像下载完后我们还需要一个镜像烧录软件。**balenaEtcher**下载： [https://etcher.balena.io/#download-etcher](https://etcher.balena.io/#download-etcher/)
+如果上面rufus软件无法烧录，也可使用balenaEtcher试试。**balenaEtcher**下载： [https://etcher.balena.io/#download-etcher](https://etcher.balena.io/#download-etcher/)
 
 ![1](./img/os-install/1.png)
 
@@ -65,14 +76,4 @@ WalnutPi OS是一款基于Debian的免费操作系统，针对核桃派硬件进
 烧录完成后会发现Windows只会显示一个100M的盘符，属于正常现象，里面放置了一些核桃派配置文件。
 
 ![8](./img/os-install/8.png)
-
-
-## 使用rufus烧录
-
-如果你无法使用上面的balenaEtcher烧录，那么可以试试这个轻量级软件rufus。下载地址：https://rufus.ie/zh/#google_vignette
-
-![9](./img/os-install/9.png)
-
-下载后直接打开软件，选择U盘盘符和要烧写的镜像即可：
-
-![10](./img/os-install/10.png)
+ 
