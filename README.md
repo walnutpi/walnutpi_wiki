@@ -19,10 +19,15 @@
 git clone https://github.com/walnutpi/walnutpi_wiki.git
 ```
 
-### 运行
+### 首次安装依赖库 
 
 ```
 cd walnutpi_wiki
+npm install
+```
+
+### 运行
+```
 npm run start
 ```
 

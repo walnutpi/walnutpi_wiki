@@ -37,14 +37,12 @@ sudo ./build.sh
 ```
 ![运行build.sh](img/run_build.gif)
 
+出来的第一个界面是选择开发板，目前有两个，带legacy的是编译walnutpi-1b最初适配的linux5.16版本，不带的是编译最新的linux6.1版本
+
 操作方式如下
 - 按`Esc键`退出
 - 按`上下方向键`选择选项
 - 按`回车键`确认
-
-出来的第一个界面是选择开发板，目前有两个，带legacy的是编译walnutpi-1b最初适配的linux5.16版本，不带的是编译最新的linux6.1版本
-
-![choose](img/choose_board.png)
 
 接下来第二个界面是选择编译哪个组件，构建一个系统镜像文件，或是想选择单独编译uboot linux rootfs。
 

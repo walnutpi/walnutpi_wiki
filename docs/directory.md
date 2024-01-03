@@ -38,6 +38,7 @@ sidebar_position: 0
     - [U盘挂载](./os_software/usb_disk.md)
     - [USB摄像头](./os_software/usb_cam.md)
     - [3.5寸触摸显示屏](./os_software/3.5_LCD.md)
+    - [config.txt](./os_software/config.txt.md)
 
 - **GPIO应用**
 
@@ -119,13 +120,14 @@ sidebar_position: 0
 
         - [绘制图像](./pyQT5/paint/image.md) 
 
-- **Linux系统镜像编译**
+- **Linux系统编译**
 
     - [使用walnutpi-build构建镜像系统](./linux_build/walnutpi-build.md) 
     - [编译uboot](./linux_build/uboot.md) 
     - [编译linux](./linux_build/linux.md) 
     - [编译debian](./linux_build/debian.md) 
     - [交叉编译器安装](./linux_build/cross_compiler.md) 
+    - [在开发板上编译驱动](./linux_build/compile_driver.md) 
 
 - [**更新说明**](./update.md)
 

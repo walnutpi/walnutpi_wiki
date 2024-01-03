@@ -1,8 +1,8 @@
 {
-  "label": "Linux系统镜像编译",
+  "label": "Linux系统编译",
   "position": 11,
   "link": {
     "type": "generated-index",
-    "description": "关于sd卡内那个linux系统是怎么编译出来的"
+    "description": " "
   }
 }

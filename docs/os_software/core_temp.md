@@ -4,7 +4,7 @@ sidebar_position: 21
 
 # 主控温度信息
 
-核桃派1B的H616主控内置4个温度传感器，分别是：
+核桃派1B的H616/H618主控内置4个温度传感器，分别是：
 - `sensor0`: CPU温度
 - `sensor1`: GPU温度
 - `sensor2`: VE(Video Encoding)温度

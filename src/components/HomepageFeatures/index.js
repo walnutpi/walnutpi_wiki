@@ -7,7 +7,7 @@ const FeatureList = [
     title: '强势出圈',
     Svg: require('@site/static/img/walnutpi.svg').default,
     description: (
-      <>*全志H616四核Cortex-A53高性能处理器<br></br>
+      <>*全志H616/H618 四核Cortex-A53高性能处理器<br></br>
         *双频WiFi+蓝牙5.0<br></br>
         *尺寸兼容树莓派<br></br>
       </>
