@@ -5,7 +5,7 @@ sidebar_position: 1
 # 使用walnutpi-build构建系统镜像
 我们提供的sd卡镜像就是用这个构建出来的
 :::info
-修改日期：2023.9.20
+修改日期：2024.1.3
 
 作者：sc-bin(酥饼)
 
@@ -21,7 +21,7 @@ git clone https://github.com/walnutpi/walnutpi-build.git
 ```
 
 - 系统需求：ubuntu22.04
-- 运行时需要全程科学上网，一些软件需要当场从github处下载
+- 运行时需要全程科学上网，一些东西需要当场从github处下载
 
 
 
@@ -42,7 +42,7 @@ sudo ./build.sh
 - 按`上下方向键`选择选项
 - 按`回车键`确认
 
-出来的第一个界面是选择开发板，目前只有一块，直接按回车就行
+出来的第一个界面是选择开发板，目前有两个，带legacy的是编译walnutpi-1b最初适配的linux5.16版本，不带的是编译最新的linux6.1版本
 
 ![choose](img/choose_board.png)
 
@@ -58,63 +58,10 @@ sudo ./build.sh
 
 ![choose](img/choose_server_desktop.png)
 
-最后会在`本项目/output`路径下输出一个可用于烧录的镜像
-- server版本的镜像名为`IMG_WalnutPi-1b_5.16.17_bookworm_server.img`
-- desktop版本的镜像名为`IMG_WalnutPi-1b_5.16.17_bookworm_desktop.img`
+最后会在`本项目/output`路径下输出一个可用于烧录的镜像，命名格式是`版本号_编译日期_有无桌面_板子名_内核版本_debian版本`，例如
+- server版本的镜像名为`V2.0.0_12-27_server_WalnutPi-1b_6.1.31_bookworm.img`
+- desktop版本的镜像名为`V2.0.0_12-27_desktop_WalnutPi-1b_6.1.31_bookworm.img`
 
-
-
-
-
-
-## uboot
-如果想单独编译uboot，在选择编译组件的界面里，选择u-boot bin。
-
-如果想自定义uboot设置，建议查看另一篇文章，使用命令行手动编译。[<编译uboot>](./uboot.md)
-
-![choose_uboot](img/choose_uboot.png)
-
-关于编译时的一些参数：
-- 版本`v2021.07`，会在运行时从[<github链接>](https://github.com/walnutpi/uboot)处下载存放到`本项目/source`文件夹下
-- 配置文件使用uboot项目内带的`walnutpi_1b_defconfig`，存放在uboot项目内
-- 编译器为`gcc-arm-9.2-2019.12-x86_64-aarch64-none-linux-gnu`，本项目运行时会从镜像源下载并解压到`本项目/toolchain`使用，不会查找使用本机的交叉编译器
-
-编译结果会输出到`本项目/output`路径下，文件`u-boot-sunxi-with-spl.bin`需要烧录到sd卡内的起始8k偏移位置。
-
-
-## linux
-如果想单独编译linux，在选择编译组件的界面里，选择Kernel bin 
-
-如果想自定义linux设置，建议查看另一篇文章，使用命令行手动编译。[<编译linuxt>](./linux.md)
-
-
-![choose_linux](img/choose_linux.png)
-
-关于编译时的一些参数：
-- 版本`5.16.17`，会在运行时从[github链接](https://github.com/walnutpi/linux)处下载存放到`本项目/source`文件夹下
-- 配置文件使用`walnutpi_defconfig`，存放在linux项目内
-- 编译器为`gcc-arm-9.2-2019.12-x86_64-aarch64-none-linux-gnu`，本项目运行时会从镜像源下载并解压到`本项目/toolchain`使用，不会查找使用本机的交叉编译器
-
-编译结果会输出到`本项目/output`路径下。文件`Image`为linux系统本体，文件夹`lib`是驱动模块，文件夹`dtb`为设备树及插件。
-
-
-
-## rootfs
-如果想单独编译rootfs，在选择编译组件的界面里，选择rootfs tar 
-
-![choose_rootfs](img/choose_rootfs.png)
-
-接下来要选择编译`server`或是`desktop`版本
-- server: 无桌面，启动快，基本功能都可以玩。
-- desktop: 在server版本基础上安装了xfce4桌面，预装了用于编程办公的桌面应用，玩法更多。
-
-![choose](img/choose_server_desktop.png)
-
-debian版本固定为`debian12-bookworm` `arm64`，会在构建时从华为源当场下载
-
-构建完成后会在`本项目/output`路径下输出一个压缩包，
-- server版本命名为`rootfs_bookworm_server.tar.gz`
-- desktop版本命名为`rootfs_bookworm_desktop.tar.gz`
 
 
 
