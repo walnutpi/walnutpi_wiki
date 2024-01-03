@@ -7,11 +7,11 @@ sidebar_position: 3
 ### 0. 交叉编译器
 关于交叉编译器的安装，写在另一篇文章里--  [安装交叉编译器](./cross_compiler) 
 
-
 ### 1. 下载
+核桃派1b目前使用的是linux 6.1.31版本。linux的历史数据得好几个G，这里只下载该分支的最新一次提交的完整数据。
 ```
-git clone https://github.com/walnutpi/linux.git
-cd linux
+git clone -b 6.1.31 --depth=1 https://github.com/walnutpi/linux.git  linux-6.1
+cd linux-6.1
 ```
 ### 2. 声明交叉编译器和系统类型
 ```
@@ -20,7 +20,7 @@ export ARCH=arm64
 ```
 ### 3. 调用配置文件
 ```
-make walnutpi_defconfig
+make walnutpi1b_defconfig
 ```
 
 ### 4. 开始编译

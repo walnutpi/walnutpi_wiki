@@ -21,9 +21,9 @@ qemu是一个模拟器
 
 
 ### 2. 拉取基本的rootfs
-使用debootstrap工具从华为的镜像源拉取，debian12，arm64版本，并在当前路径下创建文件夹rootfs存放
+使用debootstrap工具从清华的镜像源拉取，debian12，arm64版本，并在当前路径下创建文件夹rootfs存放
 ```
-sudo debootstrap --foreign --verbose  --arch=arm64 bookworm rootfs  http://mirrors.huaweicloud.com/debian/
+sudo debootstrap --foreign --verbose  --arch=arm64 bookworm rootfs  http://mirrors.tuna.tsinghua.edu.cn/debian/
 ```
 ### 3. 将模拟器放进去
 ```
