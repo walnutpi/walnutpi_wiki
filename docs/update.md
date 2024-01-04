@@ -4,6 +4,18 @@ sidebar_position: 12
 
 # 更新说明
 
+## 2024-1-4
+
+- 新增 **核桃派系统使用：** 
+
+    - [系统在线升级（OTA）](./os_software/os_intro.md#系统在线升级ota)
+    - [HDMI音频](./os_software/audio.md#hdmi音频)
+    - [config.txt](./os_software/config.txt.md) 配置文件介绍
+
+- 新增 **Linux系统编译：** 
+
+    - [在开发板上编译驱动](./linux_build/compile_driver.md) 
+
 ## 2023-11-27
 
 - 增加 [目录](./directory)
@@ -19,7 +31,8 @@ sidebar_position: 12
 ## 2023-10-23
 
 - 增加 **pyQT5** ：
-    [绘图教程](./pyQT5/paint/paint_intro.md)
+
+    - [绘图教程](./pyQT5/paint/paint_intro.md)
 
 ## 2023-10-20
 
@@ -29,6 +42,7 @@ sidebar_position: 12
 
 - 重构文档目录 ;
 - 增加 **GPIO应用** ：
+
     - [GPIO介绍](./gpio/gpio_intro.md)
     - [GPIO指令操作](./gpio/gpio_command.md)
     - [GPIO设备配置](./gpio/gpio_config.md)

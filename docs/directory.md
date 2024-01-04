@@ -33,7 +33,7 @@ sidebar_position: 0
     - [关机和重启](./os_software/log_out.md)
     - [主控温度信息](./os_software/core_temp.md)
     - [主控ID号](./os_software/cpu_id.md)
-    - [音频（耳机口）](./os_software/audio.md)
+    - [音频](./os_software/audio.md)
     - [红外接收头](./os_software/ir.md)
     - [U盘挂载](./os_software/usb_disk.md)
     - [USB摄像头](./os_software/usb_cam.md)

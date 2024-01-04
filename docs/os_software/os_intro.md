@@ -55,3 +55,20 @@ cat /etc/WalnutPi-release
 ```
 
 ![version](./img/os_intro/version.png)
+
+## 系统在线升级（OTA）
+
+可通过指令从核桃派云服务器获取升级包，实现系统远程升级，无需每次重烧镜像。
+
+:::danger 警告：
+此功能在系统版本**v2.0.0**以上才有，使用在线升级功能前务必先备份好重要资料，避免升级过程出现问题导致资料丢失。
+:::
+
+在线升级指令：
+
+```bash
+sudo wpi-update
+```
+
+![update](./img/os_intro/update.png)
+

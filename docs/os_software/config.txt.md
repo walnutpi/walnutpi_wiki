@@ -2,9 +2,10 @@
 sidebar_position: 27
 ---
 
-
-
 # config.txt
+
+**config.txt主要用于配置核桃派的部分功能。**
+
 sd卡有两个分区，config.txt存放在第一个分区内。在核桃派开发板上，可以在`/boot`路径下访问config.txt。如果用读卡器在Windows电脑上读取sd卡，由于分区2是windows无法识别的ext4格式，系统会弹出sd卡损坏的报错，请无视他。
 
 ![u盘](./img/config_txt/windows_path.png)
