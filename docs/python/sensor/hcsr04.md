@@ -56,8 +56,8 @@ sonar=adafruit_hcsr04.HCSR04(trigger_pin=board.PC9, echo_pin=board.PC11)
 构建超声波模块对象，主要是初始化连接超声波传感器的2个引脚。
 
 参数说明：
-- `trigger_pin` 开发板引脚编号。例：borad.PC9；
-- `echo_pin` 开发板引脚编号。例：borad.PC11；
+- `trigger_pin` 开发板引脚编号。例：board.PC9；
+- `echo_pin` 开发板引脚编号。例：board.PC11；
 
 ### 使用方法
 ```python

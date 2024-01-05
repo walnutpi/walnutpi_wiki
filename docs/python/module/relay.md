@@ -37,7 +37,7 @@ sidebar_position: 1
 relay=digitalio.DigitalInOut(pin)
 ```
 参数说明：
-- `pin` 开发板引脚编号。例：borad.PC8
+- `pin` 开发板引脚编号。例：board.PC8
 
 ### 使用方法
 ```python

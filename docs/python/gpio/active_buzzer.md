@@ -33,7 +33,7 @@ sidebar_position: 5
 active_buzzer=digitalio.DigitalInOut(pin)
 ```
 参数说明：
-- `pin` 开发板引脚编号。例：borad.PI15
+- `pin` 开发板引脚编号。例：board.PI15
 
 ### 使用方法
 ```python
