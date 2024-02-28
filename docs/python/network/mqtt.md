@@ -149,7 +149,7 @@ client.connect(host,port)
 while True:
     
     #发布信息
-    client.publish(topic,'Hello 01Studio!')
+    client.publish(topic,'Hello WalnutPi!')
     
     time.sleep(1) #延时1秒，发送间隔
 ```

@@ -66,6 +66,19 @@ const config = {
     ],
   ],
 
+  plugins: [
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'picow',
+        path: 'picow',
+        routeBasePath: 'picow',
+        sidebarPath: require.resolve('./sidebars.js'),
+        // ... other options
+      },
+    ],
+  ],
+
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
@@ -82,7 +95,13 @@ const config = {
             type: 'docSidebar',
             sidebarId: 'tutorialSidebar',
             position: 'left',
-            label: '教程',
+            label: '核桃派1B教程',
+          },
+          {
+            to: 'picow/directory',
+            sidebarId: 'tutorialSidebar',
+            position: 'left',
+            label: '核桃派PicoW教程',
           },
           {
             href: 'https://forum.walnutpi.com',
