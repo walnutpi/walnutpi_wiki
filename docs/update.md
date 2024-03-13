@@ -4,6 +4,16 @@ sidebar_position: 12
 
 # 更新说明
 
+## 2024-3-13
+
+- 新增 **Home Assistant教程:** 
+
+    - [接入苹果HomeKit](./home_assistant/homekit.md) 
+
+## 2024-3-12
+
+- 增加 [Home Assistant教程](./home_assistant/intro.md)
+
 ## 2024-1-4
 
 - 新增 **核桃派系统使用：** 

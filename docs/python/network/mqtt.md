@@ -47,15 +47,10 @@ sudo pip3 install paho-mqtt
 
 ### 构造函数
 ```python
-import paaho.mqtt.client as mqtt
+import paho.mqtt.client as mqtt
 client = mqtt.Client()
 ```
 导入MQTT库和构建client客户端对象。
-
-参数说明：
-- `client_id` : 客户端ID，具有唯一性；
-- `server` : MQTT服务器地址，可以是IP或者网址；
-- `port` : MQTT服务器端口。（服务器通常采用的端口是1883，但不同服务器可能不一样。）
 
 ### 使用方法
 ```python

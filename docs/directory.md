@@ -50,7 +50,6 @@ sidebar_position: 0
 
     - [运行Python代码](./python/python_run.md) 
     - [Blinka（Python库）简介](./python/blinka_intro.md) 
-
     - **GPIO基础实验**
         - [GPIO介绍](./python/gpio/gpio_intro.md) 
         - [点亮第1个LED](./python/gpio/led.md) 
@@ -58,7 +57,6 @@ sidebar_position: 0
         - [有源蜂鸣器](./python/gpio/active_buzzer.md) 
         - [UART（串口通讯）](./python/gpio/uart.md) 
         - [I2C（OLED显示屏）](./python/gpio/i2c_oled.md) 
-
     - **传感器**
         - [人体感应传感器](./python/sensor/human_induction.md) 
         - [HC-SR04超声波测距](./python/sensor/hcsr04.md) 
@@ -66,14 +64,11 @@ sidebar_position: 0
         - [MPU6050六轴加速度计](./python/sensor/mpu6050.md) 
         - [VL53L1X激光测距](./python/sensor/vl53l1x.md) 
         - [MLX90614红外测温](./python/sensor/mlx90614.md) 
-
     - **拓展模块**
         - [继电器](./python/module/relay.md) 
-
     - **网络应用**
         - [Socket通讯](./python/network/socket.md) 
         - [MQTT通讯](./python/network/mqtt.md) 
-
     - **其它使用技巧**
         - [开机自动运行Python代码](./python/skills/auto_run.md) 
         - [Python调用终端命令](./python/skills/command.md) 
@@ -92,33 +87,45 @@ sidebar_position: 0
     - [第一个窗口](./pyQT5/first_window.md) 
     - [代码编写和运行](./pyQT5/code_run.md) 
     - [信号和槽](./pyQT5/signal_slot.md) 
-
     - **控件**
         - [控件简介](./pyQT5/widgets/widgets_intro.md) 
-
         - **按钮类**
             - [PushButton（按钮）](./pyQT5/widgets/buttons/push_button.md) 
             - [ToolButton（工具按钮）](./pyQT5/widgets/buttons/tool_button.md) 
-
         - **显示控件**
             - [Label](./pyQT5/widgets/display/label.md) 
-
         - **输入控件**
             - [LineEdit（单行文本框）](./pyQT5/widgets/input/line_edit.md) 
             - [TextEdit（多行文本框）](./pyQT5/widgets/input/text_edit.md) 
-
     - **绘图**
         - [绘图简介](./pyQT5/paint/paint_intro.md) 
-
         - **绘制形状**
             - [画形状](./pyQT5/paint/shape/shape.md) 
             - [画笔和画刷设置](./pyQT5/paint/shape/qpen_qbursh.md) 
-
         - **绘制文本**
             - [写文本](./pyQT5/paint/text/text.md) 
             - [字体设置](./pyQT5/paint/text/qfont.md) 
-
         - [绘制图像](./pyQT5/paint/image.md) 
+
+- **Home Assistant**
+
+    - [简介](./home_assistant/intro.md) 
+    - [Home Assistant安装](./home_assistant/install.md) 
+    - [初始化配置](./home_assistant/config.md) 
+    - [概念和术语](./home_assistant/concept.md) 
+    - [仪表盘](./home_assistant/dashboard.md) 
+    - **MQTT集成**
+        - [MQTT服务器安装](./home_assistant/mqtt/install.md) 
+        - [添加MQTT集成](./home_assistant/mqtt/add.md) 
+        - **添加MQTT设备和实体**
+            - [发现设备和实体](./home_assistant/mqtt/device_entity/discovery.md) 
+            - [LED](./home_assistant/mqtt/device_entity/led.md) 
+            - [按键](./home_assistant/mqtt/device_entity/key.md) 
+            - [温度传感器DS18B20](./home_assistant/mqtt/device_entity/ds18b20.md) 
+    - [摄像头监控](./home_assistant/ip_camera.md) 
+    - [自动化](./home_assistant/automation.md) 
+    - [加入市面上产品](./home_assistant/other_device.md) 
+    - [接入苹果HomeKit](./home_assistant/homekit.md) 
 
 - **Linux系统编译**
 

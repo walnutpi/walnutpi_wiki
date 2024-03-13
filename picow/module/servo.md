@@ -26,7 +26,7 @@ sidebar_position: 2
 
 ![servo](./img/servo/servo3.png)
 
-核桃派PicoW的MicroPython固件并没有集成Servo模块，但从上面可以看到上面是通过PWM来控制的，我们可以直接写PWM函数驱动即可。PWM教程可以长参考： [PWM](../basic_examples/pwm_beep.md) 章节内容。
+核桃派PicoW的MicroPython固件并没有集成Servo模块，但从上面可以看到上面是通过PWM来控制的，我们可以直接写PWM函数驱动即可。PWM教程可以参考： [PWM](../basic_examples/pwm_beep.md) 章节内容。
 
 代码编程流程图如下：
 
