@@ -6,7 +6,7 @@ sidebar_position: 2
 
 ## 系统镜像
 
-核桃派桌面版（Desktop版）和非桌面版（Server版）Linux系统镜像提供以下多种下载方式。
+当前核桃派提供核桃派OS（Debian12）、Ubuntn22.04、 Home Assistant镜像，本教程主要基于核桃派OS（Debian12），也是我们推荐使用的镜像，分桌面版（Desktop版）和非桌面版（Server版）， 提供以下多种下载方式。
 
 ### 百度网盘
 

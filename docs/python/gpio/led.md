@@ -18,7 +18,26 @@ sidebar_position: 3
 从核桃派原理图可以看到LED连接到主控引脚PC13,通过输出高电平点亮：
 ![led2](./img/led/led2.png)
 
-由于我们使用的是Python库，只需要知道库引脚名称即可。LED在Python库中的名称为**board.LED** :
+由于我们使用的是Python库，只需要知道库引脚名称即可。
+
+我们可以在终端通过python指令查看引脚编号。
+
+在终端输入python进入Python交互:
+```bash
+python
+```
+
+然后输入：
+```python
+import board
+```
+再输入：
+```python
+board.
+```
+按键盘Tab键即可补全看到所有核桃派Python库引脚名称。
+
+LED在Python库中的名称为**board.LED** :
 
 ![led3](./img/led/led3.png)
 

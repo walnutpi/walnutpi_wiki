@@ -10,7 +10,7 @@ sidebar_position: 2
 
 ![blinka](./img/blinka_intro/blinka.png)
 
-简单来说，核桃派通过安装Blinka库后，就可以轻松使用Python库来玩转各类开发板GPIO外设了。核桃派出厂系统已经预装了Blinka库，位于 **/opt/adafruit_blinka** 目录下：
+简单来说，核桃派通过安装Blinka库后，就可以轻松使用Python库来玩转各类开发板GPIO外设了。核桃派出厂系统已经预装了Blinka库，位于 **/usr/lib/walnutpi/Adafruit_Blinka** 目录下：
 
 
 :::tip 提示

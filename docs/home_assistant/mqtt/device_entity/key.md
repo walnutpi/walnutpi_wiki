@@ -198,12 +198,11 @@ Home Assistant系统会自动选择卡片类型：
 ### 参考代码
 ```python
 '''
-实验名称：Home Assistant LED灯
+实验名称：Home Assistant 按键
 实验平台：核桃派1B + 核桃派PicoW
 作者：WalnutPi
-说明：编程实现Home Assistant控制LED灯
+说明：编程实现Home Assistant 按键检测
 '''
-
 import network,time
 from simple import MQTTClient #导入MQTT板块
 from machine import Pin,Timer
@@ -221,7 +220,7 @@ def WIFI_Connect():
 
     if not wlan.isconnected():
         print('connecting to network...')
-        wlan.connect('01Studio', '88888888') #输入WIFI账号密码
+        wlan.connect('01Studio_2.4G', '01studio0123456789') #输入WIFI账号密码
 
         while not wlan.isconnected():
 
@@ -249,60 +248,58 @@ def WIFI_Connect():
         return False
 
 
-#设置MQTT回调函数,有信息时候执行
-def MQTT_callback(topic, msg):
-    
-    print('topic: {}'.format(topic))
-    print('msg: {}'.format(msg))
-    
-    if msg == b'ON' :
-        
-        LED.value(1)
-    
-    if msg == b'OFF' :
-        
-        LED.value(0)
-
-#接收数据任务·
+#接收数据任务
 def MQTT_Rev(tim):
     client.check_msg()
 
 #执行WIFI连接函数并判断是否已经连接成功
 if WIFI_Connect():
     
-    CLIENT_ID = 'WalnutPi-PicoW1' # 客户端ID
+    CLIENT_ID = 'WalnutPi-PicoW2' # 客户端ID
     SERVER = '192.168.1.118'  # MQTT服务器地址
-    PORT = 1883   
+    PORT = 1883    
     USER='pi'
     PASSWORD='pi'
     
     client = MQTTClient(CLIENT_ID, SERVER, PORT, USER, PASSWORD) #建立客户端对象
-    client.set_callback(MQTT_callback)  #配置回调函数
     client.connect()
     
     #注册设备
-    TOPIC = "homeassistant/light/picow1_led/config"
+    TOPIC = "homeassistant/event/picow2_key/config"
     mssage = """{
-                  "name": "led",
-                  "device_class": "LIGHT",
-                  "command_topic": "picow1_led/light/state",
-                  "unique_id": "picow1_led",
+                  "name": "key",
+                  "device_class": "doorbell",
+                  "state_topic": "picow2_key/event/state",
+                  "event_types": "press",
+                  "unique_id": "picow2_key",
                   
                   "device": {
-                            "identifiers": "picow_1",
-                            "name": "picow1"
-                            }
-                }"""
+                    "identifiers": "picow_2",
+                    "name": "picow2"
+                  }
+                }
+            """
 
     client.publish(TOPIC, mssage)
-    
-    #订阅主题 
-    TOPIC = 'picow1_led/light/state' # TOPIC名称
-    client.subscribe(TOPIC) #订阅主题
 
-    #开启RTOS定时器，编号为1,周期100ms，执行socket通信接收任务
-    tim = Timer(1)
-    tim.init(period=100, mode=Timer.PERIODIC,callback=MQTT_Rev)
+
+KEY=Pin(0,Pin.IN,Pin.PULL_UP) #构建KEY对象
+
+#LED状态翻转函数
+def fun(KEY):
+    time.sleep_ms(10) #消除抖动
+    if KEY.value()==0: #确认按键被按下
+        
+        #发送mqtt按键信息
+        TOPIC = "picow2_key/event/state"
+        mssage = """{"event_type":"press"}"""
+        client.publish(TOPIC, mssage)
+
+KEY.irq(fun,Pin.IRQ_FALLING) #定义中断，下降沿触发
+
+while True:
+    
+    pass
 
 ```
 

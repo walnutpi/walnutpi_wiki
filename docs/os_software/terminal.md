@@ -46,6 +46,13 @@ cd Desktop
 
 ![debug1](./img/terminal/debug1.png)
 
+:::tip 提示
+
+如果你使用的ZeroW，可以通过接扩展板的调试串口，或者通过修改config.txt文件调试串口号实现使用40P排针上的uart2来实现终端信息输出。
+[config.txt设置调试串口教程](../os_software/config.txt#设置串口终端位置)
+
+:::
+
 在设备管理器可以看到设备的COM号：
 
 ![debug2](./img/terminal/debug2.png)
