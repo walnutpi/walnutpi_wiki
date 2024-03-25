@@ -175,7 +175,7 @@ gpio pwm [wpipin] [range] [freq]
 
 ![gpio9](./img/gpio_command/gpio9.png)
 
-- `[range]` ：PWM占空比。范围：0-1000 ；
+- `[range]` ：PWM占空比。范围：0 - 100 ；
 - `[freq]` ：频率。范围：400 - 20000 (由于主频分配问题这个方式频率最低只能400Hz)
 
 例如想让PMW1输出一个1KHz，占空比50%的方波，可以输入下面指令：
