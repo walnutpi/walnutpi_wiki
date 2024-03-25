@@ -95,7 +95,7 @@ const config = {
             type: 'docSidebar',
             sidebarId: 'tutorialSidebar',
             position: 'left',
-            label: '核桃派1B教程',
+            label: '核桃派1（1B / ZeroW）教程',
           },
           {
             to: 'picow/directory',
