@@ -4,6 +4,12 @@ sidebar_position: 12
 
 # 更新说明
 
+## 2024-3-25
+
+- 新增 **开箱指南:** 
+
+    - [核桃派ZeroW配件组装](./getting_start/zerow-peripherals.md)
+
 ## 2024-3-13
 
 - 新增 **Home Assistant教程:** 

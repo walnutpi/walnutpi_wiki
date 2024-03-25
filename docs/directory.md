@@ -15,7 +15,8 @@ sidebar_position: 0
 
     - [硬件参数](./getting_start/hw-parameter.md)
     - [硬件详解](./getting_start/hw-detail.md)
-    - [外围配件组装](./getting_start/hw-peripherals.md)
+    - [核桃派1B配件组装](./getting_start/hw-peripherals.md)
+    - [核桃派ZeroW配件组装](./getting_start/zerow-peripherals.md)
     - [系统镜像烧录](./getting_start/os-install.md)
     - [开机](./getting_start/start_up.md)
 
