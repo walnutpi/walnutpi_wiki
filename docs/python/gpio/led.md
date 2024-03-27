@@ -85,7 +85,7 @@ https://docs.circuitpython.org/en/latest/shared-bindings/digitalio/index.html
 
 上面对CircuitPython的DigitalInOut对象做了详细的说明，digitalio是大模块，DigitalInOut、Direction、Pull、DriveMode是digitalio下面的其中一个小模块，在python编程里有两种方式引用相关模块:
 
-- 方式1是：import digitalio，然后通过digitalio. DigitalInOut来操作；
+- 方式1是：import digitalio，然后通过digitalio.DigitalInOut来操作；
 - 方式2是：from digitalio import DigitalInOut,意思是直接从digitalio中引入DigitalInOut模块，然后直接通过DigitalInOut来操作。显然方式2会显得更直观和方便，本实验也是使用方式2来编程。代码编写流程如下：
 
 ```mermaid
