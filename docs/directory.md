@@ -38,7 +38,8 @@ sidebar_position: 0
     - [红外接收头](./os_software/ir.md)
     - [U盘挂载](./os_software/usb_disk.md)
     - [USB摄像头](./os_software/usb_cam.md)
-    - [3.5寸触摸显示屏](./os_software/3.5_LCD.md)
+    - [3.5寸显示屏（电阻触摸）](./os_software/3.5_LCD.md)
+    - [1.54寸显示屏](./os_software/1.54_LCD.md)
     - [config.txt](./os_software/config.txt.md)
 
 - **GPIO应用**
