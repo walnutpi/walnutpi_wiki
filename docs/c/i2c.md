@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2
+sidebar_position: 3
 ---
 
 # I2C
@@ -29,7 +29,7 @@ set-device status
 sudo set-device enable i2c1
 ```
 
-重启后查看引脚状态,可以看到3和5都处于alt5了
+重启后查看引脚状态,可以看到3和5都处于i2c复用模式了了
 ![引脚alt正确](./img/i2c/pin_35_mode_is_ok.png)
 
 并且存在`/dev/i2c-1`这个文件，因为后续我们需要通过操作这个文件来控制i2c通讯
