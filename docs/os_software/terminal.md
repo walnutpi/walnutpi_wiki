@@ -111,4 +111,4 @@ su pi
 | 17  | apt | advance package tool | 安装/删除软件包 |
 | 18  | exit |  | 退出 |
 | 19  | reboot |   | 重启 |
-| 20 | shutdown |  | 关机 |
+| 20 | poweroff |  | 关机 |

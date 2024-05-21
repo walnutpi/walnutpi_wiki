@@ -53,7 +53,7 @@ https://docs.micropython.org/en/latest/esp32/quickref.html#adc-analog-to-digital
 
 <br></br>
 
-熟悉RTC使用方法后，我们通过代码实现首次上电如果检测到未设置时间可以先设置时间，然后周期打印获取的时间信息，代码编程流程图如下：
+熟悉ADC使用方法后，我们通过代码实现周期性测量引脚电压，代码编程流程图如下：
 
 
 ```mermaid

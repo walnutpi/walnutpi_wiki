@@ -44,7 +44,6 @@ Pin位于machine模块下，直接import使用:
     - `Pin.PULL_DOWN` : 下拉电阻启用。
 
 
-
 ### 使用方法
 ```python
 LED.value([X])

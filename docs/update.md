@@ -4,6 +4,13 @@ sidebar_position: 12
 
 # 更新说明
 
+## 2024-4-11
+
+- 新增 **核桃派系统使用：** 
+
+    - [开机LOGO](./os_software/boot_logo.md)
+    - [开机自动运行脚本](./os_software/auto_run.md)
+
 ## 2024-3-25
 
 - 新增 **开箱指南:** 

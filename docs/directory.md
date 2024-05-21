@@ -40,6 +40,8 @@ sidebar_position: 0
     - [USB摄像头](./os_software/usb_cam.md)
     - [3.5寸显示屏（电阻触摸）](./os_software/3.5_LCD.md)
     - [1.54寸显示屏](./os_software/1.54_LCD.md)
+    - [开机LOGO](./os_software/boot_logo.md)
+    - [开机自动运行脚本](./os_software/auto_run.md)
     - [config.txt](./os_software/config.txt.md)
 
 - **GPIO应用**

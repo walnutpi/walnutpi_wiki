@@ -4,6 +4,13 @@ sidebar_position: 1
 
 # 简介
 
+- 视频演示：
+
+<iframe src="//player.bilibili.com/player.html?aid=1401200644&bvid=BV1rr421p788&cid=1452093879&p=1" high_quality="1" allowfullscreen="allowfullscreen" width="100%" height="500" scrolling="no" frameborder="0" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts"></iframe>
+
+<br></br>
+<br></br>
+
 ![intro](./img/intro/intro0.jpg)
 
 Home Assistant是用于家庭自动化的免费开源软件，旨在成为独立于物联网（IoT）生态系统的集成平台和智能家居设备的中央控制系统，重点关注本地控制和隐私。用户可以通过基于 Web 的用户界面、使用Android和iOS的配套应用程序来访问它，从而控制各类IOT设备。

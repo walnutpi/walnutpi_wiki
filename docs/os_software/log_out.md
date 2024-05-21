@@ -15,7 +15,7 @@ sidebar_position: 20
 可以通过指令来关机或重启。
 - 关机
 ```bash
-sudo shutdown
+sudo poweroff
 ```
 
 - 重启

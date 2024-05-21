@@ -1,5 +1,5 @@
 ---
-sidebar_position: 29
+sidebar_position: 50
 ---
 
 # config.txt
@@ -10,6 +10,14 @@ sd卡有两个分区，config.txt存放在第一个分区内。在核桃派开�
 
 ![u盘](./img/config_txt/windows_path.png)
 
+![u盘](./img/config_txt/config_txt2.png)
+
+## 开机LOGO
+
+默认关闭，需要开启和使用参考教程：[开机LOGO](./boot_logo.md) 章节内容。
+```
+bootlogo = false
+```
 
 ## 是否在显示器（hdmi或lcd屏）上开启控制台终端
 `console_display`, 默认是开启。如果选择关闭，则在开机信息输出完之后，不会再有那个要求输入账号密码登陆，给你敲命令行的终端。
