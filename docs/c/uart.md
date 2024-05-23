@@ -1,5 +1,5 @@
 ---
-sidebar_position: 4
+sidebar_position: 5
 ---
 
 # UART(串口)
@@ -29,7 +29,7 @@ sudo set-device enable uart4
 ```
 ![启用串口4](./img/uart/enable_uart4.png)
 
-重启后查看引脚状态,可以看到38和40都处于alt3了
+重启后查看引脚状态,可以看到38和40都工作在uart复用模式了
 ![引脚alt正确](./img/uart/pin_3840_mode_is_ok.png)
 
 ## 串口读写程序
