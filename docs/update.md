@@ -4,6 +4,15 @@ sidebar_position: 12
 
 # 更新说明
 
+## 2024-5-31
+
+- 更新 [GPIO应用](./gpio/gpio_intro.md) 和 [C嵌入式编程](./c/c_run.md) 整章内容。
+
+（从核桃派OS v2.3版本开始，GPIO弃用wiringpi的引脚编号，改为使用更直观的排针编号来指代引脚。）
+
+- 增加 [OpenCV教程](./opencv/intro.md)
+
+
 ## 2024-4-11
 
 - 新增 **核桃派系统使用：** 

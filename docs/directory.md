@@ -49,6 +49,7 @@ sidebar_position: 0
     - [GPIO介绍](./gpio/gpio_intro.md)
     - [GPIO指令操作](./gpio/gpio_command.md)
     - [GPIO设备配置](./gpio/gpio_config.md)
+    - [PWM](./gpio/pwm.md)
 
 - **Python嵌入式编程**
 
@@ -79,7 +80,8 @@ sidebar_position: 0
 
 - **C嵌入式编程**
 
-    - [IO控制（基于WiringPi）](./c/io_wiringpi.md) 
+    - [在开发板上编译C语言代码](./c/c_run.md) 
+    - [IO控制](./c/io_gpioc.md) 
     - [I2C](./c/i2c.md) 
     - [SPI](./c/spi.md) 
     - [UART（串口）](./c/uart.md) 
@@ -110,6 +112,34 @@ sidebar_position: 0
             - [写文本](./pyQT5/paint/text/text.md) 
             - [字体设置](./pyQT5/paint/text/qfont.md) 
         - [绘制图像](./pyQT5/paint/image.md) 
+
+- **OpenCV**
+
+    - [OpenCV简介](./opencv/intro.md) 
+    - [OpenCV安装](./opencv/install.md) 
+    - [图像基本操作](./opencv/operate.md) 
+    - [图像基础知识](./opencv/image.md) 
+    - **绘图**
+        - [画图形](./opencv/draw/shape.md) 
+        - [写字符](./opencv/draw/string.md) 
+    - **图像处理**
+        - [缩放](./opencv/process/resize.md) 
+        - [翻转](./opencv/process/flip.md) 
+        - [二值化](./opencv/process/binary.md) 
+    - **图像检测**
+        - [轮廓检测](./opencv/detection/contour_detection.md) 
+        - [边缘检测](./opencv/detection/edge_detection.md) 
+        - [线段检测](./opencv/detection/line_detection.md) 
+        - [圆形检测](./opencv/detection/circle_detection.md) 
+        - [模板匹配](./opencv/detection/template_match.md) 
+    - [USB摄像头使用](./opencv/usb_cam.md) 
+    - [LCD使用](./opencv/lcd.md) 
+    - **视觉识别**
+        - [级联分类器介绍](./opencv/vision/haar_cascade.md) 
+        - [人脸检测](./opencv/vision/front_face_detection.md)
+        - [眼睛检测](./opencv/vision/eye_detection%20copy.md) 
+        - [猫脸检测](./opencv/vision/cat_face_detection.md) 
+        - [车牌检测](./opencv/vision/plate_detection.md) 
 
 - **Home Assistant**
 

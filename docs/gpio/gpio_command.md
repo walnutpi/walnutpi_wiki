@@ -11,7 +11,7 @@ sidebar_position: 2
 想使用c语言编程控制gpio，请点击这一章节 [**c嵌入式编程 - 控制gpio**](../c/io_gpioc.md)
 
 :::danger[版本兼容性提示]
-从核桃派系统**v2.2.2**版本开始，废弃了基于wiringpi的引脚编号，改为使用排针编号来指代引脚。
+从核桃派系统**v2.3**版本开始，废弃了基于wiringpi的引脚编号，改为使用排针编号来指代引脚。
 :::
 
 
@@ -91,7 +91,6 @@ gpio write [PIN] [status]
     - `1` : 高电平（3.3V）
 
 
-
 我们可以使用板载蓝色LED来测试一下，由于启动系统后LED默认点亮，我们这里可以使用指令将它熄灭试试。
 
 从前面查表可以看到LED的pin编号为**42**，先设置LED引脚模式为输出：
@@ -143,7 +142,7 @@ gpio read 41
 
 再执行读取电平指令，因为开关与地相连，会把引脚电平拉低，所以可以看到输入电平变为0（低电平0V）。
 ```bash
-gpio read 42
+gpio read 41
 ```
 
 ![gpio_read_key_0](./img/gpio_command/gpio_read_key_0.png)

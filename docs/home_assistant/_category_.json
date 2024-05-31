@@ -1,6 +1,6 @@
 {
   "label": "Home Assistant",
-  "position": 8,
+  "position": 9,
   "link": {
     "type": "generated-index",
     "description": "在核桃派上使用Home Assistant"

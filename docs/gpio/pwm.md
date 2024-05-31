@@ -2,6 +2,8 @@
 sidebar_position: 4
 ---
 
+# PWM
+
 本篇主要介绍如何使用板上的硬件PWM功能，基于linux下对pwm的通用操作方式
 
 :::tip
