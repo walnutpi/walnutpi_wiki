@@ -60,25 +60,25 @@ S1 = PWM(Pin(13), freq=50, duty=0) # Servo1的引脚是0
      360连续旋转度舵机：angle:-90至90 旋转方向和速度值。
 '''
 def Servo(servo,angle):
-    S1.duty(int(((angle+90)*2/180+0.5)/20*1023))
+    servo.duty(int(((angle+90)*2/180+0.5)/20*1023))
 
 #-90度
 Servo(S1,-90)
 time.sleep(1)
 
-#-90度
+#45度
 Servo(S1,-45)
 time.sleep(1)
 
-#-90度
+#0度
 Servo(S1,0)
 time.sleep(1)
 
-#-90度
+#45度
 Servo(S1,45)
 time.sleep(1)
 
-#-90度
+#90度
 Servo(S1,90)
 time.sleep(1)
 ```
