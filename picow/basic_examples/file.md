@@ -25,7 +25,7 @@ graph TD
 
 ```python
 '''
-实验名称：线程
+实验名称：文件读写
 版本： v1.0
 作者：WalnutPi
 实验平台：核桃派PicoW
@@ -56,7 +56,7 @@ f.close() #每次操作完记得关闭文件
 
 点击IDE开发板文件系统右侧**菜单栏--刷新**，可以看到刚刚保存的文件（或复位开发板重新连接）。
 
-![file](./img/file/file2.jpg)
+![file](./img/file/file2.png)
 
 ![file](./img/file/file3.png)
 

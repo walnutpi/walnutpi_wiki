@@ -1,0 +1,8 @@
+{
+  "label": "图像检测",
+  "position": 7,
+  "link": {
+    "type": "generated-index",
+    "description": "OpenCV非常重要的功能，包括对图像中的图形、轮廓、边缘等对象进行检测"
+  }
+}

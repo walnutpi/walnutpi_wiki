@@ -4,6 +4,13 @@ sidebar_position: 5
 
 # 系统镜像烧录
 
+- **视频教程**
+
+<iframe src="//player.bilibili.com/player.html?isOutside=true&aid=1203172875&bvid=BV12F4m1N7Jz&cid=1508551068&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="500"></iframe>
+
+<br></br>
+<br></br>
+
 WalnutPi OS是一款基于Debian的免费操作系统，针对核桃派硬件进行了优化，是在核桃派上正常使用的推荐操作系统。
 
 核桃派的操作系统是安装到SD卡上的，目前提供2个镜像，分别是定制版Debian和无桌面版本。
@@ -26,7 +33,10 @@ WalnutPi OS是一款基于Debian的免费操作系统，针对核桃派硬件进
 
 ![0](./img/os-install/0.png)
 
-## 使用rufus烧录（推荐）
+
+## SD启动卡烧录
+
+### 使用rufus烧录（推荐）
 
 镜像下载完后我们还需要一个镜像烧录软件，这里推荐轻量级镜像烧录软件rufus。下载地址：https://rufus.ie/zh/#google_vignette
 
@@ -37,7 +47,7 @@ WalnutPi OS是一款基于Debian的免费操作系统，针对核桃派硬件进
 ![10](./img/os-install/10.png)
 
 
-## 使用balenaEtcher烧录
+### 使用balenaEtcher烧录
 
 如果上面rufus软件无法烧录，也可使用balenaEtcher试试。**balenaEtcher**下载： [https://etcher.balena.io/#download-etcher](https://etcher.balena.io/#download-etcher/)
 
@@ -76,4 +86,173 @@ WalnutPi OS是一款基于Debian的免费操作系统，针对核桃派硬件进
 烧录完成后会发现Windows只会显示一个100M的盘符，属于正常现象，里面放置了一些核桃派配置文件。
 
 ![8](./img/os-install/8.png)
- 
+
+## EMMC烧录
+
+核桃派CM1计算模块提供EMMC版本，核桃派提供3种烧录方式供用户选择。
+
+:::tip 提示
+当SD卡和EMMC同时带有操作系统时候，主控芯片会从SD卡启动系统。
+:::
+
+### 使用带系统SD卡烧录
+
+此方式烧录时间比较快。
+
+通过SD卡启动一个核桃派Debian系统，然后将核桃派镜像通过U盘或网络挂载方式挂载到该系统。
+
+![emmc](./img/os-install/10_2.png)
+
+
+也可以先将镜像压缩成了zip格式，再通过U盘连接核桃派，然后通过`uzip`指令解压镜像以节省拷贝时间。
+
+![emmc](./img/os-install/11.png)
+
+解压到当前目录：
+```bash
+unzip xxx.zip
+```
+
+:::tip 提示
+
+也可以解压到指定目录下，下面指令表示将zip文件解压到/home/pi目录：
+```bash
+unzip xxx.zip /home/pi
+```
+:::
+
+
+然后通过下面指令即可将img镜像文件烧录到核桃派EMMC：
+
+```bash
+sudo set-emmc burn xxx.img
+```
+
+![emmc](./img/os-install/12.png)
+
+烧录完成后关机，拔掉SD镜像卡，上电系统正常启动说明系统已经烧录到EMMC并且工作正常。
+
+**除了烧录，核桃派 `set-emmc` 指令还提供格式化EMMC功能：**
+
+快速格式化（推荐）：
+
+```bash
+sudo set-emmc earse-quick
+```
+
+完全格式化（速度会很慢）：
+
+```bash
+sudo set-emmc earse-overwrite
+```
+
+
+### USB烧录（需要一张空白SD卡）
+
+此方式烧录时间比较长。
+
+烧录资料包的U盘镜像使用[rufus](#使用rufus烧录推荐)工具烧录到SD卡。
+
+![emmc](./img/os-install/13.png)
+
+![emmc](./img/os-install/14.png)
+
+将SD卡插入核桃派，使用TYPE-C线通过USB口连接到电脑。
+
+![emmc](./img/os-install/15.png)
+
+这时候电脑会弹出一个约150M容量的U盘（EMMC的一个分区）。
+
+![emmc](./img/os-install/16.png)
+
+然后使用[rufus] (#使用rufus烧录推荐)工具将 核桃派系统镜像烧录到这个U盘即可。**这个烧录方式有点慢，请耐心等待。**
+
+![emmc](./img/os-install/17.png)
+
+烧录完成后断电，拔掉SD卡，上电系统正常启动说明系统已经烧录到EMMC并且工作正常。
+
+:::tip 提示
+刷过U盘启动卡的SD卡再次插入电脑可能无法识别，这时候可以打开**计算机管理--磁盘管理**找到SD卡容量的那个盘符，点击**右键--更改驱动器号**，按提示重新分别驱动盘符即可。
+![emmc](./img/os-install/17_2.png)
+:::
+
+### USB烧录（无需SD卡）
+
+此方法适合没有SD卡用户。烧录时间比较长。
+
+#### 安装驱动
+
+**按着CM1 EMMC版本模块IO扩展板的BOOT键不放，插入USB连接到电脑。** 
+
+![emmc](./img/os-install/18.png)
+
+可以看到设备管理器出现下面的设备。
+
+![emmc](./img/os-install/19.png)
+
+打开资料包的zadig软件：
+
+![emmc](./img/os-install/20.png)
+
+勾选选项 `OPTIONS->list all devices` ,显示所有usb设备。
+
+![emmc](./img/os-install/21.png)
+
+在下拉列表找到id为**1f3a efe8**的设备选中它：
+
+![emmc](./img/os-install/22.png)
+
+![emmc](./img/os-install/23.png)
+
+然后勾选右边Edit（表示编辑名称），将左边名称改成下面名称，务必改对否则后面烧录软件无法识别。
+
+```bash
+Allwinner SoC in FEL mode
+```
+改完后可以取消勾选edit
+
+![emmc](./img/os-install/24.png)
+
+![emmc](./img/os-install/25.png)
+
+修改设备驱动，确保这个框内是**WinUSB**，然后点击`Replace Driver`按钮安装驱动:
+
+![emmc](./img/os-install/26.png)
+
+等待一会，后提示安装完成：
+
+![emmc](./img/os-install/27.png)
+
+![emmc](./img/os-install/28.png)
+
+可以在设备管理器看到驱动变化：
+
+![emmc](./img/os-install/29.png)
+
+#### 烧录
+
+烧录使用sunxi-fel.exe工具，注意这是个命令行工具，windows上需要在**cmd**或**powershell**窗口中运行。
+
+在软件当前窗口右键，点击在终端打开：
+
+![emmc](./img/os-install/30.png)
+
+在打开终端输入下面命令：
+
+```bash
+.\sunxi-fel.exe uboot walnutpi-udisk.bin
+```
+
+执行后电脑会弹出一个约150M容量的U盘（EMMC的一个分区）。
+
+![emmc](./img/os-install/16.png)
+
+然后使用[rufus] (#使用rufus烧录推荐)工具将 核桃派系统镜像烧录到这个U盘即可。**这个烧录方式有点慢，请耐心等待。**
+
+![emmc](./img/os-install/17.png)
+
+烧录完成后断电，重新上电系统正常启动说明系统已经烧录到EMMC并且工作正常。
+
+
+
+

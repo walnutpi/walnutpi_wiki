@@ -34,8 +34,6 @@ sidebar_position: 2
 
 核桃派1B 2G/4G内存版本可使用Home Assistant Desktop版或Serve版镜像；1G版本内存有限，只能使用Home Assistant Serve版镜像；**推荐使用2G/4G版本开发板，带桌面新手配置起来会更方便。**
 
-#### Home Assistant镜像下载:
-
 
 ### 使用软件包安装
 

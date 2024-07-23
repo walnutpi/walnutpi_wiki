@@ -4,6 +4,13 @@ sidebar_position: 4
 
 # WiFi连接
 
+- **视频教程**
+
+<iframe src="//player.bilibili.com/player.html?isOutside=true&aid=1303287491&bvid=BV16M4m1D7D4&cid=1511170283&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="500"></iframe>
+
+<br></br>
+<br></br>
+
 系统运行后我们最想做的应该是连接到互联网了，以太网的话直接插入网线即可联网。除此之外核桃派板载双频WiFi模块，支持连接2.4G、5G WiFi网络。
 
 ## 桌面按钮连接

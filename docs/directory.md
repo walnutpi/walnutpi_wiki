@@ -9,13 +9,13 @@ sidebar_position: 0
 - **核桃派简介**
 
     - [核桃派简介](./intro/intro.md)
+    - [产品参数](./intro/hw-parameter.md)
     - [资料下载](./intro/download.md)
 
 - **开箱指南**
 
-    - [硬件参数](./getting_start/hw-parameter.md)
     - [硬件详解](./getting_start/hw-detail.md)
-    - [核桃派1B配件组装](./getting_start/hw-peripherals.md)
+    - [核桃派1B配件组装](./getting_start/1b-peripherals.md)
     - [核桃派ZeroW配件组装](./getting_start/zerow-peripherals.md)
     - [系统镜像烧录](./getting_start/os-install.md)
     - [开机](./getting_start/start_up.md)
@@ -170,6 +170,14 @@ sidebar_position: 0
     - [交叉编译器安装](./linux_build/cross_compiler.md) 
     - [在开发板上编译驱动](./linux_build/compile_driver.md) 
 
-- [**更新说明**](./update.md)
+- **Android系统使用**
 
+    - [镜像烧录](./android/burn.md) 
+    - [开机](./android/start_up.md) 
+    - [系统使用](./android/android_os.md) 
+    - [打造TV盒子](./android/tv_box.md) 
+
+- [**社区用户开源项目分享**](./diy.md) 
+
+- [**更新说明**](./update.md)
 

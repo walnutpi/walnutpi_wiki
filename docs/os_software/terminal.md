@@ -4,6 +4,13 @@ sidebar_position: 3
 
 # 终端和常用命令
 
+- **视频教程**
+
+<iframe src="//player.bilibili.com/player.html?isOutside=true&aid=1703287790&bvid=BV1xT42127X3&cid=1510989358&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="500"></iframe>
+
+<br></br>
+<br></br>
+
 ## 桌面系统打开终端
 终端（Termianal）要追溯到早期的计算机时代，那时候还没有可视化桌面，很多计算机操作都是通过终端命令完成。 到现在我们依然很多场合和调试会用到，掌握 linux 常用终端命令，能让你的开发工作事半功倍。**（无桌面系统启动后就只显示这个终端）**
 

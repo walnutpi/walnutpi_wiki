@@ -3,7 +3,8 @@ sidebar_position: 2
 ---
 
 # 硬件详解
-对核桃派1B各部分硬件详细讲解。
+
+对核桃派1B各部分硬件详细讲解。ZeroW、CM1、BOX功能类似。
 
 
 ## CPU

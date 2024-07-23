@@ -1,8 +1,33 @@
 ---
-sidebar_position: 12
+sidebar_position: 50
 ---
 
 # 更新说明
+
+## 2024-7-23
+
+- 核桃派OS（Debian12）v2.4.0版本发布，适配EMMC。
+
+- 新增 **核桃派介绍：** 
+
+    - [产品参数](./intro/hw-parameter.md)
+
+- 新增 **开箱指南--系统镜像烧录：** 
+
+    - [EMMC烧绿教程](./getting_start/os-install.md#emmc烧录)
+
+- 新增 **核桃派系统使用--预装软件：** 
+
+    - [btop系统监控软件](./os_software/software.md#btop)
+
+- 新增 [社区用户开源项目分享](./diy.md)
+
+## 2024-6-13
+
+- 核桃派1B Android镜像正式发布。
+
+- 增加 [Android系统使用教程](./android/burn.md)
+
 
 ## 2024-5-31
 

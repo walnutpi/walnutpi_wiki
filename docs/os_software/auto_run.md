@@ -1,5 +1,5 @@
 ---
-sidebar_position: 30
+sidebar_position: 50
 ---
 
 # 开机自动运行脚本
@@ -80,8 +80,12 @@ while True:
 
 然后我们在 /boot/start/ 目录下新建一个 python.sh 文件，里面写下面内容（表示运行led_blink.py文件）：
 
+:::tip 提示
+在下面指令末尾加 **&** 表示新建线程执行，避免python程序有死循环阻塞导致系统启动过程其它服务无法启动。
+:::
+
 ```
-sudo python /home/pi/led_blink.py
+sudo python /home/pi/led_blink.py &
 ```
 
 ![autorun](./img/auto_run/auto_run4.png)

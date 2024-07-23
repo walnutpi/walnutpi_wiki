@@ -74,3 +74,21 @@ Ristretto图片查看器可以用于打开常见的jpg、png文件。
 
 ### Xfce终端
 核桃派系统默认终端。
+
+### btop
+
+核桃派OS v2.4.0版本起增加了btop系统监控软件。相比于任务管理器拥有更完整的系统信息，而且桌面板和无桌面版系统都可以使用。
+
+桌面版系统运行指令：
+
+```bash
+btop
+```
+
+Sever（无桌面版）系统运行指令：
+
+```bash
+btop --utf-force
+```
+
+![system](./img/software/btop.jpg)

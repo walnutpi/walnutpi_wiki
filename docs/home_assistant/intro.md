@@ -6,7 +6,9 @@ sidebar_position: 1
 
 - 视频演示：
 
-<iframe src="//player.bilibili.com/player.html?aid=1401200644&bvid=BV1rr421p788&cid=1452093879&p=1" high_quality="1" allowfullscreen="allowfullscreen" width="100%" height="500" scrolling="no" frameborder="0" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts"></iframe>
+<!-- <iframe src="//player.bilibili.com/player.html?aid=1401200644&bvid=BV1rr421p788&cid=1452093879&p=1" high_quality="1" allowfullscreen="allowfullscreen" width="100%" height="500" scrolling="no" frameborder="0" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts"></iframe> -->
+
+<iframe src="//player.bilibili.com/player.html?aid=1401200644&bvid=BV1rr421p788&cid=1452093879&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="500"></iframe>
 
 <br></br>
 <br></br>

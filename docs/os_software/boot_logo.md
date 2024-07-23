@@ -1,8 +1,15 @@
 ---
-sidebar_position: 29
+sidebar_position: 49
 ---
 
 # 开机LOGO
+
+- **视频教程**
+
+<iframe src="//player.bilibili.com/player.html?isOutside=true&aid=1102857888&bvid=BV1uA4m1F7zy&cid=1510987131&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="500"></iframe>
+
+<br></br>
+<br></br>
 
 核桃派官方Debian系统支持开机LOGO设置，需要使用系统v2.2以上版本 [(系统版本查询方法)](./os_intro.md#系统版本查询)，设置方式如下：
 
@@ -42,13 +49,3 @@ sudo reboot
 该脚本文件的语法教程请看: 
  https://www.freedesktop.org/wiki/Software/Plymouth/Scripts/
 :::
-
-<br></br>
-
-- `视频教程`
-
-<iframe src="//player.bilibili.com/player.html?aid=1102857888&bvid=BV1uA4m1F7zy&cid=1501186718&p=1&high_quality=1&danmaku=0" allowfullscreen="allowfullscreen" width="100%" height="500" scrolling="no" frameborder="0" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts"></iframe>
-
-<br></br>
-
-【B站高清视频】https://www.bilibili.com/video/BV1uA4m1F7zy/

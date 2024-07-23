@@ -4,6 +4,13 @@ sidebar_position: 4
 
 # 核桃派ZeroW配件组装
 
+- **视频教程**
+
+<iframe src="//player.bilibili.com/player.html?isOutside=true&aid=1053217345&bvid=BV19H4y1K7wd&cid=1507941927&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="500"></iframe>
+
+<br></br>
+<br></br>
+
 在上一节了解过核桃派的硬件后，我们对核桃派有了一定的认识。但单独一个核桃派板子是无法工作的，它要求有一些必须的外设，如电源、键盘鼠标、显示器等。这节我们就来做详细的介绍核桃派ZeroW配件组装。
 
 核桃派ZeroW搭配扩展板和1.54寸LCD，有多种使用场景。
