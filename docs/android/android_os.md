@@ -8,7 +8,9 @@ sidebar_position: 3
 
 ## 红外遥控器 （推荐）
 
-核桃派1B板载红外接收头，可以使用Android TV盒子通用遥控器控制。接收成功蓝灯会闪烁一下。
+核桃派1B板载红外接收头，可以使用Android TV盒子通用遥控器控制。[点击购买>>](https://item.taobao.com/item.htm?id=822980807230)
+
+接收成功蓝灯会闪烁一下。
 
 ![android_os](./img/android_os/android_os1.png)
 

@@ -16,7 +16,7 @@ sidebar_position: 2
 
 OpenCV Python库提供了flip()函数实现图像翻转功能。
 
-### resize() 使用方法
+### flip() 使用方法
 
 ```python
 img = cv2.flip(src, flipCode)
