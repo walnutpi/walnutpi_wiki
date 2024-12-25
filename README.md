@@ -15,6 +15,8 @@
 
 ### 下载项目
 
+* 可以使用你Fork后的仓库地址。
+
 ```
 git clone https://github.com/walnutpi/walnutpi_wiki.git
 ```

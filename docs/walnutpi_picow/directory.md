@@ -1,4 +1,5 @@
 ---
+slug: /walnutpi_picow
 sidebar_position: 1
 ---
 

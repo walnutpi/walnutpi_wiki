@@ -23,6 +23,10 @@ sidebar_position: 9
 
 ![vnc0](./img/vnc/vnc0.png)
 
+除了官方推荐的外，也可以购买核桃派用户DIY的HDMI欺骗器，优点是体积小巧：[**点击购买->**](https://m.tb.cn/h.TWyt47y?tk=JDnp3vqGuxj) 
+
+![vnc0](./img/vnc/vnc0_1.png)
+
 ## 开启VNC服务
 
 输入下面指令即可开启：（默认密码：**pi** , 默认端口：**5900**）

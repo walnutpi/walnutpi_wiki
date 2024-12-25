@@ -75,7 +75,7 @@ sidebar_position: 50
 
 ## 2023-11-27
 
-- 增加 [目录](./directory)
+- 增加 [目录](./directory.md)
 - 增加 [资料下载](./intro/download.md) 
 
 ## 2023-11-2
@@ -114,8 +114,8 @@ sidebar_position: 50
 
 - 增加 **Python嵌入式编程 / 传感器** 例程：
 
-    - [HC-SR04超声波测距](../docs/python/sensor/hcsr04.md)
-    - [BMP280大气压强](../docs/python/sensor/bmp280.md)
-    - [MPU6050六轴加速度计](../docs/python/sensor/mpu6050.md)
-    - [VL53L1X激光测距](../docs/python/sensor/vl53l1x.md)
-    - [MLX90614红外测温](../docs/python/sensor/bmp280.md)
+    - [HC-SR04超声波测距](./python/sensor/hcsr04.md)
+    - [BMP280大气压强](./python/sensor/bmp280.md)
+    - [MPU6050六轴加速度计](./python/sensor/mpu6050.md)
+    - [VL53L1X激光测距](./python/sensor/vl53l1x.md)
+    - [MLX90614红外测温](./python/sensor/mlx90614.md)

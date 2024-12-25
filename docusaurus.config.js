@@ -29,7 +29,7 @@ const config = {
   // to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'zh',
-    locales: ['en','zh'],
+    locales: ['zh','en'],
   },
 
   markdown: {
@@ -65,7 +65,7 @@ const config = {
       }),
     ],
   ],
-
+/*
   plugins: [
     [
       '@docusaurus/plugin-content-docs',
@@ -77,7 +77,7 @@ const config = {
         // ... other options
       },
     ],
-  ],
+  ],*/
 
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
@@ -98,20 +98,31 @@ const config = {
             label: '核桃派1（1B / ZeroW / CM1 / BOX）教程',
           },
           {
-            to: 'picow/directory',
-            sidebarId: 'tutorialSidebar',
+            type: 'docSidebar',
+            sidebarId: 'newSidebar',
             position: 'left',
             label: '核桃派PicoW教程',
           },
           {
             href: 'https://forum.walnutpi.com',
             label: '论坛',
-            position: 'left',
+            position: 'right',
           },
           {
-            href: 'https://walnutpi.taobao.com',
+            type: 'dropdown',
             label: '购买',
             position: 'right',
+            className: 'navbar_dorp_items',
+            items: [
+              {
+                label: '淘宝店铺',
+                href: 'https://item.taobao.com/item.htm?id=737448151745',
+              },
+              {
+                label: 'AliExpress',
+                href: 'https://www.aliexpress.com/item/1005006129955506.html',
+              },
+            ],
           },
           //{to: '/blog', label: 'Blog', position: 'left'},
           /*{
@@ -145,7 +156,7 @@ const config = {
             items: [
               {
                 label: '教程',
-                to: '/docs/directory',
+                to: '/docs/walnutpi_1',
               },
               {
                 label: '论坛',
