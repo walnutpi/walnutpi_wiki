@@ -1,0 +1,8 @@
+{
+  "label": "绘图",
+  "position": 5,
+  "link": {
+    "type": "generated-index",
+    "description": "OpenCV绘制图形"
+  }
+}

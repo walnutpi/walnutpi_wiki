@@ -1,0 +1,8 @@
+{
+  "label": "传感器",
+  "position": 4,
+  "link": {
+    "type": "generated-index",
+    "description": "核桃派传感器应用"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "label": "绘图",
+  "position": 7,
+  "link": {
+    "type": "generated-index",
+    "description": "PyQt5绘图使用"
+  }
+}

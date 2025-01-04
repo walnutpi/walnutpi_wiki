@@ -1,0 +1,286 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.tutorialSidebar.category.核桃派介绍": {
+    "message": "Walnut Pi Introduction",
+    "description": "The label for category 核桃派介绍 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.核桃派介绍.link.generated-index.description": {
+    "message": "Walnut Pi Introduction, Data Download and Community",
+    "description": "The generated-index page description for category 核桃派介绍 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.开箱指南": {
+    "message": "Getting Start",
+    "description": "The label for category 开箱指南 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.开箱指南.link.generated-index.description": {
+    "message": "Getting start with your Walnut Pi",
+    "description": "The generated-index page description for category 开箱指南 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.核桃派系统使用": {
+    "message": "Walnut Pi OS Usage",
+    "description": "The label for category 核桃派系统使用 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.核桃派系统使用.link.generated-index.description": {
+    "message": "Walnut Pi OS configuration and use",
+    "description": "The generated-index page description for category 核桃派系统使用 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.GPIO应用": {
+    "message": "GPIO",
+    "description": "The label for category GPIO应用 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.GPIO应用.link.generated-index.description": {
+    "message": "Walnut Pi 40Pin GPIO detailed introduction",
+    "description": "The generated-index page description for category GPIO应用 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Python嵌入式编程": {
+    "message": "Python Embedded Programming",
+    "description": "The label for category Python嵌入式编程 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Python嵌入式编程.link.generated-index.description": {
+    "message": "Use Python to control GPIO, sensors, network programming and other applications",
+    "description": "The generated-index page description for category Python嵌入式编程 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.GPIO基础实验": {
+    "message": "GPIO Basic Examples",
+    "description": "The label for category GPIO基础实验 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.GPIO基础实验.link.generated-index.description": {
+    "message": "GPIO Basic Examples",
+    "description": "The generated-index page description for category GPIO基础实验 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.传感器": {
+    "message": "Sensors",
+    "description": "The label for category 传感器 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.传感器.link.generated-index.description": {
+    "message": "Walnut Pi Sensor Application",
+    "description": "The generated-index page description for category 传感器 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.拓展模块": {
+    "message": "Extension Module",
+    "description": "The label for category 拓展模块 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.拓展模块.link.generated-index.description": {
+    "message": "Use of various expansion modules",
+    "description": "The generated-index page description for category 拓展模块 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.网络应用": {
+    "message": "Network",
+    "description": "The label for category 网络应用 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.网络应用.link.generated-index.description": {
+    "message": "Common network programming applications such as Socket and MQTT",
+    "description": "The generated-index page description for category 网络应用 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.其它使用技巧": {
+    "message": "Other usage tips",
+    "description": "The label for category 其它使用技巧 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.其它使用技巧.link.generated-index.description": {
+    "message": "Some common techniques and functions of Walnut Pi Python programming",
+    "description": "The generated-index page description for category 其它使用技巧 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.C嵌入式编程": {
+    "message": "C Embedded Programming",
+    "description": "The label for category C嵌入式编程 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.C嵌入式编程.link.generated-index.description": {
+    "message": "Walnut Pi C language embedded programming (applicable to Walnut Pi OS v2.3 and above)",
+    "description": "The generated-index page description for category C嵌入式编程 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.PyQt5": {
+    "message": "PyQt5",
+    "description": "The label for category PyQt5 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.PyQt5.link.generated-index.description": {
+    "message": "Developing GUI using PyQt5 on Walnut Pi",
+    "description": "The generated-index page description for category PyQt5 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.控件": {
+    "message": "控件",
+    "description": "The label for category 控件 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.控件.link.generated-index.description": {
+    "message": "PyQt5常用控件使用方法",
+    "description": "The generated-index page description for category 控件 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.按钮类": {
+    "message": "按钮类",
+    "description": "The label for category 按钮类 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.按钮类.link.generated-index.description": {
+    "message": "按钮类控件",
+    "description": "The generated-index page description for category 按钮类 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.显示控件": {
+    "message": "显示控件",
+    "description": "The label for category 显示控件 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.显示控件.link.generated-index.description": {
+    "message": "显示类控件",
+    "description": "The generated-index page description for category 显示控件 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.输入控件": {
+    "message": "输入控件",
+    "description": "The label for category 输入控件 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.输入控件.link.generated-index.description": {
+    "message": "输入类控件",
+    "description": "The generated-index page description for category 输入控件 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.绘图": {
+    "message": "绘图",
+    "description": "The label for category 绘图 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.绘图.link.generated-index.description": {
+    "message": "OpenCV绘制图形",
+    "description": "The generated-index page description for category 绘图 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.绘制形状": {
+    "message": "绘制形状",
+    "description": "The label for category 绘制形状 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.绘制形状.link.generated-index.description": {
+    "message": "绘制形状",
+    "description": "The generated-index page description for category 绘制形状 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.绘制文本": {
+    "message": "绘制文本",
+    "description": "The label for category 绘制文本 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.绘制文本.link.generated-index.description": {
+    "message": "绘制文本",
+    "description": "The generated-index page description for category 绘制文本 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.OpenCV": {
+    "message": "OpenCV",
+    "description": "The label for category OpenCV in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.OpenCV.link.generated-index.description": {
+    "message": "Using OpenCV on Walnut Pi",
+    "description": "The generated-index page description for category OpenCV in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.图像处理": {
+    "message": "图像处理",
+    "description": "The label for category 图像处理 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.图像处理.link.generated-index.description": {
+    "message": "常用的图像处理教程",
+    "description": "The generated-index page description for category 图像处理 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.图像检测": {
+    "message": "图像检测",
+    "description": "The label for category 图像检测 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.图像检测.link.generated-index.description": {
+    "message": "OpenCV非常重要的功能，包括对图像中的图形、轮廓、边缘等对象进行检测",
+    "description": "The generated-index page description for category 图像检测 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.视觉识别": {
+    "message": "视觉识别",
+    "description": "The label for category 视觉识别 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.视觉识别.link.generated-index.description": {
+    "message": "OpenCV视觉识别应用",
+    "description": "The generated-index page description for category 视觉识别 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Home Assistant": {
+    "message": "Home Assistant",
+    "description": "The label for category Home Assistant in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Home Assistant.link.generated-index.description": {
+    "message": "Using Home Assistant on Walnut Pi",
+    "description": "The generated-index page description for category Home Assistant in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.MQTT集成": {
+    "message": "MQTT集成",
+    "description": "The label for category MQTT集成 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.MQTT集成.link.generated-index.description": {
+    "message": "Home Assistant MQTT集成应用",
+    "description": "The generated-index page description for category MQTT集成 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.添加MQTT设备和实体": {
+    "message": "添加MQTT设备和实体",
+    "description": "The label for category 添加MQTT设备和实体 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.添加MQTT设备和实体.link.generated-index.description": {
+    "message": "添加各类MQTT设备和实体",
+    "description": "The generated-index page description for category 添加MQTT设备和实体 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Linux系统编译": {
+    "message": "Linux OS compilation",
+    "description": "The label for category Linux系统编译 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Linux系统编译.link.generated-index.description": {
+    "message": " ",
+    "description": "The generated-index page description for category Linux系统编译 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Android系统使用": {
+    "message": "Android OS use",
+    "description": "The label for category Android系统使用 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Android系统使用.link.generated-index.description": {
+    "message": " ",
+    "description": "The generated-index page description for category Android系统使用 in sidebar tutorialSidebar"
+  },
+  "sidebar.newSidebar.category.核桃派PicoW介绍": {
+    "message": "Introduction of Walnut Pi PicoW",
+    "description": "The label for category 核桃派PicoW介绍 in sidebar newSidebar"
+  },
+  "sidebar.newSidebar.category.核桃派PicoW介绍.link.generated-index.description": {
+    "message": "硬件和相关资源介绍",
+    "description": "The generated-index page description for category 核桃派PicoW介绍 in sidebar newSidebar"
+  },
+  "sidebar.newSidebar.category.开发环境搭建": {
+    "message": "Getting Start",
+    "description": "The label for category 开发环境搭建 in sidebar newSidebar"
+  },
+  "sidebar.newSidebar.category.开发环境搭建.link.generated-index.description": {
+    "message": "Getting starte with your Walnut Pi PicoW development board.",
+    "description": "The generated-index page description for category 开发环境搭建 in sidebar newSidebar"
+  },
+  "sidebar.newSidebar.category.基础实验": {
+    "message": "Basic Examples",
+    "description": "The label for category 基础实验 in sidebar newSidebar"
+  },
+  "sidebar.newSidebar.category.基础实验.link.generated-index.description": {
+    "message": "Common GPIO basic experiments",
+    "description": "The generated-index page description for category 基础实验 in sidebar newSidebar"
+  },
+  "sidebar.newSidebar.category.WiFi应用": {
+    "message": "WiFi",
+    "description": "The label for category WiFi应用 in sidebar newSidebar"
+  },
+  "sidebar.newSidebar.category.WiFi应用.link.generated-index.description": {
+    "message": "PicoW implements common network programming applications such as Socket and MQTT",
+    "description": "The generated-index page description for category WiFi应用 in sidebar newSidebar"
+  },
+  "sidebar.newSidebar.category.蓝牙应用": {
+    "message": "BLE (Bluetooth Low Energy)",
+    "description": "The label for category 蓝牙应用 in sidebar newSidebar"
+  },
+  "sidebar.newSidebar.category.蓝牙应用.link.generated-index.description": {
+    "message": "Walnut Pi PicoW realizes Bluetooth data transmission and reception and other applications",
+    "description": "The generated-index page description for category 蓝牙应用 in sidebar newSidebar"
+  },
+  "sidebar.newSidebar.category.传感器": {
+    "message": "Sensors",
+    "description": "The label for category 传感器 in sidebar newSidebar"
+  },
+  "sidebar.newSidebar.category.传感器.link.generated-index.description": {
+    "message": "PicoW drives various sensors",
+    "description": "The generated-index page description for category 传感器 in sidebar newSidebar"
+  },
+  "sidebar.newSidebar.category.拓展模块": {
+    "message": "Extension Modules",
+    "description": "The label for category 拓展模块 in sidebar newSidebar"
+  },
+  "sidebar.newSidebar.category.拓展模块.link.generated-index.description": {
+    "message": "Walnut Pi PicoW drives various peripheral modules",
+    "description": "The generated-index page description for category 拓展模块 in sidebar newSidebar"
+  }
+}

@@ -1,3 +1,5 @@
+**简体中文 | [English](./README_en.md)**<br>
+
 # 核桃派教程文档
 
 ## 官方网站
@@ -6,7 +8,13 @@
 
 ## 贡献说明
 
-本项目使用 [Docusaurus 2](https://docusaurus.io/) 构建。主要内容放在 `walnutpi_wiki/docs` 目录下，大家可以遵循我们的文档格式提交教程贡献。
+本项目使用 [Docusaurus 2](https://docusaurus.io/) 构建,大家可以遵循我们的文档格式提交教程贡献。
+
+文档主要内容放在 `walnutpi_wiki/docs` 目录下，默认中文；
+
+不同语言翻译后的文档位于 `walnutpi_wiki/i18n` 目录下。
+
+（感兴趣用户Fork项目翻译后提交Pull Requests即可！）
 
 ### 安装Node.js
 
@@ -38,5 +46,12 @@ npm run start
 ![readme1](./static/img/readme1.png)
 
 ![readme2](./static/img/readme2.png)
+
+其它语言版本可以通过下面指令查看：
+
+例如英文版本：
+```
+npm run start -- --locale en
+```
 
 详细教程请看官方文档：[https://tutorial.docusaurus.io/docs/intro/](https://tutorial.docusaurus.io/docs/intro/)

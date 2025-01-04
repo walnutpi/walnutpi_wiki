@@ -1,0 +1,34 @@
+{
+  "title": {
+    "message": "Walnut Pi",
+    "description": "The title in the navbar"
+  },
+  "logo.alt": {
+    "message": "My Site Logo",
+    "description": "The alt text of navbar logo"
+  },
+  "item.label.核桃派1（1B / ZeroW / CM1 / BOX）教程": {
+    "message": "Walnut Pi 1（1B / ZeroW / CM1 / BOX）Tutorial",
+    "description": "Navbar item with label 核桃派1（1B / ZeroW / CM1 / BOX）教程"
+  },
+  "item.label.核桃派PicoW教程": {
+    "message": "Walnut Pi PicoW Tutorial",
+    "description": "Navbar item with label 核桃派PicoW教程"
+  },
+  "item.label.论坛": {
+    "message": "Forum",
+    "description": "Navbar item with label 论坛"
+  },
+  "item.label.购买": {
+    "message": "Buy",
+    "description": "Navbar item with label 购买"
+  },
+  "item.label.淘宝店铺": {
+    "message": "淘宝店铺",
+    "description": "Navbar item with label 淘宝店铺"
+  },
+  "item.label.AliExpress": {
+    "message": "AliExpress",
+    "description": "Navbar item with label AliExpress"
+  }
+}

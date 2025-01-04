@@ -2,33 +2,35 @@ import React from 'react';
 import clsx from 'clsx';
 import styles from './styles.module.css';
 
+import Translate, {translate} from '@docusaurus/Translate';
+
 const FeatureList = [
   {
-    title: '强势出圈',
+    title: <Translate>强势出圈</Translate>,
     Svg: require('@site/static/img/walnutpi.svg').default,
     description: (
-      <>*全志H616/H618 四核Cortex-A53高性能处理器<br></br>
-        *双频WiFi+蓝牙5.0<br></br>
-        *尺寸兼容树莓派<br></br>
+      <>* <Translate>全志H616/H618 四核Cortex-A53高性能处理器</Translate><br></br>
+        * <Translate>双频WiFi+蓝牙5.0</Translate><br></br>
+        * <Translate>尺寸兼容树莓派</Translate><br></br>
       </>
     ),
   },
   {
-    title: '定制版Debian系统',
+    title: <Translate>定制版Debian系统</Translate>,
     Svg: require('@site/static/img/debian.svg').default,
     description: (
       <>
-        核桃派定制版Debian，体验更像Windows<br></br>
-        降低用户使用门槛
+        <Translate>核桃派定制版Debian，体验更像Windows</Translate><br></br>
+        <Translate>降低用户使用门槛</Translate>
       </>
     ),
   },
   {
-    title: '彩色40P排针',
+    title: <Translate>彩色40P排针</Translate>,
     Svg: require('@site/static/img/gpio.svg').default,
     description: (
       <>
-        方便接线，避免误接短路。
+        <Translate>方便接线，避免误接短路</Translate>
       </>
     ),
   },

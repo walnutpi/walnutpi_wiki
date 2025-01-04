@@ -119,3 +119,7 @@ sidebar_position: 50
     - [MPU6050六轴加速度计](./python/sensor/mpu6050.md)
     - [VL53L1X激光测距](./python/sensor/vl53l1x.md)
     - [MLX90614红外测温](./python/sensor/mlx90614.md)
+
+## 2023-9-19
+
+- 第一版正式发布。

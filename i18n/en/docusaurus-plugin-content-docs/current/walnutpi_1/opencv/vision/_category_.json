@@ -1,0 +1,8 @@
+{
+  "label": "视觉识别",
+  "position": 9,
+  "link": {
+    "type": "generated-index",
+    "description": "OpenCV视觉识别应用"
+  }
+}

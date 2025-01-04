@@ -7,7 +7,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: '核桃派',
-  tagline: '-让数字化技术变得简单-',
+  tagline: '- 让数字化技术变得简单 -',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
@@ -97,6 +97,12 @@ const config = {
             position: 'left',
             label: '核桃派1（1B / ZeroW / CM1 / BOX）教程',
           },
+          /*{
+            type: 'docSidebar',
+            sidebarId: 'wpi2Sidebar',
+            position: 'left',
+            label: '核桃派2（2B）教程',
+          },*/
           {
             type: 'docSidebar',
             sidebarId: 'newSidebar',
@@ -125,7 +131,7 @@ const config = {
             ],
           },
           //{to: '/blog', label: 'Blog', position: 'left'},
-          /*{
+          {
             type: 'localeDropdown',
             position: 'right',
             dropdownItemsAfter: [
@@ -134,11 +140,11 @@ const config = {
                 value: '<hr style="margin: 0.3rem 0;">',
               },
               {
-                href: 'https://github.com/facebook/docusaurus/issues/3526',
+                href: 'https://github.com/walnutpi/walnutpi_wiki',
                 label: 'Help Us Translate',
               },
             ],
-          },*/
+          },
           {
             href: 'https://github.com/walnutpi',
             //label: 'GitHub',
