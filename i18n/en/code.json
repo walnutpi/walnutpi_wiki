@@ -436,5 +436,8 @@
   },
   "方便接线，避免误接短路": {
     "message": "Convenient wiring to avoid short circuit caused by mistake"
+  },
+  "核桃派": {
+    "message": "Walnut Pi"
   }
 }
