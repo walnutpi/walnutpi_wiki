@@ -95,19 +95,24 @@ const config = {
             type: 'docSidebar',
             sidebarId: 'tutorialSidebar',
             position: 'left',
-            label: '核桃派1（1B / ZeroW / CM1 / BOX）教程',
+            label: '核桃派1代（1B / ZeroW / CM1 / BOX）教程',
           },
-          /*{
+          {
             type: 'docSidebar',
             sidebarId: 'wpi2Sidebar',
             position: 'left',
-            label: '核桃派2（2B）教程',
-          },*/
+            label: '核桃派2代（2B）教程',
+          },
           {
             type: 'docSidebar',
             sidebarId: 'newSidebar',
             position: 'left',
             label: '核桃派PicoW教程',
+          },
+          {
+            href: 'https://map.walnutpi.com',
+            label: '设备地图',
+            position: 'right',
           },
           {
             href: 'https://forum.walnutpi.com',

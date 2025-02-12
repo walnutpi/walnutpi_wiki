@@ -1,0 +1,8 @@
+{
+  "label": "Python嵌入式编程",
+  "position": 5,
+  "link": {
+    "type": "generated-index",
+    "description": "使用Python控制GPIO、传感器、网络编程等应用"
+  }
+}

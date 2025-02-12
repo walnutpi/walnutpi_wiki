@@ -1,0 +1,15 @@
+/* 主页图片轮播用 */
+
+/* 把箭头垂直居中 */
+.swiper-button-next,
+.swiper-button-prev {
+    top: 35%;
+    transform: translateY(-50%);
+}
+
+/* 设置箭头颜色为白色且带有一定透明度 */
+.swiper-button-next::after,
+.swiper-button-prev::after {
+    color: rgba(255, 255, 255, 0.7); 
+    /* 这里的 0.7 表示透明度，可以根据需求调整，取值范围 0（完全透明）到 1（完全不透明） */
+}

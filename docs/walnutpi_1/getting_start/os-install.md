@@ -92,7 +92,7 @@ WalnutPi OS是一款基于Debian的免费操作系统，针对核桃派硬件进
 核桃派CM1计算模块提供EMMC版本，核桃派提供3种烧录方式供用户选择。
 
 :::tip 提示
-当SD卡和EMMC同时带有操作系统时候，主控芯片会从SD卡启动系统。
+**EMMC仅支持2024-7-12（V2.4.0）以上版本镜像。**当SD卡和EMMC同时带有操作系统时候，主控芯片会从SD卡启动系统。
 :::
 
 ### 使用带系统SD卡烧录
@@ -117,7 +117,7 @@ unzip xxx.zip
 
 也可以解压到指定目录下，下面指令表示将zip文件解压到/home/pi目录：
 ```bash
-unzip xxx.zip /home/pi
+unzip xxx.zip -d /home/pi
 ```
 :::
 
