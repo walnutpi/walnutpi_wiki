@@ -30,7 +30,7 @@ graph TD
 ```python
 '''
 实验名称：猫脸检测
-实验平台：核桃派1B
+实验平台：核桃派2B
 '''
 
 import cv2
@@ -69,7 +69,7 @@ cv2.destroyAllWindows() #关闭窗口
 ```python
 '''
 实验名称：猫脸检测（使用USB摄像头）
-实验平台：核桃派1B
+实验平台：核桃派2B
 '''
 
 import cv2, time

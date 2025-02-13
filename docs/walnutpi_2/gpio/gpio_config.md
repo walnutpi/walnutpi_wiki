@@ -8,7 +8,7 @@ sidebar_position: 3
 
 `set-device`的工作原理是基于linux提供的**device tree overlay**功能，我们已经把 “将xx引脚配置为spi并启用对应驱动” 之类的信息写成配置文件(.dtb)中。这条指令会控制系统在开机时加载哪些配置文件(.dtb)。
 
-注意，有些驱动是互斥的。比如启用3.5寸屏时会占用spi1，就不能同时使用spidev1.0驱动。如果将核桃派1b的38/40引脚配置为串口4，那这两个引脚就不能使用硬件pwm功能。
+注意，有些驱动是互斥的。比如启用3.5寸屏时会占用spi1，就不能同时使用spidev1.0驱动。如果将核桃派2b的38/40引脚配置为串口4，那这两个引脚就不能使用硬件pwm功能。
 
 比如**PI13**引脚可以被设置为**pwm3**或是**uart4_txd**，但如果你将其设置为了**uart4_txd**，就无法使用**pwm3**功能。
 
@@ -49,7 +49,7 @@ sudo reboot
 
 ![gpio_config2](./img/gpio_config/gpio_config2.png)
 
-运行命令`gpio pins`后，也可看到核桃派1b的对应引脚被切换为对应工作模式
+运行命令`gpio pins`后，也可看到核桃派2b的对应引脚被切换为对应工作模式
 
 ![gpio_pins_uart4](./img/gpio_config/gpio_pins_uart4.png)
 

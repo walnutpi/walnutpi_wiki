@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # OpenCV安装
 
-我们在核桃派1B上安装OpenCV非常简单，使用pip安装即可。**推荐安装 pencv-contrib-python 库，该库包含OpenCV库主模块和contrib模块, 功能完整。**
+我们在核桃派2B上安装OpenCV非常简单，使用pip安装即可。**推荐安装 pencv-contrib-python 库，该库包含OpenCV库主模块和contrib模块, 功能完整。**
 
 在核桃派终端输入下面命令安装：
 

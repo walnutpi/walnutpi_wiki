@@ -127,7 +127,7 @@ const config = {
             items: [
               {
                 label: '淘宝店铺',
-                href: 'https://item.taobao.com/item.htm?id=737448151745',
+                href: 'https://walnutpi.taobao.com/',
               },
               {
                 label: 'AliExpress',

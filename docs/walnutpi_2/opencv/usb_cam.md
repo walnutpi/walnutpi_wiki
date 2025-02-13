@@ -41,7 +41,7 @@ OpenCV可以通过VideoCapture()函数获取摄像头视频流。摄像头视频
 ```python
 '''
 实验名称：USB摄像头使用
-实验平台：核桃派1B
+实验平台：核桃派
 '''
 
 import cv2

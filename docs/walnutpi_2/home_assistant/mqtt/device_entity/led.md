@@ -74,16 +74,16 @@ graph TD
     导入相关模块-->构建LED对象-->连接MQTT服务器-->注册LED实体和设备-->接收MQTT信息-->控制LED开关-->接收MQTT信息;
 ```
 
-## 基于核桃派1B实现
+## 基于核桃派2B实现
 
-核桃派1B板载可编程LED，我们在前面教程中学习过核桃派使用Python编程实现MQTT通讯[MQTT通讯](../../../python/network/mqtt.md)，在这个基础上实现即可：
+核桃派2B板载可编程LED，我们在前面教程中学习过核桃派使用Python编程实现MQTT通讯[MQTT通讯](../../../python/network/mqtt.md)，在这个基础上实现即可：
 
 ### 参考代码
 
 ```python
 '''
 实验名称：Home Assistant LED灯
-实验平台：核桃派1B
+实验平台：核桃派
 说明：编程实现Home Assistant控制LED灯。
 '''
 
@@ -203,7 +203,7 @@ Home Assistant系统会自动选择卡片类型：
 
 ## 基于核桃派PicoW实现
 
-核桃派PicoW（ESP32-S3）板载可编程LED，使用方法参考:[核桃派PicoW教程](https://www.walnutpi.com/picow/directory)，保证核桃派PicoW和核桃派1B连接到同一个路由器下即可：
+核桃派PicoW（ESP32-S3）板载可编程LED，使用方法参考:[核桃派PicoW教程](https://www.walnutpi.com/picow/directory)，保证核桃派PicoW和核桃派2B连接到同一个路由器下即可：
 
 ![led6](./img/led/led9_2.png)
 
@@ -211,7 +211,7 @@ Home Assistant系统会自动选择卡片类型：
 ```python
 '''
 实验名称：Home Assistant LED灯
-实验平台：核桃派1B + 核桃派PicoW
+实验平台：核桃派 + 核桃派PicoW
 作者：WalnutPi
 说明：编程实现Home Assistant控制LED灯
 '''

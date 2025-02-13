@@ -30,7 +30,7 @@ img = cv2.imread(filename, flags)
 ```python
 '''
 实验名称：读取图像
-实验平台：核桃派1B
+实验平台：核桃派
 '''
 
 import cv2
@@ -64,7 +64,7 @@ cv2.imshow(winname, mat)
 ```python
 '''
 实验名称：显示图像
-实验平台：核桃派1B
+实验平台：核桃派
 '''
 import cv2
 
@@ -100,7 +100,7 @@ cv2.imwrite(filename, img)
 ```python
 '''
 实验名称：保存图像
-实验平台：核桃派1B
+实验平台：核桃派
 '''
 
 import cv2
@@ -139,7 +139,7 @@ img.dtype # 图像数据类型
 ```python
 '''
 实验名称：获取图像属性信息
-实验平台：核桃派1B
+实验平台：核桃派
 '''
 
 import cv2

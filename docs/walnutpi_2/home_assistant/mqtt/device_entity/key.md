@@ -5,9 +5,9 @@ sidebar_position: 3
 # 按键
 
 ## 前言
-本节主要内容是为Home Assistant主机添加一个按键，实现按键按下事件检测。为了方便演示，本教程会分别使用核桃派1B和核桃派PicoW（ESP32S3）来作为mqtt节点来操作。
+本节主要内容是为Home Assistant主机添加一个按键，实现按键按下事件检测。为了方便演示，本教程会分别使用核桃派2B和核桃派PicoW（ESP32S3）来作为mqtt节点来操作。
 
-- 核桃派1B按键
+- 核桃派2B按键
 
 ![key](./img/key/key1.png)
 

@@ -122,7 +122,7 @@ graph TD
 ```python
 '''
 实验名称：MQTT通信
-实验平台：核桃派1B
+实验平台：核桃派2B
 说明：编程实现MQTT通信:发布者（publish）。
 '''
 
@@ -154,7 +154,7 @@ while True:
 ```python
 '''
 实验名称：MQTT通信
-实验平台：核桃派1B
+实验平台：核桃派2B
 说明：编程实现MQTT通信: 订阅者（subscribe）。
 '''
 

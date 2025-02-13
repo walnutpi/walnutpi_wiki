@@ -122,7 +122,7 @@ graph TD
 ```python
 '''
 实验名称：VL53L1X激光测距
-实验平台：核桃派1B
+实验平台：核桃派2B
 '''
 
 import time, busio, board, adafruit_vl53l1x

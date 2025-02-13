@@ -32,7 +32,7 @@ sidebar_position: 4
 ```python
 '''
 实验名称：读取像素
-实验平台：核桃派1B
+实验平台：核桃派
 '''
 
 import cv2
@@ -82,7 +82,7 @@ print(p) #打印像素值信息
 ```python
 '''
 实验名称：修改像素
-实验平台：核桃派1B
+实验平台：核桃派
 '''
 
 import cv2

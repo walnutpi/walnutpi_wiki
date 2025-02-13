@@ -14,11 +14,11 @@ sidebar_position: 8
 
 ## 按键和LED
 
-在MQTT集成里面我们新增了LED和按键实体，他们都是使用Home Assistant界面控制的，这里我们就通过添加一个自动化，实现核桃派1B开发板上按键按下改变LED亮灭状态，来学习Home Assistant的自动化使用。
+在MQTT集成里面我们新增了LED和按键实体，他们都是使用Home Assistant界面控制的，这里我们就通过添加一个自动化，实现核桃派2B开发板上按键按下改变LED亮灭状态，来学习Home Assistant的自动化使用。
 
 LED和按键实体添加教程参考教程：[LED](../home_assistant/mqtt/device_entity/led.md) 和 [按键](../home_assistant/mqtt/device_entity/key.md) ，这里不再重复。
 
-将上面例程的LED和按键代码拷贝到核桃派1B开发板， 可以在终端使用下面指令同时运行2个代码，将实体注册到Home Assistant：
+将上面例程的LED和按键代码拷贝到核桃派2B开发板， 可以在终端使用下面指令同时运行2个代码，将实体注册到Home Assistant：
 
 ```bash
 sudo python led.py & sudo python key.py
@@ -57,7 +57,7 @@ sudo python led.py & sudo python key.py
 ![automation](./img/automation/automation6.png)
 <br></br>
 
-在弹出的窗口填写MQTT主题和消息，从[按键](../home_assistant/mqtt/device_entity/key.md)实验中可以看到核桃派1B按键按下时候发布的主题和代码如下：
+在弹出的窗口填写MQTT主题和消息，从[按键](../home_assistant/mqtt/device_entity/key.md)实验中可以看到核桃派2B按键按下时候发布的主题和代码如下：
 
 ![automation](./img/automation/automation7.png)
 <br></br>
@@ -112,7 +112,7 @@ MQTT消息：
 <br></br>
 
 
-依次按下核桃派1B上的按键KEY，可以发现LED蓝灯的亮灭状态会改变，实现了开关灯自动化功能：
+依次按下核桃派2B上的按键KEY，可以发现LED蓝灯的亮灭状态会改变，实现了开关灯自动化功能：
 
 ![automation](./img/automation/automation16.png)
 <br></br>

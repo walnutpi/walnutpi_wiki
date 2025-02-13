@@ -65,7 +65,7 @@ graph TD
 ```python
 '''
 实验名称：轮廓检测
-实验平台：核桃派1B
+实验平台：核桃派
 '''
 
 import cv2
@@ -116,7 +116,7 @@ cv2.destroyAllWindows() #关闭窗口
 ```python
 '''
 实验名称：轮廓检测2
-实验平台：核桃派1B
+实验平台：核桃派
 '''
 import cv2
 import numpy as np

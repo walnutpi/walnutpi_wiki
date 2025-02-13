@@ -24,7 +24,7 @@ sidebar_position: 2
 
 ## 用核桃派开发板DIY
 
-核桃派是一款迷你低成本的单板计算机，对于已经购买核桃派1B等Linux开发板用户可以在核桃派系统上自行安装Home Assistant。
+核桃派是一款迷你低成本的单板计算机，对于已经购买核桃派2B等Linux开发板用户可以在核桃派系统上自行安装Home Assistant。
 
 
 ### 使用镜像安装
@@ -32,6 +32,6 @@ sidebar_position: 2
 核桃派官方提供预装Home Assitant的镜像，已适配所有核桃派Linux开发板，用户烧录镜像后上电启动即可。镜像烧录方法参考：[**系统镜像烧录**](../getting_start/os-install.md#使用rufus烧录推荐) 章节内容。
 
 
-核桃派1B 2G/4G内存版本可使用Home Assistant Desktop版或Serve版镜像；1G版本内存有限，只能使用Home Assistant Serve版镜像；**推荐使用2G/4G版本开发板，带桌面新手配置起来会更方便。**
+核桃派2B 2G/4G内存版本可使用Home Assistant Desktop版或Serve版镜像；1G版本内存有限，只能使用Home Assistant Serve版镜像；**推荐使用2G/4G版本开发板，带桌面新手配置起来会更方便。**
 
 安装完成后下一节开始初始化配置。
