@@ -13,6 +13,8 @@ sidebar_position: 3
 - 百度网盘链接：https://pan.baidu.com/s/1dxZ9weWiwwEjI5t3j5sP6Q?pwd=WPKJ
 - 提取码：**WPKJ**
 
+![download](./img/download/download0.png)
+
 ### QQ群文件
 
 核桃派开源互助群:  **677173708**
@@ -20,6 +22,8 @@ sidebar_position: 3
 :::tip 提示
 在Q群将群文件转发给自己设备或其它QQ即可高速下载。
 :::
+
+![download](./img/download/download1.png)
 
 ## 在线教程配套资料包
 
