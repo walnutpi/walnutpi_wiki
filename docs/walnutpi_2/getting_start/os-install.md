@@ -95,9 +95,50 @@ WalnutPi OS是一款基于Debian的免费操作系统，针对核桃派硬件进
 当SD卡和EMMC同时带有操作系统时候，主控芯片会从SD卡启动系统。
 :::
 
-### 使用带系统SD卡烧录
+### 使用SD卡自动烧录镜像（推荐）
 
-通过SD卡启动一个核桃派Debian系统，然后将核桃派镜像通过U盘或网络挂载方式挂载到该系统。
+核桃派2B提供封装好可自动烧录镜像到EMMC的镜像系统，下载地址：
+
+- 百度网盘链接：https://pan.baidu.com/s/1nUUUX1yq7dbeRtqAv8XCMQ?pwd=WPKJ
+- 提取码：**WPKJ**
+
+装载的是核桃派Debian镜像，包含桌面版和无桌面版。
+
+![emmc_burn](./img/os-install/emmc_burn0.png)
+
+通过前面 [SD启动卡烧录](#sd启动卡烧录) 方法将这个镜像烧录到SD卡。烧录后插入核桃派。
+
+可通过下面3种方式查看烧录进度：
+
+**1、连接HDMI显示器（推荐1080P分辨率显示器）**
+
+系统启动后会自动显示烧录进度：
+
+![emmc_burn](./img/os-install/emmc_burn1.png)
+
+烧录完成后如下图所示：
+
+![emmc_burn](./img/os-install/emmc_burn2.png)
+
+**2、串口终端**
+
+也可以通过串口终端可以查看烧录进度：
+
+![emmc_burn](./img/os-install/emmc_burn3.png)
+
+**3、LED蓝灯**
+
+烧录时LED蓝灯闪烁，烧录完成熄灭。
+
+![emmc_burn](./img/os-install/emmc_burn4.png)
+
+
+烧录完成后断电，拔掉SD卡，再次上电后从EMMC启动系统。
+
+
+### 在核桃派Debian系统手动烧录
+
+除了上面方法外外，也可以通过SD卡启动一个核桃派Debian系统，然后将核桃派镜像通过U盘或网络挂载方式挂载到该系统进行手动烧写。
 
 ![emmc](./img/os-install/10_2.png)
 
