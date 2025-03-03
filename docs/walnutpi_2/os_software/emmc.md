@@ -41,3 +41,19 @@ sudo set-emmc to_disk
 双击即可挂载使用。出现提示框输入password为系统密码，即 `pi`。
 
 ![emmc](./img/emmc/emmc4.png)
+
+## EMMC格式化
+
+快速格式化（推荐）：
+
+```bash
+sudo set-emmc erase-quick
+```
+
+完全格式化（速度会很慢）：
+
+```bash
+sudo set-emmc erase-overwrite
+```
+
+

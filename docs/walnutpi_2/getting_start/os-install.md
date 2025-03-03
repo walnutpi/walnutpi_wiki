@@ -170,18 +170,3 @@ sudo set-emmc burn xxx.img
 ![emmc](./img/os-install/12.png)
 
 烧录完成后关机，拔掉SD镜像卡，上电系统正常启动说明系统已经烧录到EMMC并且工作正常。
-
-**除了烧录，核桃派 `set-emmc` 指令还提供格式化EMMC功能：**
-
-快速格式化（推荐）：
-
-```bash
-sudo set-emmc earse-quick
-```
-
-完全格式化（速度会很慢）：
-
-```bash
-sudo set-emmc earse-overwrite
-```
-

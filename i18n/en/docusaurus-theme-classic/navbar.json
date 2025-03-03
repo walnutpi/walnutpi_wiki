@@ -12,7 +12,7 @@
     "description": "Navbar item with label 核桃派1（1B / ZeroW / CM1 / BOX）教程"
   },
   "item.label.核桃派PicoW教程": {
-    "message": "Walnut Pi PicoW Tutorial",
+    "message": "Walnut Pi PicoW",
     "description": "Navbar item with label 核桃派PicoW教程"
   },
   "item.label.论坛": {
@@ -30,5 +30,17 @@
   "item.label.AliExpress": {
     "message": "AliExpress",
     "description": "Navbar item with label AliExpress"
+  },
+  "item.label.核桃派1代（1B / ZeroW / CM1 / BOX）教程": {
+    "message": "Walnut Pi 1",
+    "description": "Navbar item with label 核桃派1代（1B / ZeroW / CM1 / BOX）教程"
+  },
+  "item.label.核桃派2代（2B）教程": {
+    "message": "Walnut Pi 2",
+    "description": "Navbar item with label 核桃派2代（2B）教程"
+  },
+  "item.label.设备地图": {
+    "message": "Devices Map",
+    "description": "Navbar item with label 设备地图"
   }
 }

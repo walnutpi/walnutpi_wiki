@@ -200,6 +200,10 @@ const config = {
                 to: '/blog',
               },*/
               {
+                label: 'Discord',
+                href: 'https://discord.gg/VcdmjRZ4',
+              },
+              {
                 label: 'QQ群: 677173708',
                 to: '/',
               },
