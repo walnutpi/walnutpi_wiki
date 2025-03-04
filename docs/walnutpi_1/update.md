@@ -4,6 +4,12 @@ sidebar_position: 50
 
 # 更新说明
 
+## 2025-3-3
+
+- 新增 [使用SD卡自动烧录镜像到EMMC功能](./getting_start/os-install.md#使用sd卡自动烧录镜像推荐)。
+- 新增 [闪存EMMC使用教程](./os_software/emmc.md)。
+- 新增 [设备地图功能](./os_software/map_device.md)。
+
 ## 2024-7-23
 
 - 核桃派OS（Debian12）v2.4.0版本发布，适配EMMC。
