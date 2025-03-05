@@ -3,14 +3,6 @@
     "message": "Next",
     "description": "The label for version current"
   },
-  "sidebar.tutorialSidebar.category.核桃派介绍": {
-    "message": "Walnut Pi Introduction",
-    "description": "The label for category 核桃派介绍 in sidebar tutorialSidebar"
-  },
-  "sidebar.tutorialSidebar.category.核桃派介绍.link.generated-index.description": {
-    "message": "Walnut Pi Introduction, Data Download and Community",
-    "description": "The generated-index page description for category 核桃派介绍 in sidebar tutorialSidebar"
-  },
   "sidebar.tutorialSidebar.category.开箱指南": {
     "message": "Getting Start",
     "description": "The label for category 开箱指南 in sidebar tutorialSidebar"
@@ -187,14 +179,6 @@
     "message": "OpenCV视觉识别应用",
     "description": "The generated-index page description for category 视觉识别 in sidebar tutorialSidebar"
   },
-  "sidebar.tutorialSidebar.category.Home Assistant": {
-    "message": "Home Assistant",
-    "description": "The label for category Home Assistant in sidebar tutorialSidebar"
-  },
-  "sidebar.tutorialSidebar.category.Home Assistant.link.generated-index.description": {
-    "message": "Using Home Assistant on Walnut Pi",
-    "description": "The generated-index page description for category Home Assistant in sidebar tutorialSidebar"
-  },
   "sidebar.tutorialSidebar.category.MQTT集成": {
     "message": "MQTT集成",
     "description": "The label for category MQTT集成 in sidebar tutorialSidebar"
@@ -220,7 +204,7 @@
     "description": "The generated-index page description for category Linux系统编译 in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.Android系统使用": {
-    "message": "Android OS use",
+    "message": "Android OS Usage",
     "description": "The label for category Android系统使用 in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.Android系统使用.link.generated-index.description": {
@@ -284,7 +268,7 @@
     "description": "The generated-index page description for category 拓展模块 in sidebar newSidebar"
   },
   "sidebar.tutorialSidebar.category.核桃派1代介绍": {
-    "message": "核桃派1代介绍",
+    "message": "WalnutPi 1 Introduction",
     "description": "The label for category 核桃派1代介绍 in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.核桃派1代介绍.link.generated-index.description": {
@@ -292,7 +276,7 @@
     "description": "The generated-index page description for category 核桃派1代介绍 in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.Home Assistant 智能家居": {
-    "message": "Home Assistant 智能家居",
+    "message": "Home Assistant",
     "description": "The label for category Home Assistant 智能家居 in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.Home Assistant 智能家居.link.generated-index.description": {
@@ -300,7 +284,7 @@
     "description": "The generated-index page description for category Home Assistant 智能家居 in sidebar tutorialSidebar"
   },
   "sidebar.wpi2Sidebar.category.核桃派2代介绍": {
-    "message": "核桃派2代介绍",
+    "message": "WalnutPi 2 Introduction",
     "description": "The label for category 核桃派2代介绍 in sidebar wpi2Sidebar"
   },
   "sidebar.wpi2Sidebar.category.核桃派2代介绍.link.generated-index.description": {
@@ -308,7 +292,7 @@
     "description": "The generated-index page description for category 核桃派2代介绍 in sidebar wpi2Sidebar"
   },
   "sidebar.wpi2Sidebar.category.开箱指南": {
-    "message": "开箱指南",
+    "message": "Getting Start",
     "description": "The label for category 开箱指南 in sidebar wpi2Sidebar"
   },
   "sidebar.wpi2Sidebar.category.开箱指南.link.generated-index.description": {
@@ -316,7 +300,7 @@
     "description": "The generated-index page description for category 开箱指南 in sidebar wpi2Sidebar"
   },
   "sidebar.wpi2Sidebar.category.核桃派系统使用": {
-    "message": "核桃派系统使用",
+    "message": "Walnut Pi OS Usage",
     "description": "The label for category 核桃派系统使用 in sidebar wpi2Sidebar"
   },
   "sidebar.wpi2Sidebar.category.核桃派系统使用.link.generated-index.description": {
@@ -324,7 +308,7 @@
     "description": "The generated-index page description for category 核桃派系统使用 in sidebar wpi2Sidebar"
   },
   "sidebar.wpi2Sidebar.category.GPIO应用": {
-    "message": "GPIO应用",
+    "message": "GPIO",
     "description": "The label for category GPIO应用 in sidebar wpi2Sidebar"
   },
   "sidebar.wpi2Sidebar.category.GPIO应用.link.generated-index.description": {
@@ -332,7 +316,7 @@
     "description": "The generated-index page description for category GPIO应用 in sidebar wpi2Sidebar"
   },
   "sidebar.wpi2Sidebar.category.Python嵌入式编程": {
-    "message": "Python嵌入式编程",
+    "message": "Python Embedded Programming",
     "description": "The label for category Python嵌入式编程 in sidebar wpi2Sidebar"
   },
   "sidebar.wpi2Sidebar.category.Python嵌入式编程.link.generated-index.description": {
@@ -380,7 +364,7 @@
     "description": "The generated-index page description for category 其它使用技巧 in sidebar wpi2Sidebar"
   },
   "sidebar.wpi2Sidebar.category.C嵌入式编程": {
-    "message": "C嵌入式编程",
+    "message": "C Embedded Programming",
     "description": "The label for category C嵌入式编程 in sidebar wpi2Sidebar"
   },
   "sidebar.wpi2Sidebar.category.C嵌入式编程.link.generated-index.description": {
@@ -484,7 +468,7 @@
     "description": "The generated-index page description for category 视觉识别 in sidebar wpi2Sidebar"
   },
   "sidebar.wpi2Sidebar.category.Home Assistant 智能家居": {
-    "message": "Home Assistant 智能家居",
+    "message": "Home Assistant",
     "description": "The label for category Home Assistant 智能家居 in sidebar wpi2Sidebar"
   },
   "sidebar.wpi2Sidebar.category.Home Assistant 智能家居.link.generated-index.description": {

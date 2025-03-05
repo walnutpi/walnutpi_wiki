@@ -32,6 +32,8 @@ sidebar_position: 0
     - [IP地址获取](./os_software/ip_get.md)
     - [SSH远程终端](./os_software/ssh.md)
     - [VNC远程桌面](./os_software/vnc.md)
+    - [设备地图](./os_software/map_device.md)
+    - [EMMC闪存](./os_software/emmc.md)
     - [关机和重启](./os_software/log_out.md)
     - [主控温度信息](./os_software/core_temp.md)
     - [主控ID号](./os_software/cpu_id.md)

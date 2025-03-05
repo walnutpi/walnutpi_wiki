@@ -1,0 +1,8 @@
+{
+  "label": "GPIO应用",
+  "position": 4,
+  "link": {
+    "type": "generated-index",
+    "description": "核桃派40Pin GPIO详细介绍"
+  }
+}

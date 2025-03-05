@@ -131,7 +131,7 @@ const config = {
               },
               {
                 label: 'AliExpress',
-                href: 'https://www.aliexpress.com/item/1005006129955506.html',
+                href: 'https://01studiolab.aliexpress.com/store/5598484/pages/all-items.html?shop_sortType=bestmatch_sort&productGroupId=40000004959530&SearchText=&shop_filterType=',
               },
             ],
           },

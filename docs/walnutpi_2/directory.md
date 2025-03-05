@@ -164,5 +164,7 @@ sidebar_position: 0
     - [加入市面上产品](./home_assistant/other_device.md) 
     - [接入苹果HomeKit](./home_assistant/homekit.md) 
 
+- [**社区用户开源项目分享**](./diy.md) 
+
 - [**更新说明**](./update.md)
 

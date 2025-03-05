@@ -7,10 +7,6 @@
     "message": "My Site Logo",
     "description": "The alt text of navbar logo"
   },
-  "item.label.核桃派1（1B / ZeroW / CM1 / BOX）教程": {
-    "message": "Walnut Pi 1（1B / ZeroW / CM1 / BOX）Tutorial",
-    "description": "Navbar item with label 核桃派1（1B / ZeroW / CM1 / BOX）教程"
-  },
   "item.label.核桃派PicoW教程": {
     "message": "Walnut Pi PicoW",
     "description": "Navbar item with label 核桃派PicoW教程"
