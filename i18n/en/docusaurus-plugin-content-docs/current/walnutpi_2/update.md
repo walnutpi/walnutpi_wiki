@@ -4,6 +4,10 @@ sidebar_position: 50
 
 # Update Notes
 
+## 2025-3-19
+
+- 新增 [MIPI显示屏](./os_software/mipi_lcd.md) 教程。
+
 ## 2025-3-3
 
 - 新增 [录音](./os_software/audio.md#录音) 教程。

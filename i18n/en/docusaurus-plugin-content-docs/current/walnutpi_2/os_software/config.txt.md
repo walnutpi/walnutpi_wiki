@@ -12,6 +12,31 @@ sd卡有两个分区，config.txt存放在第一个分区内。在核桃派开�
 
 ![u盘](./img/config_txt/config_txt2.png)
 
+## 显示屏配置
+
+默认是使用HDMI显示，`screen=hdmi`, 可以修改参数使能其它屏幕显示。
+
+- 核桃派官方3.5寸SPI屏
+
+```bash
+screen=lcd35-st7796
+```
+
+- 核桃派官方1.54寸SPI屏
+
+```bash
+screen=lcd15-st7789
+```
+
+- 市面上树莓派mipi屏(分辨率为800x480)
+
+```bash
+screen=dsi-800x480
+```
+
+![lcd](./img/config_txt/lcd.png)
+
+
 ## 是否在显示器（hdmi或lcd屏）上开启控制台终端
 `console_display`, 默认是开启。如果选择关闭，则在开机信息输出完之后，不会再有那个要求输入账号密码登陆，给你敲命令行的终端。
 

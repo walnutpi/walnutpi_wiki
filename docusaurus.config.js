@@ -201,7 +201,7 @@ const config = {
               },*/
               {
                 label: 'Discord',
-                href: 'https://discord.gg/VcdmjRZ4',
+                href: 'https://discord.gg/nmBNn6Au',
               },
               {
                 label: 'QQ群: 677173708',
