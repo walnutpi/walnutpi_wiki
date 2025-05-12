@@ -1,0 +1,8 @@
+{
+  "label": "NPU应用",
+  "position": 8,
+  "link": {
+    "type": "generated-index",
+    "description": "在核桃派上使用NPU跑模型"
+  }
+}
