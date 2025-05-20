@@ -490,5 +490,21 @@
   "sidebar.wpi2Sidebar.category.添加MQTT设备和实体.link.generated-index.description": {
     "message": "添加各类MQTT设备和实体",
     "description": "The generated-index page description for category 添加MQTT设备和实体 in sidebar wpi2Sidebar"
+  },
+  "sidebar.wpi2Sidebar.category.NPU应用": {
+    "message": "NPU",
+    "description": "The label for category NPU应用 in sidebar wpi2Sidebar"
+  },
+  "sidebar.wpi2Sidebar.category.NPU应用.link.generated-index.description": {
+    "message": "在核桃派上使用开发NPU",
+    "description": "The generated-index page description for category NPU应用 in sidebar wpi2Sidebar"
+  },
+  "sidebar.wpi2Sidebar.category.YOLO应用": {
+    "message": "YOLO应用",
+    "description": "The label for category YOLO应用 in sidebar wpi2Sidebar"
+  },
+  "sidebar.wpi2Sidebar.category.YOLO应用.link.generated-index.description": {
+    "message": "在核桃派上跑YOLO",
+    "description": "The generated-index page description for category YOLO应用 in sidebar wpi2Sidebar"
   }
 }

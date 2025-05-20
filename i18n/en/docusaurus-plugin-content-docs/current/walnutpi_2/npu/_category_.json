@@ -1,0 +1,8 @@
+{
+  "label": "NPU应用",
+  "position": 9,
+  "link": {
+    "type": "generated-index",
+    "description": "在核桃派上使用开发NPU"
+  }
+}

@@ -4,6 +4,12 @@ sidebar_position: 50
 
 # Update Notes
 
+## 2025-5-20
+
+- 新增 **NPU应用 -- YOLO11**教程。 
+
+    - [YOLO应用](./npu/yolo/intro.md)
+
 ## 2025-3-19
 
 - 新增 [MIPI显示屏](./os_software/mipi_lcd.md) 教程。
