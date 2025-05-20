@@ -1,70 +1,30 @@
 ---
-sidebar_position: 6
+sidebar_position: 5
 ---
 
 # YOLO11 图像分割
+
 该模型在检测模型的基础上，增加了对于哪些像素点属于目标物体的判断
-![result](./img/example_seg.jpg)
+
+![result](./img/seg/example_seg.jpg)
 
 
+## 准备模型文件
 
-## 模型文件准备
+我们提供的程序包里会有一个名为`yolo11n-seg.nb`的文件，这就是在核桃派2B（T527） NPU上运行YOLO11图像分割的模型文件。
 
-我们提供的程序包里会有一个名为`yolo11n-seg.nb`的文件，这就是在npu上运行的模型文件。
+![result](./img/seg/seg1.png)
 
-该文件是使用从[ultralytics release(v8.3.0)](https://github.com/ultralytics/assets/releases/tag/v8.3.0)下载的`yolo11n-seg.pt`文件，按照以下步骤,在电脑端进行格式转换而得到的。其他的smlx尺寸模型也可参照以下步骤来转换。
+想尝试自行转换模型可以参考：[模型转换教程](./model_convert.md) 
 
+## 安装OpenCV
 
-### 所需工具
-需要使用安装了linux系统的电脑，或是在windows上使用虚拟机安装linux系统。开发板上不能运行模型格式转换工具
-- [netron.app](https://netron.app/) 是一个网页工具，可用于查看模型的结构
-- 需要下载一份 yolo11 的源码，用来将yolo11专用的模型文件转为通用的onnx模型文件
-    ```shell
-    git clone https://github.com/walnutpi/ultralytics_yolo11.git
-    ```
-- 下载核桃派提供的docker镜像和脚本工具，用于将通用onnx模型转为npu专用的模型格式
+本教程需要用到OpenCV库，安装方法参考：[OpenCV安装](../../opencv/install.md)
 
-### 1. 将yolo的模型导出为onnx格式
+## Python运行模型
 
-yolo训练后会得到一个后缀名为`.pt`的文件，里面包含着yolo运行所需要的参数数值，但里面没有网络结构信息。如果要在npu上运行，需要将其导出为包含网络结构信息的onnx格式。这一步需要调用yolo11源码自带的工具。
+核桃派2B v1.3.0 版本以上系统提供一套封装好的YOLO11 Python库。
 
-先运行以下命令，临时修改环境变量PYTHONPATH，指定python的模块搜索路径到yolo11源码的存放位置。我的yolo11源码存放路径是/opt/ultralytics_yolo11，所以命令如下
-
-```shell
-export PYTHONPATH=/opt/ultralytics_yolo11
-```
-
-然后运行以下python代码，他会从刚刚设置的`PYTHONPATH`指向的路径中查找 YOLO 这个库，并导出这个代码里指定的模型文件为onnx格式。
-```python
-from ultralytics import YOLO
-
-model = YOLO("./yolo11n-seg.pt")
-model.export(format="onnx")
-```
-
-实践中发现在npu上运行yolo11模型时，自带的一些后处理操作会影响检测精度。所以我们提供的yolo11代码中增加了一些模型原始数据的输出。
-![model_change](./img/model_change_yolo11_seg.jpg)
-
-### 2. 将onnx模型转为npu专用模型
-这一步需要使用我们提供的docker镜像，里面搭建好了相关工具的运行环境，为了方便用户使用，我们将 导出模型信息、编写配置文件、模型量化、量化数据生成nb文件 等步骤都合并做成了一条命令 **npu-transfer-yolo**
-
-模型在训练时使用的是float32类型来存储参数，在NPU上运行时，需要将参数转化为int8等存储范围较小的类型，以减小模型体积，同时提高模型运行速度。这个步骤就叫量化。量化不是直接对参数做四舍五入，而是需要输入一些图片给模型，根据模型的响应状态来优化各个参数。
-
-我们需要准备几张图片用于量化，一般是从训练数据集里抽几张就行，将他们存放到一个文件夹下。
-
-然后运行以下命令，传入两个参数，一个是onnx模型文件的路径，一个是存放图片的文件夹路径。
-
-```bash
-sudo npu-transfer-yolo yolo11n-seg.onnx ../image/
-```
-
-最后会在当前路径下生成一个`yolo11n-seg.nb`文件，这个文件就可以在npu上运行推理了
-
-
-
-
-
-## python运行模型
 ### 1. 实例化yolo11类
 实例化`YOLO11_SEG`类，需要传入模型文件的路径
 ```python
@@ -151,32 +111,44 @@ img = cv2.addWeighted(img, 1, mask_img, 0.5, 0)  # 将mask_img与原图叠加
 
 ## 示例程序
 
-### 示例-读取图片做检测，将目标物体都高亮
-![results](./img/example_seg_picture.jpg)
+### 基于图片
+
+读取图片做检测，将目标物体都高亮
+
+![results](./img/seg/example_seg_picture.jpg)
 
 ```python
+'''
+实验名称：YOLO11图像分割
+实验平台：核桃派2B
+说明：基于图片
+'''
+
 from walnutpi import YOLO11
+import dataset_coco
 import cv2
 import numpy as np
-label_names = ["person","bicycle","car","motorcycle","airplane","bus","train","truck","boat","traffic light","fire hydrant","stop sign","parking meter","bench","bird","cat","dog","horse","sheep","cow","elephant","bear","zebra","giraffe","backpack","umbrella","handbag","tie","suitcase","frisbee","skis","snowboard","sports ball","kite","baseball bat","baseball glove","skateboard","surfboard","tennis racket","bottle","wine glass","cup","fork","knife","spoon","bowl","banana","apple","sandwich","orange","broccoli","carrot","hot dog","pizza","donut","cake","chair","couch","potted plant","bed","dining table","toilet","tv","laptop","mouse","remote","keyboard","cell phone","microwave","oven","toaster","sink","refrigerator","book","clock","vase","scissors","teddy bear","hair drier","toothbrush",]
 
+#【可选代码】允许Thonny远程运行
+import os
+os.environ["DISPLAY"] = ":0.0"
 
 model_path = "model/yolo11n-seg.nb"
-picture_path = "image/bus.jpg"
-output_path = ".result.jpg"
+picture_path = "image/000000371552.jpg"
+output_path = "result.jpg"
 
 # 检测图片
 yolo = YOLO11.YOLO11_SEG(model_path)
 boxes = yolo.run(picture_path, 0.5, 0.5)
 
-# 将检测框画到图像上
+# 到图上画框
 img = cv2.imread(picture_path)
 for box in boxes:
     left_x = int(box.x - box.w / 2)
     left_y = int(box.y - box.h / 2)
     right_x = int(box.x + box.w / 2)
     right_y = int(box.y + box.h / 2)
-    label = str(label_names[box.label]) + " " + str(box.reliability)
+    label = str(dataset_coco.label_names[box.label]) + " " + str('%.2f'%box.reliability)
     (label_width, label_height), bottom = cv2.getTextSize(
         label,
         cv2.FONT_HERSHEY_SIMPLEX,
@@ -187,7 +159,7 @@ for box in boxes:
         img,
         (left_x, left_y),
         (right_x, right_y),
-        (255,255,0),
+        (255, 255, 0),
         2,
     )
     cv2.rectangle(
@@ -210,26 +182,40 @@ for box in boxes:
     mask_img[box.mask > 200] = (0, 255, 0)  # 将mask颜色值大于200的像素都改为绿色
     img = cv2.addWeighted(img, 1, mask_img, 0.5, 0)  # 将mask_img与原图叠加
 
+#保存图片
 cv2.imwrite(output_path, img)
+
+#窗口显示图片
+cv2.imshow('result',img)
+
+cv2.waitKey() #等待键盘任意按键按下
+cv2.destroyAllWindows() #关闭窗口
 
 ```
 
-### 示例-读取摄像头做检测，将目标物体都高亮
-![results](./img/example_seg_camera.jpg)
+### 基于摄像头
+
+可以先学习在OpenCV的 [USB摄像头使用教程](../../opencv/usb_cam.md)
+
+![results](./img/seg/example_seg_camera.jpg)
 
 ```python
+'''
+实验名称：YOLO11图像分割
+实验平台：核桃派2B
+说明：基于摄像头
+'''
+
 from walnutpi import YOLO11
+import dataset_coco
 import cv2
 import numpy as np
+
+#【可选代码】允许Thonny远程运行
 import os
 os.environ["DISPLAY"] = ":0.0"
-label_names = ["person","bicycle","car","motorcycle","airplane","bus","train","truck","boat","traffic light","fire hydrant","stop sign","parking meter","bench","bird","cat","dog","horse","sheep","cow","elephant","bear","zebra","giraffe","backpack","umbrella","handbag","tie","suitcase","frisbee","skis","snowboard","sports ball","kite","baseball bat","baseball glove","skateboard","surfboard","tennis racket","bottle","wine glass","cup","fork","knife","spoon","bowl","banana","apple","sandwich","orange","broccoli","carrot","hot dog","pizza","donut","cake","chair","couch","potted plant","bed","dining table","toilet","tv","laptop","mouse","remote","keyboard","cell phone","microwave","oven","toaster","sink","refrigerator","book","clock","vase","scissors","teddy bear","hair drier","toothbrush",]
-
 
 model_path = "model/yolo11n-seg.nb"
-picture_path = "image/bus.jpg"
-output_path = ".result.jpg"
-
 
 # 检测图片
 yolo = YOLO11.YOLO11_SEG(model_path)
@@ -254,13 +240,13 @@ while True:
         yolo.run_async(img, 0.5, 0.5)
     boxes = yolo.get_result()
 
-    # 将检测框画到图像上
+    # 到图上画框
     for box in boxes:
         left_x = int(box.x - box.w / 2)
         left_y = int(box.y - box.h / 2)
         right_x = int(box.x + box.w / 2)
         right_y = int(box.y + box.h / 2)
-        label = str(label_names[box.label]) + " " + str(box.reliability)
+        label = str(dataset_coco.label_names[box.label]) + " " + str('%.2f'%box.reliability)
         (label_width, label_height), bottom = cv2.getTextSize(
             label,
             cv2.FONT_HERSHEY_SIMPLEX,
@@ -295,6 +281,11 @@ while True:
         img = cv2.addWeighted(img, 1, mask_img, 0.8, 0)  # 将mask_img与原图叠加
 
     cv2.imshow("result", img)
-    cv2.waitKey(1)
+    key = cv2.waitKey(1) # 窗口的图像刷新时间为1毫秒，防止阻塞    
+    if key == 32: # 如果按下空格键，打断退出
+        break
+    
+cap .release() # 关闭摄像头
+cv2.destroyAllWindows() # 销毁显示摄像头视频的窗口
 
 ```

@@ -3,61 +3,27 @@ sidebar_position: 2
 ---
 
 # YOLO11 分类
+
 该模型的功能是对图片进行分类，输出这张图片有多大概率是什么物品。
 
-![result](./img/example_cls.jpg)
+![result](./img/classify/example_cls.jpg)
 
+## 准备模型文件
 
-## 模型文件准备
-我们提供的程序包里会有一个名为`yolo11n-cls.nb`的文件，这就是在npu上运行的模型文件。
+我们提供的程序包里会有一个名为`yolo11n-cls.nb`的文件，这就是在核桃派2B（T527） NPU上运行YOLO11分类的模型文件。
 
-该文件是使用从[ultralytics release(v8.3.0)](https://github.com/ultralytics/assets/releases/tag/v8.3.0)下载的`yolo11n-cls.pt`文件，按照以下步骤,在电脑端进行格式转换而得到的。其他的smlx尺寸模型也可参照以下步骤来转换。
+![result](./img/classify/cls1.png)
 
-yolo11官方提供的模型自带1000种物品分类。
+想尝试自行转换模型可以参考：[模型转换教程](./model_convert.md) 
 
-### 所需工具
-需要使用安装了linux系统的电脑，或是在windows上使用虚拟机安装linux系统。开发板上不能运行模型格式转换工具
-- [netron.app](https://netron.app/) 是一个网页工具，可用于查看模型的结构
-- 需要下载一份 yolo11 的源码，用来将yolo11专用的模型文件转为通用的onnx模型文件
-    ```shell
-    git clone https://github.com/walnutpi/ultralytics_yolo11.git
-    ```
-- 下载核桃派提供的docker镜像和脚本工具，用于将通用onnx模型转为npu专用的模型格式
+## 安装OpenCV
 
-### 1. 将yolo的模型导出为onnx格式
+本教程需要用到OpenCV库，安装方法参考：[OpenCV安装](../../opencv/install.md)
 
-yolo训练后会得到一个后缀名为`.pt`的文件，里面包含着yolo运行所需要的参数数值，但里面没有网络结构信息。如果要在npu上运行，需要将其导出为包含网络结构信息的onnx格式。这一步需要调用yolo11源码自带的工具。
+## Python运行模型
 
-先运行以下命令，临时修改环境变量PYTHONPATH，指定python的模块搜索路径到yolo11源码的存放位置。我的yolo11源码存放路径是/opt/ultralytics_yolo11，所以命令如下
+核桃派2B v1.3.0 版本以上系统提供一套封装好的YOLO11 Python库。
 
-```shell
-export PYTHONPATH=/opt/ultralytics_yolo11
-```
-
-然后运行以下python代码，他会从刚刚设置的`PYTHONPATH`指向的路径中查找 YOLO 这个库，并导出这个代码里指定的模型文件为onnx格式。
-```python
-from ultralytics import YOLO
-
-model = YOLO("./yolo11n-cls.pt")
-model.export(format="onnx")
-```
-
-### 2. 将onnx模型转为npu专用模型
-这一步需要使用我们提供的docker镜像，里面搭建好了相关工具的运行环境，为了方便用户使用，我们将 导出模型信息、编写配置文件、模型量化、量化数据生成nb文件 等步骤都合并做成了一条命令 **npu-transfer-yolo**
-
-模型在训练时使用的是float32类型来存储参数，在NPU上运行时，需要将参数转化为int8等存储范围较小的类型，以减小模型体积，同时提高模型运行速度。这个步骤就叫量化。量化不是直接对参数做四舍五入，而是需要输入一些图片给模型，根据模型的响应状态来优化各个参数。
-
-我们需要准备几张图片用于量化，一般是从训练数据集里抽几张就行，将他们存放到一个文件夹下。
-
-然后运行以下命令，传入两个参数，一个是onnx模型文件的路径，一个是存放图片的文件夹路径。
-
-```bash
-sudo npu-transfer-yolo yolo11n-cls.onnx ../image/
-```
-
-最后会在当前路径下生成一个`yolo11n-cls.nb`文件，这个文件就可以在npu上运行推理了
-
-## python运行模型
 ### 1. 实例化yolo11类
 实例化`YOLO11_CLS`类，需要传入模型文件的路径
 ```python
@@ -77,8 +43,12 @@ img = cv2.imread("image/banana.jpg")
 result = yolo.run(img)
 ```
 
-
 ### 3. 运行模型-非阻塞式
+
+:::tip 提示
+非阻塞式主要用于摄像头采集场景，当推理速度比摄像头慢的时候，采用阻塞方式不会影响摄像头采集图像，从感官上看不会降低显示速度。
+:::
+
 使用`run_async`方法会创建一个线程来运行模型,然后立刻返回。需要传入3个参数
 - 图片数据， 使用opencv的读取图片方法进行读取即可
 - 置信度阈值， 只会返回置信度高于这个值的检测框
@@ -142,7 +112,12 @@ for i in result.top5:
 print(f"该图片为香蕉的概率{result.all[954]}")
 ```
 ## 示例程序
-###  yolo11官方模型类别名称
+
+将资料包的整个YOLO11文件夹代码拷贝到核桃派2B，使用核桃派自带的thonny或者终端python运行代码即可。
+
+![result](./img/classify/cls2.png)
+
+
 yolo官方的cls模型训练时标注了1000个类别，模型运行的时候只会输出检测到的类别的序号，需要自己获取类别名称
 
 这里我创建了一个名为`dataset_ImageNet.py`的文件，将类别名称写进数组里，方便在代码中调用
@@ -151,24 +126,35 @@ label_names = ["tench","goldfish","great white shark","tiger shark","hammerhead 
 
 ```
 
-### 示例-读取图片做检测，并将结果写在图片上保存
-![result](./img/example_cls_picture.jpg)
+### 基于图片
+
 ```python
+'''
+实验名称：YOLO11分类
+实验平台：核桃派2B
+说明：图片识别
+'''
+
 from walnutpi import YOLO11
 import dataset_ImageNet
 import cv2
 
-model_path = "model/yolo11n-cls.nb"
-picture_path = "image/banana.jpg"
-output_path = ".result.jpg"
+#【可选代码】允许Thonny远程运行
+import os
+os.environ["DISPLAY"] = ":0.0"
 
+model_path = "model/yolo11n-cls.nb" #模型路径
+picture_path = "image/banana.jpg" #待识别图片路径
+output_path = "result.jpg" #输出结果保存到当前路径
+
+#读取图片
 img = cv2.imread(picture_path)
 
 # 检测图片
 yolo = YOLO11.YOLO11_CLS(model_path)
 result = yolo.run(img)
 
-# 输出与绘制到图片上
+# 输出结果打印和绘制到图片上
 index = 0
 for i in result.top5:
     show_string = "{:f} {:s}".format(
@@ -190,20 +176,36 @@ for i in result.top5:
 
 # 保存图片
 cv2.imwrite(output_path, img)
+
+#窗口显示图片
+cv2.imshow('result',img)
+
+cv2.waitKey() #等待键盘任意按键按下
+cv2.destroyAllWindows() #关闭窗口
 ```
 
+![result](./img/classify/example_cls_picture.jpg)
 
+### 基于摄像头
 
-### 示例-读取摄像头做检测，并显示在桌面上
-![result](./img/example_cls_camera.jpg)
+可以先学习在OpenCV的 [USB摄像头使用教程](../../opencv/usb_cam.md)
+
 ```python
+'''
+实验名称：YOLO11分类
+实验平台：核桃派2B
+说明：摄像头采集识别
+'''
+
 from walnutpi import YOLO11
 import dataset_ImageNet
-import cv2
-import os
+import cv2,time
 
+#【可选代码】允许Thonny远程运行
+import os
 os.environ["DISPLAY"] = ":0.0"
 
+#加载模型
 model_path = "model/yolo11n-cls.nb"
 yolo = YOLO11.YOLO11_CLS(model_path)
 
@@ -214,40 +216,68 @@ if not cap.isOpened():
     exit()
 
 # 设置为1080p
-# cap.set(cv2.CAP_PROP_FOURCC, cv2.VideoWriter_fourcc(*"MJPG"))
-# cap.set(cv2.CAP_PROP_FRAME_WIDTH, 1920)  # 设置宽度
-# cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 1080)  # 设置长度
+#cap.set(cv2.CAP_PROP_FOURCC, cv2.VideoWriter_fourcc(*"MJPG"))
+#cap.set(cv2.CAP_PROP_FRAME_WIDTH, 1920)  # 设置宽度
+#cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 1080)  # 设置长度
+
+#计算帧率
+count=0
+pt=0
+fps = 0
+
 
 while True:
-    # 读取一帧图像并显示出来
+    
+    #计算帧率
+    count+=1    
+    if time.time()-pt >=1 : #超过1秒
+        
+        fps=1/((time.time()-pt)/count)#计算帧率
+        print(fps)
+        count=0
+        pt=time.time()
+    
+    # 摄像头读取一帧图像
     ret, img = cap.read()
+    
     if not ret:
         print("Can't receive frame (stream end?). Exiting ...")
         break
+    
+    #推理帧
     if not yolo.is_running:
         yolo.run_async(img)
     result = yolo.get_result()
+
+    
+    #处理输出结果
     index = 0
+    
     if result is not None:
+        
         for i in result.top5:
-            show_string = "{:f} {:s}".format(
-                i.reliability,
-                dataset_ImageNet.label_names[i.label],
-            )
+            
+            show_string = "{:.2f} {:s}".format(i.reliability, dataset_ImageNet.label_names[i.label])
+            
             index += 1
-
-            cv2.putText(
-                img,
-                show_string,
-                (10, 30 * index),
-                cv2.FONT_HERSHEY_SIMPLEX,
-                1,
-                (0, 0, 200),
-                2,
-            )
-
-    cv2.imshow("result", img)
-    cv2.waitKey(1)
-
+            
+            #打印结果
+            print(show_string)
+            
+            #结果绘图
+            cv2.putText(img, show_string, (10, 50+30 * index), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 2)        
+    
+    cv2.putText(img, 'FPS: '+str(fps), (10,30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,255), 2) #图像绘制帧率
+    
+    cv2.imshow("result", img)#窗口显示图片
+    
+    key = cv2.waitKey(1) # 窗口的图像刷新时间为1毫秒，防止阻塞    
+    if key == 32: # 如果按下空格键，打断退出
+        break
+    
+cap .release() # 关闭摄像头
+cv2.destroyAllWindows() # 销毁显示摄像头视频的窗口
 ```
+
+![result](./img/classify/example_cls_camera.jpg)
 

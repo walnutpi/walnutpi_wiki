@@ -13,7 +13,7 @@ pip install opencv-contrib-python
 ```
 
 :::tip 提示：
-如果你的网络无法下载，或在中国大陆地区用户可以使用国内清华源下载，速度回比较快。将上面安装指令替换到下面指令安装即可：
+如果你的网络无法下载，或在中国大陆地区用户可以使用国内清华源下载，速度会比较快。将上面安装指令替换到下面指令安装即可：
 ```bash
 pip install opencv-contrib-python -i https://pypi.tuna.tsinghua.edu.cn/simple 
 ```

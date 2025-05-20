@@ -145,6 +145,17 @@ sidebar_position: 0
         - [猫脸检测](./opencv/vision/cat_face_detection.md) 
         - [车牌检测](./opencv/vision/plate_detection.md) 
 
+- **NPU应用**
+
+    - [NPU简介](./npu/intro.md) 
+    - **YOLO应用**
+        - [YOLO简介](./npu/yolo/intro.md) 
+        - [YOLO11分类](./npu/yolo/yolo11-cls.md) 
+        - [YOLO11检测](./npu/yolo/yolo11-detect.md) 
+        - [YOLO11定向检测](./npu/yolo/yolo11-obb.md) 
+        - [YOLO11图像分割](./npu/yolo/yolo11-seg.md) 
+        - [YOLO11姿势识别](./npu/yolo/yolo11-pose.md) 
+
 - **Home Assistant**
 
     - [简介](./home_assistant/intro.md) 

@@ -2,71 +2,37 @@
 sidebar_position: 4
 ---
 # YOLO11 定向检测
-该模型的功能是找到图片中所有在训练时标注的物品类型。但在检测模型的基础上，增加了对于物体旋转角度的检测。
 
-![result](./img/example_obb.jpg)
+该模型的功能是找到图片中所有在训练时标注的物品类型。但在检测模型的基础上，增加了对于物体识别框旋转角度的检测。
 
-
-## 模型文件准备
-我们提供的程序包里会有一个名为`yolo11n-obb.nb`的文件，这就是在npu上运行的模型文件。
-
-该文件是使用从[ultralytics release(v8.3.0)](https://github.com/ultralytics/assets/releases/tag/v8.3.0)下载的`yolo11n-obb.pt`文件，按照以下步骤,在电脑端进行格式转换而得到的。其他的smlx尺寸模型也可参照以下步骤来转换。
-
-yolo11官方提供的模型训练了15种类别的物品
-
-### 所需工具
-需要使用安装了linux系统的电脑，或是在windows上使用虚拟机安装linux系统。开发板上不能运行模型格式转换工具
-- [netron.app](https://netron.app/) 是一个网页工具，可用于查看模型的结构
-- 需要下载一份 yolo11 的源码，用来将yolo11专用的模型文件转为通用的onnx模型文件
-    ```shell
-    git clone https://github.com/walnutpi/ultralytics_yolo11.git
-    ```
-- 下载核桃派提供的docker镜像和脚本工具，用于将通用onnx模型转为npu专用的模型格式
-
-### 1. 将yolo的模型导出为onnx格式
-
-yolo训练后会得到一个后缀名为`.pt`的文件，里面包含着yolo运行所需要的参数数值，但里面没有网络结构信息。如果要在npu上运行，需要将其导出为包含网络结构信息的onnx格式。这一步需要调用yolo11源码自带的工具。
-
-先运行以下命令，临时修改环境变量PYTHONPATH，指定python的模块搜索路径到yolo11源码的存放位置。我的yolo11源码存放路径是/opt/ultralytics_yolo11，所以命令如下
-
-```shell
-export PYTHONPATH=/opt/ultralytics_yolo11
-```
-
-然后运行以下python代码，他会从刚刚设置的`PYTHONPATH`指向的路径中查找 YOLO 这个库，并导出这个代码里指定的模型文件为onnx格式。
-```python
-from ultralytics import YOLO
-
-model = YOLO("./yolo11n-obb.pt")
-model.export(format="onnx")
-```
-
-实践中发现在npu上运行yolo11模型时，自带的一些后处理操作会影响检测精度。所以我们提供的yolo11代码中增加了一些模型原始数据的输出。
-![model_change](./img/model_change_yolo11n_obb.jpg)
+![result](./img/obb/example_obb.jpg)
 
 
-### 2. 将onnx模型转为npu专用模型
-这一步需要使用我们提供的docker镜像，里面搭建好了相关工具的运行环境，为了方便用户使用，我们将 导出模型信息、编写配置文件、模型量化、量化数据生成nb文件 等步骤都合并做成了一条命令 **npu-transfer-yolo**
+## 准备模型文件
 
-模型在训练时使用的是float32类型来存储参数，在NPU上运行时，需要将参数转化为int8等存储范围较小的类型，以减小模型体积，同时提高模型运行速度。这个步骤就叫量化。量化不是直接对参数做四舍五入，而是需要输入一些图片给模型，根据模型的响应状态来优化各个参数。
+我们提供的程序包里会有一个名为`yolo11n-obb.nb`的文件，这就是在核桃派2B（T527） NPU上运行YOLO11定向检测的模型文件。
 
-我们需要准备几张图片用于量化，一般是从训练数据集里抽几张就行，将他们存放到一个文件夹下。
+![result](./img/obb/obb1.png)
 
-然后运行以下命令，传入两个参数，一个是onnx模型文件的路径，一个是存放图片的文件夹路径。
+想尝试自行转换模型可以参考：[模型转换教程](./model_convert.md) 
 
-```bash
-sudo npu-transfer-yolo yolo11n-obb.onnx ../image/
-```
+## 安装OpenCV
 
-最后会在当前路径下生成一个`yolo11n-obb.nb`文件，这个文件就可以在npu上运行推理了
+本教程需要用到OpenCV库，安装方法参考：[OpenCV安装](../../opencv/install.md)
 
-## python运行模型
+## Python运行模型
+
+核桃派2B v1.3.0 版本以上系统提供一套封装好的YOLO11 Python库。
+
 ### 1. 实例化yolo11类
 实例化`YOLO11_OBB`类，需要传入模型文件的路径
+
 ```python
 from walnutpi import YOLO11
+
 yolo = YOLO11.YOLO11_OBB("model/yolo11n-obb.nb")
 ```
+
 ### 2. 运行模型-阻塞式
 使用`run`方法即可运行模型，并返回检测结果，需要传入3个参数
 - 图片数据， 使用opencv的读取图片方法进行读取即可
@@ -144,18 +110,31 @@ for box in boxes:
     )
 ```
 ## 示例程序
-### 示例-读取图片做检测，并保存结果
-![results](./img/example_obb_picture.jpg)
+
+### 基于图片
+
+读取图片做检测，并保存结果
+
+![results](./img/obb/example_obb_picture.jpg)
 
 ```python
+'''
+实验名称：YOLO11定向检测
+实验平台：核桃派2B
+说明：基于图片
+'''
+
 from walnutpi import YOLO11
+import dataset_dota
 import cv2
 
-label_names = ["plane","ship","storage tank","baseball diamond","tennis court","basketball court","ground track field","harbor","bridge","large vehicle","small vehicle","helicopter","roundabout","soccer ball field","swimming pool",]
+#【可选代码】允许Thonny远程运行
+import os
+os.environ["DISPLAY"] = ":0.0"
 
 model_path = "model/yolo11n-obb.nb"
 picture_path = "image/plane.jpg"
-output_path = ".result.jpg"
+output_path = "result.jpg"
 
 # 检测图片
 yolo = YOLO11.YOLO11_OBB(model_path)
@@ -172,18 +151,18 @@ for box in boxes:
             box.angle,
             box.w,
             box.h,
-            label_names[box.label],
+            dataset_dota.label_names[box.label],
         )
     )
 
-# 将检测框画到图像上
+# 到图上画框
 img = cv2.imread(picture_path)
 for box in boxes:
     left_x = int(box.x - box.w / 2)
     left_y = int(box.y - box.h / 2)
     right_x = int(box.x + box.w / 2)
     right_y = int(box.y + box.h / 2)
-    label = str(label_names[box.label]) + " " + str(box.reliability)
+    label = str(dataset_dota.label_names[box.label]) + " " + str(box.reliability)
     (label_width, label_height), bottom = cv2.getTextSize(
         label,
         cv2.FONT_HERSHEY_SIMPLEX,
@@ -214,5 +193,129 @@ for box in boxes:
 
 # 保存图片
 cv2.imwrite(output_path, img)
+
+#窗口显示图片
+cv2.imshow('result',img)
+
+cv2.waitKey() #等待键盘任意按键按下
+cv2.destroyAllWindows() #关闭窗口
+
 ```
 
+### 基于摄像头
+
+可以先学习在OpenCV的 [USB摄像头使用教程](../../opencv/usb_cam.md)
+
+![results](./img/obb/obb2.png)
+
+```python
+'''
+实验名称：YOLO11定向检测
+实验平台：核桃派2B
+说明：基于摄像头
+'''
+
+from walnutpi import YOLO11
+import dataset_dota
+import cv2
+
+#【可选代码】允许Thonny远程运行
+import os
+os.environ["DISPLAY"] = ":0.0"
+
+#加载模型
+path_model = "model/yolo11n-obb.nb"
+yolo = YOLO11.YOLO11_OBB(path_model)
+
+# 打开摄像头
+cap = cv2.VideoCapture(0)
+if not cap.isOpened():
+    print("Cannot open camera")
+    exit()
+
+# 设置为1080p
+# cap.set(cv2.CAP_PROP_FOURCC, cv2.VideoWriter_fourcc(*"MJPG"))
+# cap.set(cv2.CAP_PROP_FRAME_WIDTH, 1920)  # 设置宽度
+# cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 1080)  # 设置长度
+
+boxes = []
+
+while True:
+    
+    # 摄像头读取一帧图像    
+    ret, img = cap.read()
+    
+    if not ret:
+        print("Can't receive frame (stream end?). Exiting ...")
+        break
+    
+    #非阻塞式推理图片    
+    if not yolo.is_running:
+        # 执行目标检测，设置置信度阈值为 0.5，IoU 阈值为 0.45
+        yolo.run_async(img, 0.6, 0.1)
+        
+    boxes = yolo.get_result()
+    
+    # 输出检测结果
+    if boxes is not None:
+            
+        # 输出检测结果
+        print(f"boxes: {boxes.__len__()}")
+            
+        for box in boxes:
+            print(
+                "{:f} ({:4d},{:4d} r{:f} ) w{:4d} h{:4d} {:s}".format(
+                    box.reliability,
+                    box.x,
+                    box.y,
+                    box.angle,
+                    box.w,
+                    box.h,
+                    dataset_dota.label_names[box.label],
+                )
+            )
+
+        for box in boxes:
+            
+            left_x = int(box.x - box.w / 2)
+            left_y = int(box.y - box.h / 2)
+            right_x = int(box.x + box.w / 2)
+            right_y = int(box.y + box.h / 2)
+            label = str(dataset_dota.label_names[box.label]) + " " + str(box.reliability)
+            (label_width, label_height), bottom = cv2.getTextSize(
+                label,
+                cv2.FONT_HERSHEY_SIMPLEX,
+                0.5,
+                1,
+            )
+
+            cv2.line(img, box.get_top_left(), box.get_top_right(), (255, 255, 0), 2)
+            cv2.line(img, box.get_top_left(), box.get_bottom_left(), (255, 255, 0), 2)
+            cv2.line(img, box.get_bottom_right(), box.get_bottom_left(), (255, 255, 0), 2)
+            cv2.line(img, box.get_bottom_right(), box.get_top_right(), (255, 255, 0), 2)
+            cv2.rectangle(
+                img,
+                (left_x, left_y - label_height * 2),
+                (left_x + label_width, left_y),
+                (255, 255, 255),
+                -1,
+            )
+            cv2.putText(
+                img,
+                label,
+                (left_x, left_y - label_height),
+                cv2.FONT_HERSHEY_SIMPLEX,
+                0.5,
+                (0, 0, 0),
+                1,
+            )
+    cv2.imshow("result", img)#窗口显示图片
+    
+    key = cv2.waitKey(1) # 窗口的图像刷新时间为1毫秒，防止阻塞    
+    if key == 32: # 如果按下空格键，打断退出
+        break
+    
+cap .release() # 关闭摄像头
+cv2.destroyAllWindows() # 销毁显示摄像头视频的窗口
+
+```
