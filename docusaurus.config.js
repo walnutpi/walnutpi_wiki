@@ -110,6 +110,11 @@ const config = {
             label: '核桃派PicoW教程',
           },
           {
+            href: 'https://ai.01studio.cc',
+            label: '模型训练',
+            position: 'right',
+          },
+          {
             href: 'https://map.walnutpi.com',
             label: '设备地图',
             position: 'right',
@@ -222,10 +227,10 @@ const config = {
       },
       algolia: {
         // The application ID provided by Algolia
-        appId: 'RY7U130GIJ',
+        appId: '1YT34LH30D',
   
         // Public API key: it is safe to commit it
-        apiKey: '7f49dba340170516ee1384f23b973d06',
+        apiKey: '9e11f200be575aca7713026484bb65b0',
   
         indexName: 'walnutpi',
   

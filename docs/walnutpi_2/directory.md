@@ -155,6 +155,8 @@ sidebar_position: 0
         - [YOLO11定向检测](./npu/yolo/yolo11-obb.md) 
         - [YOLO11图像分割](./npu/yolo/yolo11-seg.md) 
         - [YOLO11姿势识别](./npu/yolo/yolo11-pose.md) 
+        - [模型转换](./npu/yolo/model_convert.md) 
+        - [在线模型训练](./npu/yolo/model_train.md) 
 
 - **Home Assistant**
 
