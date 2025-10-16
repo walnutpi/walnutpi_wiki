@@ -95,23 +95,23 @@ const config = {
             type: 'docSidebar',
             sidebarId: 'tutorialSidebar',
             position: 'left',
-            label: '核桃派1代（1B / ZeroW / CM1 / BOX）教程',
+            label: '1代（1B / ZeroW / CM1 / BOX）教程',
           },
           {
             type: 'docSidebar',
             sidebarId: 'wpi2Sidebar',
             position: 'left',
-            label: '核桃派2代（2B）教程',
+            label: '2代（2B）教程',
           },
           {
             type: 'docSidebar',
             sidebarId: 'newSidebar',
             position: 'left',
-            label: '核桃派PicoW教程',
+            label: 'PicoW教程',
           },
           {
             href: 'https://ai.01studio.cc',
-            label: '模型训练',
+            label: 'AI模型训练',
             position: 'right',
           },
           {
@@ -171,17 +171,21 @@ const config = {
             title: '开发者资源',
             items: [
               {
-                label: '教程',
-                to: '/docs/walnutpi_1',
+                label: '核桃派官网',
+                href: 'https://www.walnutpi.com',
               },
               {
-                label: '论坛',
+                label: '技术论坛',
                 href: 'https://forum.walnutpi.com',
               },
               {
                 label: 'GitHub',
                 href: 'https://github.com/walnutpi',
               },
+              {
+                label: '01Studio',
+                href: 'https://www.01studio.cc',
+              }
             ],
           },
           {
