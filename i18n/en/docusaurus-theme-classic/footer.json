@@ -46,5 +46,21 @@
   "link.item.label.Discord": {
     "message": "Discord",
     "description": "The label of footer link with label=Discord linking to https://discord.gg/nmBNn6Au"
+  },
+  "link.item.label.核桃派官网": {
+    "message": "WalnutPi Offcial",
+    "description": "The label of footer link with label=核桃派官网 linking to https://www.walnutpi.com"
+  },
+  "link.item.label.技术论坛": {
+    "message": "Forum",
+    "description": "The label of footer link with label=技术论坛 linking to https://forum.walnutpi.com"
+  },
+  "link.item.label.01Studio": {
+    "message": "01Studio",
+    "description": "The label of footer link with label=01Studio linking to https://www.01studio.cc"
+  },
+  "link.item.label.电话: +86-18123953882 (微信同号)": {
+    "message": "Tel: +86-18123953882 (WeChat)",
+    "description": "The label of footer link with label=电话: +86-18123953882 (微信同号) linking to /"
   }
 }

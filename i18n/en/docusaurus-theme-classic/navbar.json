@@ -38,5 +38,21 @@
   "item.label.设备地图": {
     "message": "Devices Map",
     "description": "Navbar item with label 设备地图"
+  },
+  "item.label.1代（1B / ZeroW / CM1 / BOX）教程": {
+    "message": "WalnutPi 1（1B / ZeroW / CM1 / BOX）",
+    "description": "Navbar item with label 1代（1B / ZeroW / CM1 / BOX）教程"
+  },
+  "item.label.2代（2B）教程": {
+    "message": "WalnutPi 2（2B）",
+    "description": "Navbar item with label 2代（2B）教程"
+  },
+  "item.label.PicoW教程": {
+    "message": "PicoW",
+    "description": "Navbar item with label PicoW教程"
+  },
+  "item.label.AI模型训练": {
+    "message": "AI Model Training",
+    "description": "Navbar item with label AI模型训练"
   }
 }

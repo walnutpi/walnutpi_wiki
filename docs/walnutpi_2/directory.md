@@ -39,6 +39,7 @@ sidebar_position: 0
     - [音频和录音](./os_software/audio.md)
     - [红外接收头](./os_software/ir.md)
     - [U盘挂载](./os_software/usb_disk.md)
+    - [MIPI摄像头](./os_software/mipi_cam.md)
     - [USB摄像头](./os_software/usb_cam.md)
     - [3.5寸显示屏（电阻触摸）](./os_software/3.5_LCD.md)
     - [1.54寸显示屏](./os_software/1.54_LCD.md)

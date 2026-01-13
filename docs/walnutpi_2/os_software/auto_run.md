@@ -1,5 +1,5 @@
 ---
-sidebar_position: 50
+sidebar_position: 59
 ---
 
 # 开机自动运行脚本

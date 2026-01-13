@@ -59,7 +59,7 @@ while (cam.isOpened()): # 确认被打开
     if key == 32: # 如果按下空格键，打断
         break
     
-capture.release() # 关闭摄像头
+cam.release() # 关闭摄像头
 cv2.destroyAllWindows() # 销毁显示摄像头视频的窗口
 
 ```
