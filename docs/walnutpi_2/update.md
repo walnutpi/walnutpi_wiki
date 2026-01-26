@@ -4,16 +4,17 @@ sidebar_position: 50
 
 # 更新说明
 
+## 2026-1-26
+
+- 新增 **核桃派2B** Android镜像和使用教程。 
+
+    - [Android系统使用](./android/burn.md)
+
+
 ## 2026-1-13
 
 - 新增 [MIPI摄像头](./os_software/mipi_cam.md) 教程。
 - 新增 [MIPI显示屏（核桃派官方5.5寸）](./os_software/mipi_lcd.md#核桃派官方55寸mipi屏) 教程。
-
-## 2025-10-16
-
-- 新增 **NPU应用 -- 在线训练模型**教程。 
-
-    - [模型分享](./npu/yolo/model_train.md#模型分享)
 
 ## 2025-10-16
 
