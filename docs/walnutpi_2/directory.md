@@ -179,6 +179,11 @@ sidebar_position: 0
     - [加入市面上产品](./home_assistant/other_device.md) 
     - [接入苹果HomeKit](./home_assistant/homekit.md) 
 
+- **Android系统使用**
+
+    - [镜像烧录](./android/burn.md) 
+    - [开机](./android/start_up.md) 
+    
 - [**社区用户开源项目分享**](./diy.md) 
 
 - [**更新说明**](./update.md)

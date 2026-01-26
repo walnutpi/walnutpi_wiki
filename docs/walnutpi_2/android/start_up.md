@@ -27,3 +27,26 @@ sidebar_position: 2
 ![start_up](./img/start_up/start_up2.png)
 
 如果你没有显示器，或者无法正常启动，可以使用USB转TTL工具连接到核桃派的调试串口使用串口终端方式登录，此方式适合调试人员。具体参考：[调试串口打开终端](../os_software/terminal#调试串口打开终端) 章节内容。
+
+## 设置简体中文
+
+点击主界面左下角**设置**按钮：
+
+![start_up](./img/start_up/language1.png)
+
+然后依次选择 `System` -- `Language & input` -- `Languages`，如下图。然后点击 **Add a language**
+
+![start_up](./img/start_up/language2.png)
+
+选择**简体中文**：
+
+![start_up](./img/start_up/language3.png)
+
+出现后需要按着右边的拖动按钮，将简体中文拖动到最上边。
+
+![start_up](./img/start_up/language4.png)
+
+设置完如下图，默认语言为简体中文。
+
+![start_up](./img/start_up/language5.png)
+
