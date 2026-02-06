@@ -4,17 +4,20 @@ sidebar_position: 50
 
 # 更新说明
 
+## 2026-2-5
+
+- 新增 [MIPI显示屏（核桃派官方10.1寸）](./os_software/display/10.1_mipi.md) 教程。
+
 ## 2026-1-26
 
 - 新增 **核桃派2B** Android镜像和使用教程。 
 
     - [Android系统使用](./android/burn.md)
 
-
 ## 2026-1-13
 
 - 新增 [MIPI摄像头](./os_software/mipi_cam.md) 教程。
-- 新增 [MIPI显示屏（核桃派官方5.5寸）](./os_software/mipi_lcd.md#核桃派官方55寸mipi屏) 教程。
+- 新增 [MIPI显示屏（核桃派官方5.5寸）](./os_software/display/5.5_mipi.md) 教程。
 
 ## 2025-10-16
 
@@ -36,7 +39,7 @@ sidebar_position: 50
 
 ## 2025-3-19
 
-- 新增 [MIPI显示屏](./os_software/mipi_lcd.md) 教程。
+- 新增 [MIPI显示屏](./os_software/display/5.5_mipi.md) 教程。
 
 ## 2025-3-3
 

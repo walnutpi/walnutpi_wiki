@@ -50,3 +50,11 @@ sidebar_position: 2
 
 ![start_up](./img/start_up/language5.png)
 
+
+## 关机
+
+长按开发板按键可以进入关机选项。
+
+![start_up](./img/start_up/poweroff.png)
+
+

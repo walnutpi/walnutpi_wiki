@@ -17,6 +17,12 @@ sidebar_position: 1
 
 ![burn](./img/burn/burn1.png)
 
+:::tip 提示
+- 镜像名称为：【**2026-1-26_WalnutPi-2B_android13_5.5inch_hdmi.img**】 表示默认使用核桃派官方5.5寸屏（11920x1080）幕为主屏;
+
+- 镜像名称为：【**2026-1-30_WalnutPi-2B_android13_10.1inch_hdmi.img**】 表示默认使用核桃派官方10.1寸屏（1280x800）幕为主屏;
+:::
+
 ## SD启动卡烧录
 
 ### 使用 PhoenixCard 烧录

@@ -122,7 +122,7 @@ os.environ["DISPLAY"] = ":0.0"
 
 ## 通过3.5寸LCD显示
 
-上面方法既可通过核桃派HDMI显示器显示，也可以通过3.5寸LCD显示。3.5寸显示屏使用说明：[3.5寸触摸显示屏](../os_software/3.5_LCD.md)
+上面方法既可通过核桃派HDMI显示器显示，也可以通过3.5寸LCD显示。3.5寸显示屏使用说明：[3.5寸触摸显示屏](../os_software/display/3.5_LCD.md)
 
 ![code_run6](./img/code_run/code_run6.png)
 

@@ -16,16 +16,27 @@ sd卡有两个分区，config.txt存放在第一个分区内。在核桃派开�
 
 默认是使用HDMI显示，`screen=hdmi`, 可以修改参数使能其它屏幕显示。
 
+- 核桃派官方1.54寸SPI屏
+
+```bash
+screen=lcd15-st7789
+```
+
 - 核桃派官方3.5寸SPI屏
 
 ```bash
 screen=lcd35-st7796
 ```
-
-- 核桃派官方1.54寸SPI屏
+- 核桃派官方5.5寸mipi屏(分辨率为1920x1080)
 
 ```bash
-screen=lcd15-st7789
+screen=dsi-1920x1080
+```
+
+- 核桃派官方10.1寸mipi屏(分辨率为1280x800)
+
+```bash
+screen=dsi-1280x800
 ```
 
 - 市面上树莓派mipi屏(分辨率为800x480)
