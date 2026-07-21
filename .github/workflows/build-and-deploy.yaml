@@ -22,6 +22,7 @@ jobs:
   check-secrets:
     name: 检查部署配置
     runs-on: ubuntu-latest
+    if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
     outputs:
       secrets_configured: ${{ steps.check.outputs.configured }}
       missing_secrets: ${{ steps.check.outputs.missing }}
@@ -88,8 +89,8 @@ jobs:
             echo "设置地址: https://github.com/${{ github.repository }}/settings/secrets/actions"
             echo ""
             echo "1. SERVER_SSH_KEY - 服务器SSH私钥"
-            echo "   生成: ssh-keygen -t ed25519 -C 'github-actions'"
-            echo "   查看: cat ~/.ssh/id_ed25519"
+            echo "   生成: ssh-keygen -t rsa -b 4096 -m PEM -C 'github-actions'"
+            echo "   查看: cat ~/.ssh/id_rsa"
             echo ""
             echo "2. SERVER_HOST - 服务器地址"
             echo "   例如: 192.168.1.100 或 example.com"
@@ -101,30 +102,47 @@ jobs:
             echo "   例如: /var/www/your-site/"
             echo "========================================"
           fi
+
+  # ==================== 测试 SSH 连接 ====================
+  test-ssh:
+    name: 测试SSH连接
+    runs-on: ubuntu-latest
+    if: (github.event_name == 'push' || github.event_name == 'workflow_dispatch') && needs.check-secrets.outputs.secrets_configured == 'true'
+    needs: [check-secrets]
+    steps:
+      - name: 测试SSH连接
+        env:
+          SSH_KEY: ${{ secrets.SERVER_SSH_KEY }}
+          HOST: ${{ secrets.SERVER_HOST }}
+          USER: ${{ secrets.SERVER_USER }}
+        run: |
+          echo "========================================"
+          echo "🔌 测试 SSH 连接"
+          echo "========================================"
+          echo "服务器: $HOST"
+          echo "用户: $USER"
+          echo ""
           
-      - name: PR配置缺失提醒
-        if: github.event_name == 'pull_request' && steps.check.outputs.configured == 'false'
-        uses: actions/github-script@v7
-        with:
-          script: |
-            const missing = '${{ steps.check.outputs.missing }}'.split(' ');
-            let message = '## ⚠️ 部署配置缺失\n\n';
-            message += '此PR无法自动部署，因为缺少以下Secrets配置：\n\n';
-            missing.forEach(s => {
-              message += `- ❌ \`${s}\`\n`;
-            });
-            message += '\n### 解决方法\n\n';
-            message += '请仓库管理员在 [Settings > Secrets](';
-            message += `https://github.com/${{ github.repository }}/settings/secrets/actions`;
-            message += ') 中添加以上配置。\n\n';
-            message += '> 💡 如果是外部贡献者的PR，请管理员合并后手动触发部署。';
-            
-            github.rest.issues.createComment({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              body: message
-            });
+          mkdir -p ~/.ssh
+          echo "$SSH_KEY" > ~/.ssh/test_key
+          chmod 600 ~/.ssh/test_key
+          
+          if ssh -o StrictHostKeyChecking=no -o ConnectTimeout=10 -i ~/.ssh/test_key ${USER}@${HOST} "echo '✅ SSH连接成功！' && whoami && pwd"; then
+            echo "========================================"
+            echo "✅ SSH 连接测试通过"
+            echo "========================================"
+          else
+            echo "========================================"
+            echo "❌ SSH 连接失败"
+            echo "========================================"
+            echo ""
+            echo "请检查："
+            echo "1. SERVER_SSH_KEY 是否正确（完整的私钥）"
+            echo "2. SERVER_USER 是否正确"
+            echo "3. 服务器上是否已添加公钥到 ~/.ssh/authorized_keys"
+            echo "4. 服务器防火墙是否允许 SSH 连接"
+            exit 1
+          fi
 
   # ==================== 调试任务 ====================
   debug:
@@ -136,22 +154,17 @@ jobs:
           echo "========================================"
           echo "📋 触发信息调试"
           echo "========================================"
-          echo "事件类型 (event_name): ${{ github.event_name }}"
-          echo "分支 (ref_name): ${{ github.ref_name }}"
-          echo "完整引用 (ref): ${{ github.ref }}"
-          echo "提交SHA: ${{ github.sha }}"
+          echo "事件类型: ${{ github.event_name }}"
+          echo "分支: ${{ github.ref_name }}"
+          echo "完整引用: ${{ github.ref }}"
+          echo "提交: ${{ github.sha }}"
           echo "触发者: ${{ github.actor }}"
-          echo "========================================"
-          echo ""
-          echo "条件判断结果:"
-          echo "event_name == 'push': ${{ github.event_name == 'push' }}"
-          echo "ref == 'refs/heads/main': ${{ github.ref == 'refs/heads/main' }}"
           echo "========================================"
 
   # ==================== 构建任务 ====================
   build:
     name: 构建项目
-    needs: [check-secrets]
+    needs: []
     runs-on: ubuntu-latest
     timeout-minutes: 60
     
@@ -321,13 +334,15 @@ jobs:
   # ==================== 部署任务 ====================
   deploy:
     name: 部署到生产环境
-    needs: [build, check-secrets]
+    needs: [build]
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    
     if: |
-      (github.event_name == 'push' && github.ref == 'refs/heads/main') ||
-      (github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main')
-      && needs.build.outputs.status == 'success'
-      && needs.check-secrets.outputs.secrets_configured == 'true'
+      needs.build.outputs.status == 'success' &&
+      (github.event_name == 'push' || github.event_name == 'workflow_dispatch') &&
+      github.ref == 'refs/heads/main'
     
     steps:
       - name: 下载构建产物
@@ -336,21 +351,94 @@ jobs:
           name: build-${{ needs.build.outputs.build_id }}
           path: build/
           
-      - name: 验证产物
+      - name: 验证产物完整性
+        id: verify
         run: |
-          if [ ! -d "build" ] || [ -z "$(ls -A build)" ]; then
-            echo "❌ 产物为空"
+          echo "========================================"
+          echo "📦 验证构建产物"
+          echo "========================================"
+          
+          if [ ! -d "build" ]; then
+            echo "❌ 错误: build 目录不存在"
             exit 1
           fi
-          echo "✅ 产物大小: $(du -sh build | awk '{print $1}')"
-          echo "📁 文件数量: $(find build -type f | wc -l)"
+          
+          if [ -z "$(ls -A build)" ]; then
+            echo "❌ 错误: build 目录为空"
+            exit 1
+          fi
+          
+          if [ ! -f "build/index.html" ]; then
+            echo "⚠️ 警告: 未找到 index.html，请确认构建产物正确"
+          else
+            echo "✅ 找到 index.html"
+          fi
+          
+          FILE_COUNT=$(find build -type f | wc -l)
+          DIR_COUNT=$(find build -type d | wc -l)
+          TOTAL_SIZE=$(du -sh build | awk '{print $1}')
+          TOTAL_SIZE_BYTES=$(du -sb build | awk '{print $1}')
+          
+          echo "📊 产物统计:"
+          echo "  - 文件数: $FILE_COUNT"
+          echo "  - 目录数: $DIR_COUNT"
+          echo "  - 总大小: $TOTAL_SIZE"
+          echo ""
+          echo "file_count=$FILE_COUNT" >> $GITHUB_OUTPUT
+          echo "dir_count=$DIR_COUNT" >> $GITHUB_OUTPUT
+          echo "total_size=$TOTAL_SIZE" >> $GITHUB_OUTPUT
+          echo "total_size_bytes=$TOTAL_SIZE_BYTES" >> $GITHUB_OUTPUT
+          
+          echo "✅ 产物验证通过"
+          echo "========================================"
+          
+      - name: 创建服务器备份
+        env:
+          SSH_KEY: ${{ secrets.SERVER_SSH_KEY }}
+          HOST: ${{ secrets.SERVER_HOST }}
+          USER: ${{ secrets.SERVER_USER }}
+          TARGET: ${{ secrets.SERVER_TARGET_PATH }}
+        run: |
+          echo "========================================"
+          echo "💾 创建服务器备份"
+          echo "========================================"
+          
+          mkdir -p ~/.ssh
+          echo "$SSH_KEY" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          
+          ssh -o StrictHostKeyChecking=no -i ~/.ssh/deploy_key ${USER}@${HOST} << 'EOF'
+            TARGET_PATH="${{ secrets.SERVER_TARGET_PATH }}"
+            BACKUP_DIR="/tmp/backup_$(date +%Y%m%d_%H%M%S)"
+            
+            if [ -d "$TARGET_PATH" ] && [ "$(ls -A $TARGET_PATH)" ]; then
+              echo "📦 备份当前版本到: $BACKUP_DIR"
+              mkdir -p "$BACKUP_DIR"
+              cp -r "$TARGET_PATH"/* "$BACKUP_DIR/"
+              
+              ls -dt /tmp/backup_* | tail -n +6 | xargs rm -rf 2>/dev/null || true
+              echo "✅ 备份完成，保留最近5个备份"
+            else
+              echo "ℹ️ 目标目录为空或不存在，跳过备份"
+            fi
+          EOF
+          
+          echo "✅ 备份操作完成"
+          echo "========================================"
           
       - name: 打包产物
         run: |
+          echo "========================================"
+          echo "📦 打包产物"
+          echo "========================================"
+          
           BUILD_ID="${{ needs.build.outputs.build_id }}"
           tar -czf "build-${BUILD_ID}.tar.gz" build/
+          
+          PACKAGE_SIZE=$(du -h build-${BUILD_ID}.tar.gz | awk '{print $1}')
           echo "压缩包: build-${BUILD_ID}.tar.gz"
-          echo "压缩包大小: $(du -h build-${BUILD_ID}.tar.gz | awk '{print $1}')"
+          echo "压缩包大小: $PACKAGE_SIZE"
+          echo "========================================"
           
       - name: 显示部署信息
         run: |
@@ -360,59 +448,116 @@ jobs:
           echo "服务器: ${{ secrets.SERVER_HOST }}"
           echo "用户: ${{ secrets.SERVER_USER }}"
           echo "路径: ${{ secrets.SERVER_TARGET_PATH }}"
-          echo "构建: ${{ needs.build.outputs.build_id }}"
+          echo "构建ID: ${{ needs.build.outputs.build_id }}"
+          echo "提交: ${{ needs.build.outputs.short_hash }}"
+          echo "触发方式: ${{ github.event_name }}"
+          echo "触发者: ${{ github.actor }}"
+          echo "触发时间: $(date '+%Y-%m-%d %H:%M:%S')"
           echo "========================================"
           
       - name: 部署到服务器
         uses: easingthemes/ssh-deploy@main
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY }}
-          ARGS: "-avzr --delete"
+          ARGS: "-avzr --delete --progress"
           SOURCE: "build/"
           REMOTE_HOST: ${{ secrets.SERVER_HOST }}
           REMOTE_USER: ${{ secrets.SERVER_USER }}
           TARGET: ${{ secrets.SERVER_TARGET_PATH }}
           EXCLUDE: "/.git/, /.env, /.meta/"
           
-      - name: 创建Release
-        id: create_release
-        uses: actions/create-release@v1
+      - name: 部署后验证
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: ${{ needs.build.outputs.build_id }}
-          release_name: "Build ${{ needs.build.outputs.build_id }}"
-          body: |
-            ## 🚀 自动部署
-            
-            ### 构建信息
-            - **构建ID**: `${{ needs.build.outputs.build_id }}`
-            - **提交**: `${{ needs.build.outputs.short_hash }}`
-            - **耗时**: ${{ needs.build.outputs.build_duration }}秒
-            - **产物**: ${{ needs.build.outputs.build_size }}
-            - **触发者**: ${{ github.actor }}
-            
-            ### 部署信息
-            - **服务器**: ${{ secrets.SERVER_HOST }}
-            - **路径**: ${{ secrets.SERVER_TARGET_PATH }}
-            - **状态**: ✅ 部署成功
-          draft: false
-          prerelease: false
+          SSH_KEY: ${{ secrets.SERVER_SSH_KEY }}
+          HOST: ${{ secrets.SERVER_HOST }}
+          USER: ${{ secrets.SERVER_USER }}
+          TARGET: ${{ secrets.SERVER_TARGET_PATH }}
+        run: |
+          echo "========================================"
+          echo "🔍 部署后验证"
+          echo "========================================"
           
-      - name: 上传产物到Release
-        uses: actions/upload-release-asset@v1
+          mkdir -p ~/.ssh
+          echo "$SSH_KEY" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          
+          ssh -o StrictHostKeyChecking=no -i ~/.ssh/deploy_key ${USER}@${HOST} << 'EOF'
+            TARGET_PATH="${{ secrets.SERVER_TARGET_PATH }}"
+            
+            if [ ! -d "$TARGET_PATH" ]; then
+              echo "❌ 错误: 目标目录不存在"
+              exit 1
+            fi
+            
+            if [ -z "$(ls -A $TARGET_PATH)" ]; then
+              echo "❌ 错误: 目标目录为空"
+              exit 1
+            fi
+            
+            FILE_COUNT=$(find $TARGET_PATH -type f | wc -l)
+            TOTAL_SIZE=$(du -sh $TARGET_PATH | awk '{print $1}')
+            
+            echo "📊 服务器上部署状态:"
+            echo "  - 文件数: $FILE_COUNT"
+            echo "  - 总大小: $TOTAL_SIZE"
+            
+            if [ -f "$TARGET_PATH/index.html" ]; then
+              echo "  ✅ index.html 存在"
+            else
+              echo "  ❌ 警告: index.html 不存在"
+            fi
+            
+            echo "✅ 部署验证通过"
+          EOF
+          
+          echo "========================================"
+          
+      - name: 创建 Release
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./build-${{ needs.build.outputs.build_id }}.tar.gz
-          asset_name: build-${{ needs.build.outputs.build_id }}.tar.gz
-          asset_content_type: application/gzip
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          BUILD_ID="${{ needs.build.outputs.build_id }}"
+          COMMIT_MSG=$(git log -1 --pretty=%B | head -1)
+          COMMIT_URL="https://github.com/${{ github.repository }}/commit/${{ needs.build.outputs.commit_hash }}"
+          
+          gh release create \
+            "$BUILD_ID" \
+            "build-${BUILD_ID}.tar.gz" \
+            --repo "${{ github.repository }}" \
+            --title "Build $BUILD_ID" \
+            --notes "## 🚀 自动部署 Release
+            
+            ### 📦 构建信息
+            | 项目 | 详情 |
+            |------|------|
+            | 构建ID | \`$BUILD_ID\` |
+            | 提交 | [\`${{ needs.build.outputs.short_hash }}\`]($COMMIT_URL) |
+            | 提交信息 | $COMMIT_MSG |
+            | 耗时 | ${{ needs.build.outputs.build_duration }}秒 |
+            | 产物大小 | ${{ needs.build.outputs.build_size }} |
+            | 文件数 | ${{ steps.verify.outputs.file_count }} |
+            | 触发者 | @${{ github.actor }} |
+            | 触发方式 | ${{ github.event_name }} |
+            
+            ### 🌐 部署信息
+            | 项目 | 详情 |
+            |------|------|
+            | 服务器 | ${{ secrets.SERVER_HOST }} |
+            | 路径 | ${{ secrets.SERVER_TARGET_PATH }} |
+            | 状态 | ✅ 部署成功 |
+            
+            ### 📝 变更内容
+            $COMMIT_MSG
+            
+            ---
+            > 🔗 [查看部署记录](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})"
+          
+          echo "✅ Release 已创建"
 
   # ==================== 清理任务 ====================
   cleanup:
     name: 清理资源
-    needs: [build, deploy]
+    needs: [build]
     runs-on: ubuntu-latest
     if: always()
     
@@ -436,19 +581,3 @@ jobs:
           echo "| 服务器 | ${{ secrets.SERVER_HOST }} |" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "> 🎉 部署完成！" >> $GITHUB_STEP_SUMMARY
-          
-      - name: 配置缺失警告
-        if: failure() && needs.check-secrets.outputs.secrets_configured == 'false'
-        run: |
-          echo "## ⚠️ 部署已跳过" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "缺少必要的Secrets配置：" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          MISSING="${{ needs.check-secrets.outputs.missing }}"
-          echo "$MISSING" | tr ' ' '\n' | while read item; do
-            if [ -n "$item" ]; then
-              echo "- \`$item\`" >> $GITHUB_STEP_SUMMARY
-            fi
-          done
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "请查看Actions日志获取配置指南。" >> $GITHUB_STEP_SUMMARY
