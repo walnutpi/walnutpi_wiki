@@ -30,10 +30,10 @@ jobs:
       - name: 检查必需的Secrets
         id: check
         env:
-          SECRET_SSH_KEY: ${{ secrets.SERVER_SSH_KEY }}
-          SECRET_HOST: ${{ secrets.SERVER_HOST }}
-          SECRET_USER: ${{ secrets.SERVER_USER }}
-          SECRET_PATH: ${{ secrets.SERVER_TARGET_PATH }}
+          SECRET_SSH_KEY: ${{ secrets.SERVER_SSH_KEY || '' }}
+          SECRET_HOST: ${{ secrets.SERVER_HOST || '' }}
+          SECRET_USER: ${{ secrets.SERVER_USER || '' }}
+          SECRET_PATH: ${{ secrets.SERVER_TARGET_PATH || '' }}
         run: |
           MISSING=()
           
@@ -107,8 +107,12 @@ jobs:
   test-ssh:
     name: 测试SSH连接
     runs-on: ubuntu-latest
-    if: (github.event_name == 'push' || github.event_name == 'workflow_dispatch') && needs.check-secrets.outputs.secrets_configured == 'true'
+    # ✅ 只在 check-secrets 运行且配置成功时执行
     needs: [check-secrets]
+    if: |
+      always() &&
+      needs.check-secrets.result == 'success' &&
+      needs.check-secrets.outputs.secrets_configured == 'true'
     steps:
       - name: 测试SSH连接
         env:
@@ -167,6 +171,11 @@ jobs:
     needs: []
     runs-on: ubuntu-latest
     timeout-minutes: 60
+    # ✅ PR 评论所需权限
+    permissions:
+      contents: read
+      issues: write
+      pull-requests: write
     
     outputs:
       build_duration: ${{ steps.build.outputs.duration }}
@@ -220,7 +229,7 @@ jobs:
           path: |
             node_modules
             ~/.npm
-            .docusaurus
+          # ✅ 移除 .docusaurus 缓存，避免权限问题
           key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-
@@ -270,11 +279,11 @@ jobs:
             exit 1
           fi
           
-      - name: 修复文件权限（Docker root 创建的文件）
+      - name: 修复文件权限
         if: steps.build.outputs.status == 'success'
         run: |
           echo "修复文件权限..."
-          sudo chown -R $(id -u):$(id -g) node_modules build .docusaurus 2>/dev/null || true
+          sudo chown -R $(id -u):$(id -g) node_modules build 2>/dev/null || true
           chmod -R 755 build/ 2>/dev/null || true
           echo "✅ 权限已修复"
           
@@ -334,15 +343,18 @@ jobs:
   # ==================== 部署任务 ====================
   deploy:
     name: 部署到生产环境
-    needs: [build]
+    # ✅ 依赖 build 和 check-secrets（确保 Secrets 已检查）
+    needs: [build, check-secrets]
     runs-on: ubuntu-latest
     permissions:
       contents: write
     
+    # ✅ 完整条件：构建成功 + 事件匹配 + main分支 + Secrets已配置
     if: |
       needs.build.outputs.status == 'success' &&
       (github.event_name == 'push' || github.event_name == 'workflow_dispatch') &&
-      github.ref == 'refs/heads/main'
+      github.ref == 'refs/heads/main' &&
+      needs.check-secrets.outputs.secrets_configured == 'true'
     
     steps:
       - name: 下载构建产物
@@ -369,25 +381,20 @@ jobs:
           fi
           
           if [ ! -f "build/index.html" ]; then
-            echo "⚠️ 警告: 未找到 index.html，请确认构建产物正确"
+            echo "⚠️ 警告: 未找到 index.html"
           else
             echo "✅ 找到 index.html"
           fi
           
           FILE_COUNT=$(find build -type f | wc -l)
-          DIR_COUNT=$(find build -type d | wc -l)
           TOTAL_SIZE=$(du -sh build | awk '{print $1}')
-          TOTAL_SIZE_BYTES=$(du -sb build | awk '{print $1}')
           
           echo "📊 产物统计:"
           echo "  - 文件数: $FILE_COUNT"
-          echo "  - 目录数: $DIR_COUNT"
           echo "  - 总大小: $TOTAL_SIZE"
-          echo ""
+          
           echo "file_count=$FILE_COUNT" >> $GITHUB_OUTPUT
-          echo "dir_count=$DIR_COUNT" >> $GITHUB_OUTPUT
           echo "total_size=$TOTAL_SIZE" >> $GITHUB_OUTPUT
-          echo "total_size_bytes=$TOTAL_SIZE_BYTES" >> $GITHUB_OUTPUT
           
           echo "✅ 产物验证通过"
           echo "========================================"
@@ -397,7 +404,6 @@ jobs:
           SSH_KEY: ${{ secrets.SERVER_SSH_KEY }}
           HOST: ${{ secrets.SERVER_HOST }}
           USER: ${{ secrets.SERVER_USER }}
-          TARGET: ${{ secrets.SERVER_TARGET_PATH }}
         run: |
           echo "========================================"
           echo "💾 创建服务器备份"
@@ -411,12 +417,12 @@ jobs:
             TARGET_PATH="${{ secrets.SERVER_TARGET_PATH }}"
             BACKUP_DIR="/tmp/backup_$(date +%Y%m%d_%H%M%S)"
             
-            if [ -d "$TARGET_PATH" ] && [ "$(ls -A $TARGET_PATH)" ]; then
+            if [ -d "$TARGET_PATH" ] && [ "$(ls -A $TARGET_PATH 2>/dev/null)" ]; then
               echo "📦 备份当前版本到: $BACKUP_DIR"
               mkdir -p "$BACKUP_DIR"
-              cp -r "$TARGET_PATH"/* "$BACKUP_DIR/"
+              cp -r "$TARGET_PATH"/* "$BACKUP_DIR/" 2>/dev/null || true
               
-              ls -dt /tmp/backup_* | tail -n +6 | xargs rm -rf 2>/dev/null || true
+              ls -dt /tmp/backup_* 2>/dev/null | tail -n +6 | xargs rm -rf 2>/dev/null || true
               echo "✅ 备份完成，保留最近5个备份"
             else
               echo "ℹ️ 目标目录为空或不存在，跳过备份"
@@ -428,17 +434,10 @@ jobs:
           
       - name: 打包产物
         run: |
-          echo "========================================"
-          echo "📦 打包产物"
-          echo "========================================"
-          
           BUILD_ID="${{ needs.build.outputs.build_id }}"
           tar -czf "build-${BUILD_ID}.tar.gz" build/
-          
-          PACKAGE_SIZE=$(du -h build-${BUILD_ID}.tar.gz | awk '{print $1}')
           echo "压缩包: build-${BUILD_ID}.tar.gz"
-          echo "压缩包大小: $PACKAGE_SIZE"
-          echo "========================================"
+          echo "压缩包大小: $(du -h build-${BUILD_ID}.tar.gz | awk '{print $1}')"
           
       - name: 显示部署信息
         run: |
@@ -452,14 +451,13 @@ jobs:
           echo "提交: ${{ needs.build.outputs.short_hash }}"
           echo "触发方式: ${{ github.event_name }}"
           echo "触发者: ${{ github.actor }}"
-          echo "触发时间: $(date '+%Y-%m-%d %H:%M:%S')"
           echo "========================================"
           
       - name: 部署到服务器
         uses: easingthemes/ssh-deploy@main
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY }}
-          ARGS: "-avzr --delete --progress"
+          ARGS: "-avzr --delete"
           SOURCE: "build/"
           REMOTE_HOST: ${{ secrets.SERVER_HOST }}
           REMOTE_USER: ${{ secrets.SERVER_USER }}
@@ -471,7 +469,6 @@ jobs:
           SSH_KEY: ${{ secrets.SERVER_SSH_KEY }}
           HOST: ${{ secrets.SERVER_HOST }}
           USER: ${{ secrets.SERVER_USER }}
-          TARGET: ${{ secrets.SERVER_TARGET_PATH }}
         run: |
           echo "========================================"
           echo "🔍 部署后验证"
@@ -494,8 +491,8 @@ jobs:
               exit 1
             fi
             
-            FILE_COUNT=$(find $TARGET_PATH -type f | wc -l)
-            TOTAL_SIZE=$(du -sh $TARGET_PATH | awk '{print $1}')
+            FILE_COUNT=$(find $TARGET_PATH -type f 2>/dev/null | wc -l)
+            TOTAL_SIZE=$(du -sh $TARGET_PATH 2>/dev/null | awk '{print $1}')
             
             echo "📊 服务器上部署状态:"
             echo "  - 文件数: $FILE_COUNT"
@@ -504,7 +501,7 @@ jobs:
             if [ -f "$TARGET_PATH/index.html" ]; then
               echo "  ✅ index.html 存在"
             else
-              echo "  ❌ 警告: index.html 不存在"
+              echo "  ⚠️ 警告: index.html 不存在"
             fi
             
             echo "✅ 部署验证通过"
@@ -519,6 +516,12 @@ jobs:
           BUILD_ID="${{ needs.build.outputs.build_id }}"
           COMMIT_MSG=$(git log -1 --pretty=%B | head -1)
           COMMIT_URL="https://github.com/${{ github.repository }}/commit/${{ needs.build.outputs.commit_hash }}"
+          
+          # ✅ 如果 Release 已存在，先删除再创建
+          if gh release view "$BUILD_ID" --repo "${{ github.repository }}" 2>/dev/null; then
+            echo "⚠️ Release $BUILD_ID 已存在，删除旧版本..."
+            gh release delete "$BUILD_ID" --repo "${{ github.repository }}" -y 2>/dev/null || true
+          fi
           
           gh release create \
             "$BUILD_ID" \
@@ -535,7 +538,6 @@ jobs:
             | 提交信息 | $COMMIT_MSG |
             | 耗时 | ${{ needs.build.outputs.build_duration }}秒 |
             | 产物大小 | ${{ needs.build.outputs.build_size }} |
-            | 文件数 | ${{ steps.verify.outputs.file_count }} |
             | 触发者 | @${{ github.actor }} |
             | 触发方式 | ${{ github.event_name }} |
             
@@ -546,9 +548,6 @@ jobs:
             | 路径 | ${{ secrets.SERVER_TARGET_PATH }} |
             | 状态 | ✅ 部署成功 |
             
-            ### 📝 变更内容
-            $COMMIT_MSG
-            
             ---
             > 🔗 [查看部署记录](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})"
           
@@ -557,6 +556,7 @@ jobs:
   # ==================== 清理任务 ====================
   cleanup:
     name: 清理资源
+    # ✅ 依赖 build，不依赖 deploy（无论部署是否成功都清理）
     needs: [build]
     runs-on: ubuntu-latest
     if: always()
@@ -578,6 +578,5 @@ jobs:
           echo "| 状态 | ✅ 成功 |" >> $GITHUB_STEP_SUMMARY
           echo "| 耗时 | ${{ needs.build.outputs.build_duration }}秒 |" >> $GITHUB_STEP_SUMMARY
           echo "| 产物 | ${{ needs.build.outputs.build_size }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| 服务器 | ${{ secrets.SERVER_HOST }} |" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "> 🎉 部署完成！" >> $GITHUB_STEP_SUMMARY
