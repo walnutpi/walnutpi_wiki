@@ -60,7 +60,7 @@ pyQT5的一个好处是可移植性强，也就是说在Windows，Mac, Linux代�
 
 ![setup6](./img/development_setup/setup6.png)
 
-如果没有安装请到[<python官网下载链接>](https://www.python.org/downloads/)，推荐python3.10以上版本，注意安装时要勾选添加到环境变量的选项。
+如果没有安装请到[python官网下载链接](https://www.python.org/downloads/)，推荐python3.10以上版本，注意安装时要勾选添加到环境变量的选项。
 
 ### 安装PyQT5
 

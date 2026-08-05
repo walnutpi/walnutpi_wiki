@@ -14,8 +14,8 @@ on:
         default: false
 
 env:
-  NODE_VERSION: '18'
-  DOCKER_IMAGE: 'node:18.20.5-alpine'
+  NODE_VERSION: '24'
+  DOCKER_IMAGE: 'node:24-alpine'
   BUILD_PATH: 'build'
 
 jobs:
@@ -416,7 +416,7 @@ jobs:
         uses: easingthemes/ssh-deploy@main
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY }}
-          ARGS: "-avzr --delete --progress"
+          ARGS: "-rlgoDzvc --delete --progress"
           SOURCE: "${{ env.BUILD_PATH }}/"
           REMOTE_HOST: ${{ secrets.SERVER_HOST }}
           REMOTE_USER: ${{ secrets.SERVER_USER }}

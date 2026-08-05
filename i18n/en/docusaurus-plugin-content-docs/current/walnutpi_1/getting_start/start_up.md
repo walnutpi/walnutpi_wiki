@@ -33,4 +33,4 @@ If the blue LED stays on but the HDMI display shows nothing, try a different HDM
 
 ## Login via Serial Terminal
 
-If you don't have a display, you can use a USB-to-TTL tool to connect to WalnutPi's debug serial port and log in via the serial terminal. For details, refer to: [Debug Serial Terminal](../os_software/terminal#debug-serial-terminal) section.
+If you don't have a display, you can use a USB-to-TTL tool to connect to WalnutPi's debug serial port and log in via the serial terminal. For details, refer to: [Debug Serial Terminal](../os_software/terminal#opening-terminal-via-debug-serial-port) section.

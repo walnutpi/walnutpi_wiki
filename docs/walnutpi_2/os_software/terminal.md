@@ -98,7 +98,7 @@ su pi
 | 9  | cp | copy | 复制文件或目录 |
 | 10  | echo |   | 显示在终端输入内容 |
 | 11  | date |  | 读取系统日期和时间 |
-| 12  | grep | global search regular <br></br> expression and print | 全面搜索正则表达式并打印 |
+| 12  | grep | global search regular <br/> expression and print | 全面搜索正则表达式并打印 |
 | 13  | man | manual  | 显示命令使用手册 |
 | 14  | sudo | super user do | 以root权限执行 |
 | 15  | chomod | change mode | 改变文件读写权限 |

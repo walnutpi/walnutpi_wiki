@@ -16,7 +16,7 @@ The image below shows a commonly used HC-SR04 ultrasonic module:
 
 ![hcsr04_1](./img/hcsr04/hcsr04_1.png)
 
-|  Module Parameters |
+|  Module Parameters |  |
 |  :---:  | ---  |
 | Supply Voltage  | 3.3V~5V (Walnut Pi requires 3.3V compatible version) |
 | Measuring Distance  | 2cm~450cm |

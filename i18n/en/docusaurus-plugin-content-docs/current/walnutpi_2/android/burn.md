@@ -73,7 +73,7 @@ When the blue LED turns off, burning is complete.
 ![burn](./img/burn/burn12.png)
 
 :::tip Note
-You can use a USB-to-TTL tool connected to the debug serial port to monitor the burning progress. [Debug Serial Port Terminal](../os_software/terminal.md#调试串口打开终端)
+You can use a USB-to-TTL tool connected to the debug serial port to monitor the burning progress. [Debug Serial Port Terminal](../os_software/terminal.md#opening-terminal-via-debug-serial-port)
 :::
 
 Power off, remove the SD card, and power on again to boot the Android system from EMMC.

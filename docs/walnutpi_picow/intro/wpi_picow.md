@@ -14,7 +14,7 @@ sidebar_position: 1
 
 ![intro3](./img/wpi_picow/intro2.png)
 
-|  产品参数 |
+|  产品参数 |  |
 |  :---:  | ---  |
 | 主控 | **ESP32-S3R2** 32-bit dual cores @ up to 240MHz |
 | 内存 | 2M Bytes PSRAM |
@@ -29,7 +29,7 @@ sidebar_position: 1
 | 其它  |  ● 预留串口调试（UART0）3Pin引脚<br></br>  ● 背面焊盘 `TP1`:GND, `TP2`:USB-, `TP3`:USB+, `TP4`:GPIO3, `TP5`:GPIO46, `TP6`:GPIO0 |
 | 编程语言  | MicroPython |
 
-|  外观规格 |
+|  外观规格 |  |
 |  :---:  | ---  |
 | 尺寸  | 51 x 21mm  (长宽为PCB尺寸) |
 | 重量  | 3.6克 （裸板）|

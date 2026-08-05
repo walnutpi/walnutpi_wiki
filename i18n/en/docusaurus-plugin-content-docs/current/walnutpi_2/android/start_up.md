@@ -26,7 +26,7 @@ Simply connect an HDMI monitor to enable screen mirroring.
 
 ![start_up](./img/start_up/start_up2.png)
 
-If you do not have a monitor or cannot boot normally, you can use a USB-to-TTL tool connected to the WalnutPi debug serial port to log in via a serial terminal. This method is suitable for developers. For details, refer to: [Debug Serial Port Terminal](../os_software/terminal#调试串口打开终端).
+If you do not have a monitor or cannot boot normally, you can use a USB-to-TTL tool connected to the WalnutPi debug serial port to log in via a serial terminal. This method is suitable for developers. For details, refer to: [Debug Serial Port Terminal](../os_software/terminal#opening-terminal-via-debug-serial-port).
 
 ## Setting Simplified Chinese
 

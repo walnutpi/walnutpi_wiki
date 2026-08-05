@@ -11,7 +11,7 @@ gcc编译出来的程序，只能在指定的cpu架构上运行，而电脑跟�
 ## 安装
 ### 1. 下载
 
-walnutpi-1b使用的交叉编译器为`aarch64-none-linux-gnu`,版本为`gcc-arm-9.2-2019.12-x86_64-aarch64-none-linux-gnu`,可从此链接处下载[<清华源>](https://mirrors.tuna.tsinghua.edu.cn/armbian-releases/_toolchain/)。
+walnutpi-1b使用的交叉编译器为`aarch64-none-linux-gnu`,版本为`gcc-arm-9.2-2019.12-x86_64-aarch64-none-linux-gnu`,可从此链接处下载[清华源](https://mirrors.tuna.tsinghua.edu.cn/armbian-releases/_toolchain/)。
 
 可以运行下面这段命令，把walnutpi-1b所使用的交叉编译器压缩包下载到当前路径下。
 

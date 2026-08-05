@@ -16,7 +16,7 @@ Below is a commonly available HC-SR04 ultrasonic module:
 
 ![hcsr04_1](./img/hcsr04/hcsr04_1.png)
 
-|  Module Specifications |
+|  Module Specifications |  |
 |  :---:  | ---  |
 | Supply Voltage  | 3.3V~5V (WalnutPi PicoW requires one supporting 3.3V) |
 | Measurement Distance  | 2cm~450cm |

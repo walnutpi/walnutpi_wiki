@@ -33,4 +33,4 @@ If the blue LED is steadily lit but there is no HDMI output, try using a differe
 
 ## Logging in via Serial Terminal
 
-If you do not have a display, you can use a USB-to-TTL adapter to connect to the Walnut Pi's debug serial port and log in via a serial terminal. For details, refer to: [Opening a Terminal via Debug Serial Port](../os_software/terminal#调试串口打开终端).
+If you do not have a display, you can use a USB-to-TTL adapter to connect to the Walnut Pi's debug serial port and log in via a serial terminal. For details, refer to: [Opening a Terminal via Debug Serial Port](../os_software/terminal#opening-terminal-via-debug-serial-port).

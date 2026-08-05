@@ -14,7 +14,7 @@ sidebar_position: 1
 
 
 ## walnutpi-build
-我们把构建系统镜像的过程写成了shell脚本，并在[<github链接>](https://github.com/walnutpi/walnutpi-build)处开源，可以从此处下载最新版。
+我们把构建系统镜像的过程写成了shell脚本，并在[github链接](https://github.com/walnutpi/walnutpi-build)处开源，可以从此处下载最新版。
 
 ```
 git clone https://github.com/walnutpi/walnutpi-build.git

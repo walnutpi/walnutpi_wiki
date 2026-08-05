@@ -10,7 +10,7 @@ The Walnut Pi 2B is available with an optional EMMC flash storage version, with 
 
 ## EMMC as a System Boot Drive
 
-Burn the Walnut Pi OS to EMMC and boot from it. Refer to: [EMMC Image Burning Method](../getting_start/os-install.md#emmc-烧录)
+Burn the Walnut Pi OS to EMMC and boot from it. Refer to: [EMMC Image Burning Method](../getting_start/os-install.md#emmc-burning)
 
 ## EMMC as a Storage Drive
 

@@ -28,7 +28,7 @@ The WalnutPi is a compact, low-cost single-board computer. For users who already
 
 ### Install Using Image
 
-WalnutPi officially provides images pre-installed with Home Assistant, compatible with all WalnutPi Linux development boards. Simply flash the image and power on to get started. For image flashing instructions, refer to the [System Image Flashing](../getting_start/os-install.md#using-rufus-to-flash-recommended) section.
+WalnutPi officially provides images pre-installed with Home Assistant, compatible with all WalnutPi Linux development boards. Simply flash the image and power on to get started. For image flashing instructions, refer to the [System Image Flashing](../getting_start/os-install.md#using-rufus-recommended) section.
 
 The WalnutPi 2B 2GB/4GB variants can use the Home Assistant Desktop or Server edition images. The 1GB variant has limited memory and can only use the Home Assistant Server edition image. **We recommend using the 2GB/4GB version — having a desktop makes initial configuration much easier.**
 

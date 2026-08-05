@@ -56,7 +56,7 @@ Home Assistant主机从启动到运行大概需要2-3分钟时间，启动并联
 
 在电脑浏览器或者核桃派浏览器（桌面版）输入：http://walnutpi.local:8123 进入初始化界面。
 
-（如果这个链接无法进入需要使用：http://XXXX:8123 ，XXXX为你的核桃派当前IP地址，如：http://192.168.1.100:8123） [**核桃派IP地址获取方法**](../os_software/ip_get.md)
+（如果这个链接无法进入需要使用：http://XXXX:8123 ，XXXX为你的核桃派当前IP地址，如：`http://192.168.1.100:8123`） [**核桃派IP地址获取方法**](../os_software/ip_get.md)
 
 :::tip 提示
 配置成功后推荐使用ip地址登录，http://walnutpi.local:8123 实测偶尔会出现打不开情况。

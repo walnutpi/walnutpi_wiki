@@ -98,7 +98,7 @@ su pi
 | 9  | cp | copy | Copy files or directories |
 | 10  | echo |   | Display input content in the terminal |
 | 11  | date |  | Read system date and time |
-| 12  | grep | global search regular <br></br> expression and print | Search for a pattern and print matching lines |
+| 12  | grep | global search regular <br/> expression and print | Search for a pattern and print matching lines |
 | 13  | man | manual  | Display command manual |
 | 14  | sudo | super user do | Execute with root privileges |
 | 15  | chmod | change mode | Change file read/write permissions |

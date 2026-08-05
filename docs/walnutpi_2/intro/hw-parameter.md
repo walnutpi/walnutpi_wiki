@@ -14,7 +14,7 @@ sidebar_position: 2
 
 ### 详细参数
 
-|  产品参数 |
+|  产品参数 |  |
 |  :---:  | ---  |
 | CPU  | 全志T527 <br></br> ● ARM , 八核Cortex-A55 64bit @1.8GHz 高性能处理器 <br></br> ● RISC-V @200MHz 协处理器 |
 | GPU  | Mali G57 MC1<br></br> ● OpenGL ES 1.1/2.0/3.2<br></br> ● OpenCL 2.2<br></br> ● Vulkan 1.1/1.2/1.3|
@@ -31,7 +31,7 @@ sidebar_position: 2
 | 电源  | ● Type-C接口 5V@2A输入<br></br>● PoE以太网供电 |
 | 操作系统  | 核桃派OS（Debian）、Ubuntu、Android 、Home Assitant|
 
-|  外观规格 |
+|  外观规格 |  |
 |  :---:  | ---  |
 | 尺寸  | 85 x 56 x 21mm  (长宽为PCB尺寸) |
 | 重量  | 43克 （裸板）|

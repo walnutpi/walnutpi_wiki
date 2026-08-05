@@ -23,7 +23,7 @@ sidebar_position: 50
 
 - Added **NPU Applications -- Model Sharing** tutorial.
 
-    - [Model Sharing](./npu/yolo/model_train.md#模型分享)
+    - [Model Sharing](./npu/yolo/model_train.md#model-sharing)
 
 ## 2025-9-10
 
@@ -43,11 +43,11 @@ sidebar_position: 50
 
 ## 2025-3-3
 
-- Added [Audio Recording](./os_software/audio.md#录音) tutorial.
+- Added [Audio Recording](./os_software/audio.md#recording) tutorial.
 
 ## 2025-2-21
 
-- Added [Auto-flash Image to EMMC Using SD Card](./getting_start/os-install.md#使用sd卡自动烧录镜像推荐) feature.
+- Added [Auto-flash Image to EMMC Using SD Card](./getting_start/os-install.md#auto-flash-image-to-emmc-using-sd-card-recommended) feature.
 - Added [Community Open-Source Project Sharing](./diy.md)
 
 ## 2025-2-13

@@ -14,7 +14,7 @@ Walnut Pi 2 is based on the Allwinner T527 octa-core 64-bit Cortex-A55 high-perf
 
 ### Detailed Specifications
 
-|  Specifications |
+|  Specifications |  |
 |  :---:  | ---  |
 | CPU  | Allwinner T527 <br></br> ● ARM, Octa-core Cortex-A55 64bit @1.8GHz High-performance Processor <br></br> ● RISC-V @200MHz Co-processor |
 | GPU  | Mali G57 MC1<br></br> ● OpenGL ES 1.1/2.0/3.2<br></br> ● OpenCL 2.2<br></br> ● Vulkan 1.1/1.2/1.3|
@@ -31,7 +31,7 @@ Walnut Pi 2 is based on the Allwinner T527 octa-core 64-bit Cortex-A55 high-perf
 | Power  | ● Type-C Port 5V@2A Input<br></br>● PoE (Power over Ethernet) |
 | Operating Systems  | Walnut Pi OS (Debian), Ubuntu, Android, Home Assistant|
 
-|  Physical Specifications |
+|  Physical Specifications |  |
 |  :---:  | ---  |
 | Dimensions  | 85 x 56 x 21mm (Length & width are PCB dimensions) |
 | Weight  | 43g (Bare board)|

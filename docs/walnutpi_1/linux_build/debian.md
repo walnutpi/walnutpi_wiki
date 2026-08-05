@@ -5,7 +5,7 @@ sidebar_position: 4
 # 编译debian
 我们使用debian提供的rootfs
 
-debian提供了适用于多种芯片架构的rootfs，具体可以查看 [<debian发行记录>](https://www.debian.org/releases/)
+debian提供了适用于多种芯片架构的rootfs，具体可以查看 [debian发行记录](https://www.debian.org/releases/)
 
 
 ## 构建
@@ -15,7 +15,7 @@ debian提供了适用于多种芯片架构的rootfs，具体可以查看 [<debia
 ```
 sudo apt install qemu-user-static debootstrap 
 ```
-debootstrap是debian官方工具，具体可查看 [<debootstrap介绍>](https://wiki.debian.org/Debootstrap)
+debootstrap是debian官方工具，具体可查看 [debootstrap介绍](https://wiki.debian.org/Debootstrap)
 
 qemu是一个模拟器
 

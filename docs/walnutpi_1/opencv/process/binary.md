@@ -33,7 +33,7 @@ retval, img = cv2.threshold(src, thresh, maxval, type)
     - `cv2.THRESH_TOZERO_INV` ：超出阈值零处理。
     - `cv2.THRESH_TRUNC` ：截断阈值处理。
 
-本节实验用到 `cv2.THRESH_BINARY`二值化阈值处理实现图像二值化。中间值 thresh = 127 ， 最大值 maxval = 255。那么图像中像素<127的会改成0，下雨127的会改成255。变成一张非黑即白的图像。
+本节实验用到 `cv2.THRESH_BINARY`二值化阈值处理实现图像二值化。中间值 thresh = 127 ， 最大值 maxval = 255。那么图像中像素\<127的会改成0，下雨127的会改成255。变成一张非黑即白的图像。
 
 代码编写流程如下：
 

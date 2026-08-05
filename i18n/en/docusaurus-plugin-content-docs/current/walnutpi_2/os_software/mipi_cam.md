@@ -20,7 +20,7 @@ The OV5647 is a commonly used MIPI camera on various development boards, featuri
 
 ### Specifications
 
-|  Specifications |
+|  Specifications |  |
 |  :---:  | ---  |
 | Sensor  | OV5647 |
 | Pixels | 5MP |
@@ -28,7 +28,7 @@ The OV5647 is a commonly used MIPI camera on various development boards, featuri
 | Field of View  | 72° / 120° (Optional) |
 | Connector  | 22P-0.5mm FPC |
 
-|  Physical Specifications |
+|  Physical Specifications |  |
 |  :---:  | ---  |
 | Dimensions  | 6cm/15cm/30cm cable length options |
 

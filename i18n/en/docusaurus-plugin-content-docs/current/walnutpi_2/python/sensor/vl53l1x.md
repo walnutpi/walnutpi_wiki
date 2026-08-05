@@ -16,7 +16,7 @@ Most VL53L1X modules on the market are universal and use I2C bus communication. 
 
 ![vl53l1x_1](./img/vl53l1x/vl53l1x_1.png)
 
-|  Module Parameters |
+|  Module Parameters |  |
 |  :---:  | ---  |
 | Supply Voltage  | 3.3V |
 | Communication Method  | I2C Bus (default address: 0x29) |

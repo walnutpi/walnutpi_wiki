@@ -22,7 +22,7 @@ sidebar_position: 2
 
 ### 详细参数
 
-|  产品参数 |
+|  产品参数 |  |
 |  :---:  | ---  |
 | CPU  | 全志H618 64位/四核高性能Cortex-A53处理器，1.5GHz |
 | GPU  | Mali G31 MP2<br></br>Supports OpenGL ES 1.0/2.0/3.2 、OpenCL 2.0|
@@ -36,7 +36,7 @@ sidebar_position: 2
 | 电源  | Type-C接口 5V/1A输入 |
 | 操作系统  | 核桃派OS（Debian）、Ubuntu22.04、Home Assitant、Android |
 
-|  外观规格 |
+|  外观规格 |  |
 |  :---:  | ---  |
 | 尺寸  | 85 x 56 x 21mm  (长宽为PCB尺寸) |
 | 重量  | 38克 （裸板）|
@@ -54,7 +54,7 @@ sidebar_position: 2
 
 ### 详细参数
 
-|  产品参数 |
+|  产品参数 |  |
 |  :---:  | ---  |
 | CPU  | 全志H618 64位/四核高性能Cortex-A53处理器，1.5GHz |
 | GPU  | Mali G31 MP2<br></br>Supports OpenGL ES 1.0/2.0/3.2 、OpenCL 2.0|
@@ -67,7 +67,7 @@ sidebar_position: 2
 | 电源  | Type-C接口 5V/1A输入 |
 | 操作系统  | 核桃派OS（Debian）、Ubuntu22.04、Home Assitant、Android |
 
-|  外观规格 |
+|  外观规格 |  |
 |  :---:  | ---  |
 | 尺寸  | 65 x 30 x 5mm  (长宽为PCB尺寸) |
 | 重量  | 8.5克 （裸板）|
@@ -95,7 +95,7 @@ sidebar_position: 2
 
 ### 详细参数
 
-|  产品参数 |
+|  产品参数 |  |
 |  :---:  | ---  |
 | CPU  | 全志H618 64位/四核高性能Cortex-A53处理器，1.5GHz |
 | GPU  | Mali G31 MP2<br></br>Supports OpenGL ES 1.0/2.0/3.2 、OpenCL 2.0|
@@ -106,7 +106,7 @@ sidebar_position: 2
 | 电源  | Type-C接口 5V/1A输入 |
 | 操作系统  | 核桃派OS（Debian）、Ubuntu22.04、Home Assitant、Android |
 
-|  外观规格 |
+|  外观规格 |  |
 |  :---:  | ---  |
 | 尺寸  | 55 x 40 x 5mm |
 | 重量  | 8.5克 （裸板）|
@@ -133,7 +133,7 @@ sidebar_position: 2
 ### 详细参数
 
 
-|  产品参数 |
+|  产品参数 |  |
 |  :---:  | ---  |
 | CPU  | 全志H618 64位/四核高性能Cortex-A53处理器，1.5GHz |
 | GPU  | Mali G31 MP2<br></br>Supports OpenGL ES 1.0/2.0/3.2 、OpenCL 2.0|
@@ -147,7 +147,7 @@ sidebar_position: 2
 | 电源  | Type-C接口 5V/1A输入 |
 | 操作系统  | 核桃派OS（Debian）、Ubuntu22.04、Home Assitant、Android |
 
-|  外观规格 |
+|  外观规格 |  |
 |  :---:  | ---  |
 | 尺寸  | 100 x 100 x 21 mm  (不含外壳)<br></br> 105 x 105 x 33.6 mm (含外壳)|
 | 重量  | 67.5克 （不含外壳）|

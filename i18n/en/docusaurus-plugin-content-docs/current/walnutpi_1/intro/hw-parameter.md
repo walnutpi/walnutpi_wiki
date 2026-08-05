@@ -22,7 +22,7 @@ WalnutPi 1st generation is based on the Allwinner H616/H618 quad-core 64-bit Cor
 
 ### Detailed Specifications
 
-|  Product Specs |
+|  Product Specs |  |
 |  :---:  | ---  |
 | CPU  | Allwinner H618 64-bit / Quad-core high-performance Cortex-A53 processor, 1.5GHz |
 | GPU  | Mali G31 MP2<br></br>Supports OpenGL ES 1.0/2.0/3.2, OpenCL 2.0|
@@ -36,7 +36,7 @@ WalnutPi 1st generation is based on the Allwinner H616/H618 quad-core 64-bit Cor
 | Power  | Type-C port, 5V/1A input |
 | OS  | WalnutPi OS (Debian), Ubuntu 22.04, Home Assistant, Android |
 
-|  Physical Specs |
+|  Physical Specs |  |
 |  :---:  | ---  |
 | Dimensions  | 85 x 56 x 21mm (PCB size) |
 | Weight  | 38g (bare board) |
@@ -54,7 +54,7 @@ WalnutPi 1st generation is based on the Allwinner H616/H618 quad-core 64-bit Cor
 
 ### Detailed Specifications
 
-|  Product Specs |
+|  Product Specs |  |
 |  :---:  | ---  |
 | CPU  | Allwinner H618 64-bit / Quad-core high-performance Cortex-A53 processor, 1.5GHz |
 | GPU  | Mali G31 MP2<br></br>Supports OpenGL ES 1.0/2.0/3.2, OpenCL 2.0|
@@ -67,7 +67,7 @@ WalnutPi 1st generation is based on the Allwinner H616/H618 quad-core 64-bit Cor
 | Power  | Type-C port, 5V/1A input |
 | OS  | WalnutPi OS (Debian), Ubuntu 22.04, Home Assistant, Android |
 
-|  Physical Specs |
+|  Physical Specs |  |
 |  :---:  | ---  |
 | Dimensions  | 65 x 30 x 5mm (PCB size) |
 | Weight  | 8.5g (bare board) |
@@ -95,7 +95,7 @@ WalnutPi 1st generation is based on the Allwinner H616/H618 quad-core 64-bit Cor
 
 ### Detailed Specifications
 
-|  Product Specs |
+|  Product Specs |  |
 |  :---:  | ---  |
 | CPU  | Allwinner H618 64-bit / Quad-core high-performance Cortex-A53 processor, 1.5GHz |
 | GPU  | Mali G31 MP2<br></br>Supports OpenGL ES 1.0/2.0/3.2, OpenCL 2.0|
@@ -106,7 +106,7 @@ WalnutPi 1st generation is based on the Allwinner H616/H618 quad-core 64-bit Cor
 | Power  | Type-C port, 5V/1A input |
 | OS  | WalnutPi OS (Debian), Ubuntu 22.04, Home Assistant, Android |
 
-|  Physical Specs |
+|  Physical Specs |  |
 |  :---:  | ---  |
 | Dimensions  | 55 x 40 x 5mm |
 | Weight  | 8.5g (bare board) |
@@ -133,7 +133,7 @@ WalnutPi BOX is composed of a CM1 compute module and an IO expansion board. It c
 ### Detailed Specifications
 
 
-|  Product Specs |
+|  Product Specs |  |
 |  :---:  | ---  |
 | CPU  | Allwinner H618 64-bit / Quad-core high-performance Cortex-A53 processor, 1.5GHz |
 | GPU  | Mali G31 MP2<br></br>Supports OpenGL ES 1.0/2.0/3.2, OpenCL 2.0|
@@ -147,7 +147,7 @@ WalnutPi BOX is composed of a CM1 compute module and an IO expansion board. It c
 | Power  | Type-C port, 5V/1A input |
 | OS  | WalnutPi OS (Debian), Ubuntu 22.04, Home Assistant, Android |
 
-|  Physical Specs |
+|  Physical Specs |  |
 |  :---:  | ---  |
 | Dimensions  | 100 x 100 x 21 mm (without enclosure)<br></br> 105 x 105 x 33.6 mm (with enclosure)|
 | Weight  | 67.5g (without enclosure) |

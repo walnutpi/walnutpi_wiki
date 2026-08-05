@@ -97,7 +97,7 @@ Since PyQt5 is cross-platform compatible, operations on Windows locally are exac
 
 ## Thonny Remote Development (Based on Windows)
 
-Above, we used the Thonny IDE within the WalnutPi system for programming. Similarly, we can use the Thonny IDE on Windows to remotely connect to WalnutPi for Python programming. The WalnutPi factory system comes with the SSH service pre-installed, allowing remote control via SSH. This method is suitable for remote development using your own computer. For the remote method, refer to the Python embedded programming section: [Thonny Remote](../python/python_run#thonny-remote-connection-based-on-windows). This will not be repeated here.
+Above, we used the Thonny IDE within the WalnutPi system for programming. Similarly, we can use the Thonny IDE on Windows to remotely connect to WalnutPi for Python programming. The WalnutPi factory system comes with the SSH service pre-installed, allowing remote control via SSH. This method is suitable for remote development using your own computer. For the remote method, refer to the Python embedded programming section: [Thonny Remote](../python/python_run#thonny-remote-connection-windows-based). This will not be repeated here.
 
 Note that when using Thonny remotely, you must include the following code for it to run properly:
 

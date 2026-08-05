@@ -6,7 +6,7 @@ sidebar_position: 50
 
 ## 2025-3-3
 
-- Added [Auto-Flashing Image to EMMC via SD Card](./getting_start/os-install.md#auto-flashing-image-to-emmc-via-sd-card-recommended).
+- Added [Auto-Flashing Image to EMMC via SD Card](./getting_start/os-install.md#automatic-sd-card-flashing-recommended).
 - Added [EMMC Flash Usage Guide](./os_software/emmc.md).
 - Added [Device Map Feature](./os_software/map_device.md).
 
