@@ -98,6 +98,123 @@ set-vnc port 5901
 
 ![vnc7](./img/vnc/vnc7.png)
 
+## 进阶操作：通过虚拟显示器和自动切换解决VNC卡顿问题
 
+显卡欺骗器可行，但是不够优雅，那么有没有更优雅的方案呢？有的，兄弟，有的！我们可以通过脚本在开机时检测HDMI是否插入，从而决定是否启用虚拟显示器，解决VNC卡顿问题，实现流畅的VNC体验。
+
+首先安装 xserver-xorg-video-dummy
+
+```bash
+sudo apt install xserver-xorg-video-dummy
+```
+
+创建自动切换脚本，此处以mousepad文本编辑器为例，你可以使用vim、nano等任意你喜欢的文本编辑器。
+
+```bash
+sudo mousepad /usr/local/bin/auto-display.sh
+```
+
+脚本内容为：
+
+```bash
+#!/bin/bash
+
+# 检测核桃派的HDMI接口状态
+HDMI_STATUS=$(cat sys/class/drm/card0-HDMI-A-1/status 2>/dev/null | head -1)
+
+# 如果没检测到任何HDMI状态，默认视为未连接
+if [ -z "$HDMI_STATUS" ]; then
+    HDMI_STATUS="disconnected"
+fi
+
+# 配置文件路径
+CONFIG_FILE="/usr/share/X11/xorg.conf.d/xorg.conf"
+CONFIG_DIR="/usr/share/X11/xorg.conf.d"
+
+# 确保目录存在
+mkdir -p "$CONFIG_DIR"
+
+if [ "$HDMI_STATUS" = "connected" ]; then
+    echo "HDMI connected: 删除虚拟显示器配置，恢复物理屏..."
+    # 如果有虚拟显示器配置，则删除它
+    if [ -f "$CONFIG_FILE" ]; then
+        rm -f "$CONFIG_FILE"
+    fi
+else
+    echo "HDMI disconnected: 写入虚拟显示器配置..."
+    # 写入 dummy 配置
+    cat > "$CONFIG_FILE" << 'EOF'
+Section "Device"
+    Identifier  "DummyDevice"
+    Driver      "dummy"
+    VideoRam    256000
+EndSection
+
+Section "Monitor"
+    Identifier  "DummyMonitor"
+    HorizSync   28.0-80.0
+    VertRefresh 48.0-75.0
+    Modeline    "1920x1080_60.00" 173.00 1920 2048 2248 2576 1080 1083 1088 1120 -hsync +vsync
+EndSection
+
+Section "Screen"
+    Identifier  "DummyScreen"
+    Device      "DummyDevice"
+    Monitor     "DummyMonitor"
+    DefaultDepth 24
+    SubSection "Display"
+        Depth 24
+        Modes "1920x1080_60.00"
+    EndSubSection
+EndSection
+EOF
+fi
+```
+
+保存文件、退出编辑，执行以下命令赋予执行权限：
+
+```bash
+sudo chmod +x /usr/local/bin/auto-display.sh
+```
+
+创建systemd服务
+
+```bash
+sudo mousepad /etc/systemd/system/auto-display.service
+```
+
+内容为：
+
+```bash
+[Unit]
+Description=Auto switch HDMI or Dummy display for WalnutPi
+Before=lightdm.service display-manager.service
+DefaultDependencies=false
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/auto-display.sh
+
+[Install]
+WantedBy=multi-user.target
+```
+
+保存文件、退出编辑，执行以下命令启用服务：
+
+```bash
+sudo systemctl daemon-reload
+sudo systemctl enable auto-display.service
+```
+
+到这里就完成啦！后续核桃派开机时，如果插入了显示器，就会自动从显示器输出，否则会自动启用虚拟显示器输出。
+
+当不插显示器开机后，虚拟显示器运行中时，如果此时想使用物理显示器了，可以插上HDMI，然后通过VNC或SSH执行以下指令：
+
+```bash
+sudo /usr/local/bin/auto-display.sh
+sudo systemctl restart lightdm
+```
+
+这样虚拟显示器会被关闭，物理显示器会被启用。同理，反向切换也是拔掉HDMI后执行上述命令。
 
 
