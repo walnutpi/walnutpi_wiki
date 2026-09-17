@@ -8,6 +8,8 @@ sidebar_position: 2
 
 ## 核桃派2B
 
+[点击购买>>](https://item.taobao.com/item.htm?id=884822853972)
+
 ### 功能描述
 
 ![walnutpi](./img/hw-parameter/2b.png)
@@ -22,7 +24,7 @@ sidebar_position: 2
 | DSP  | HIFI4 @600MHz |
 | 内存  | 1GB / 2GB / 4GB LPDDR4（可选）| 
 | 存储  | ● MicroSD卡最大支持512G <br></br> ● 闪存 EMMC5.1 32GB 选配（其它容量可联系定制） <br></br> ● SPI Flash 8MB|
-| 无线网络  | 双频WiFi6（2.4G & 5G） + 蓝牙5.0 |
+| 无线网络  | 双频WiFi6（2.4G & 5G） + 蓝牙5.0 <br></br>(板载双频高增益陶瓷天线，ipex4外接可选)|
 | 有线网络  | 千兆以太网口（10M/100M/1000M自适应） |
 | 音频输出  | ● HDMI音频 <br></br> ● HPOUT (FPC座) |
 | 视频输出 |  ● MicroHDMI 2.0a 支持4K@60fps <br></br> ● MIPI显示屏（1x4 lane DSI，兼容2 lane）, 支持1080P@60fps |
@@ -43,3 +45,58 @@ sidebar_position: 2
 ### 尺寸图
 
 ![size](./img/hw-parameter/2b_size.png)
+
+
+## 核桃派CM2
+
+[点击购买>>](https://item.taobao.com/item.htm?id=1083412062313)
+
+### 功能描述
+
+![walnutpi](./img/hw-parameter/cm2_1.png)
+
+### 引脚图
+
+![walnutpi](./img/hw-parameter/cm2_2.png)
+
+### 详细参数
+
+
+|  产品参数 |  |
+|  :---:  | ---  |
+| CPU  | 全志T527 <br></br> ● ARM , 八核Cortex-A55 64bit @1.8GHz 高性能处理器 <br></br> ● RISC-V @200MHz 协处理器 |
+| GPU  | Mali G57 MC1<br></br> ● OpenGL ES 1.1/2.0/3.2<br></br> ● OpenCL 2.2<br></br> ● Vulkan 1.1/1.2/1.3|
+| NPU  | 2Tops, 支持INT 8/16/32b, Float 16/32b|
+| DSP  | HIFI4 @600MHz |
+| 内存  | 1GB / 2GB / 4GB LPDDR4（可选）| 
+| 存储  | ● MicroSD卡最大支持512G（BTB 连接器引出） <br></br> ● 闪存 EMMC5.1 16GB 选配（其它容量可联系定制） <br></br> ● SPI Flash 8MB|
+| 无线网络  | 双频WiFi6（2.4G & 5G） + 蓝牙5.0 <br></br>(板载双频高增益陶瓷天线，ipex4外接可选)|
+| 有线网络<br></br>（BTB连接器）  | 千兆以太网口（10M/100M/1000M自适应） |
+| 音频输入<br></br>（BTB连接器）  |  MIC x 2 |
+| 音频输出<br></br>（BTB连接器）  |  HPOUT x 1 |
+| 视频输出<br></br>（BTB连接器） |  ● MicroHDMI 2.0a 支持4K@60fps <br></br> ● MIPI显示屏（1x4 lane DSI，兼容2 lane）, 支持1080P@60fps |
+| 摄像头<br></br>（BTB连接器） | MIPI摄像头（1x4 lane CSI，兼容2 lane） |
+| 其它外设<br></br>（BTB连接器）  | ● PCIe 2.1 x 1 （支持NVMe固态硬盘）<br></br>● USB 3.0 x 1<br></br> ● USB 2.0 x 1<br></br>● 红外接收 x 1 <br></br>● 按键 x 1（可编程）<br></br>● LED x 1（可编程）<br></br>● ADC x 1（量程1.8V）<br></br>● 40Pin GPIO（兼容树莓派）<br></br>● 调试串口（UART）<br></br>● BOOT引脚 <br></br>● 电源输入（5V）<br></br><br></br>**说明：PCIe2.1和USB3.0二选一使用，通过指令切换。**|
+| 电源  | 5V@2A输入 |
+| 操作系统  | 核桃派OS（Debian）、Ubuntu、Android 、Home Assitant|
+
+|  外观规格 |  |
+|  :---:  | ---  |
+| 尺寸  | 55 x 40 x 4mm |
+| 重量  | 9.6克 （裸板）|
+
+### 尺寸图
+
+![walnutpi](./img/hw-parameter/cm2_size.png)
+
+## 核桃派CM2 IO底板
+
+### 功能描述
+
+![walnutpi](./img/hw-parameter/io_board1.png)
+
+### PCB工程文件
+
+CM2 IO底板PCB工程文件: [点击打开>>](https://oshwhub.com/walnutpi/project_oangqsdx)
+
+![walnutpi](./img/hw-parameter/io_board2.png)

@@ -9,13 +9,15 @@ sidebar_position: 0
 
 ### **核桃派2代介绍**
 
+- [核桃派简介](./intro/intro.md)
 - [产品参数](./intro/hw-parameter.md)
 - [资料下载](./intro/download.md)
 
 ### **开箱指南**
 
 - [硬件详解](./getting_start/hw-detail.md)
-- [核桃派2B配件组装](./getting_start/1b-peripherals.md)
+- [核桃派2B配件组装](./getting_start/2b-peripherals.md)
+- [核桃派CM2配件组装](./getting_start/cm2-peripherals.md)
 - [系统镜像烧录](./getting_start/os-install.md)
 - [开机](./getting_start/start_up.md)
 

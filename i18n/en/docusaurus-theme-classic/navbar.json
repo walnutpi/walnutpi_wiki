@@ -43,9 +43,9 @@
     "message": "WalnutPi 1（1B / ZeroW / CM1 / BOX）",
     "description": "Navbar item with label 1代（1B / ZeroW / CM1 / BOX）教程"
   },
-  "item.label.2代（2B）教程": {
-    "message": "WalnutPi 2（2B）",
-    "description": "Navbar item with label 2代（2B）教程"
+  "item.label.2代（2B / CM2）教程": {
+    "message": "WalnutPi 2（2B / CM2）",
+    "description": "Navbar item with label 2代（2B / CM2）教程"
   },
   "item.label.PicoW教程": {
     "message": "PicoW",

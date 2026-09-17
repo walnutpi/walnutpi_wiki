@@ -4,6 +4,11 @@ sidebar_position: 50
 
 # 更新说明
 
+## 2026-9-17
+
+- 新增 [核桃派CM2产品参数](./intro/hw-parameter.md#核桃派cm2)。 
+- 新增 [核桃派CM2 配件组装](./getting_start/cm2-peripherals.md) 
+
 ## 2026-2-5
 
 - 新增 [MIPI显示屏（核桃派官方10.1寸）](./os_software/display/10.1_mipi.md) 教程。

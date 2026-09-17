@@ -108,7 +108,7 @@ markdown: {
             type: 'docSidebar',
             sidebarId: 'wpi2Sidebar',
             position: 'left',
-            label: '2代（2B）教程',
+            label: '2代（2B / CM2）教程',
           },
           {
             type: 'docSidebar',

@@ -4,6 +4,11 @@ sidebar_position: 50
 
 # Changelog
 
+## 2026-9-17
+
+- Added [Walnut Pi CM2 Product Specifications](./intro/hw-parameter.md#walnut-pi-cm2).
+- Added [Walnut Pi CM2 Peripheral Assembly](./getting_start/cm2-peripherals.md)
+
 ## 2026-2-5
 
 - Added [MIPI Display (Walnut Pi Official 10.1-inch)](./os_software/display/10.1_mipi.md) tutorial.

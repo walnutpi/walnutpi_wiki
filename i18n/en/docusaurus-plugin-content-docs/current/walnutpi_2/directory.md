@@ -9,13 +9,15 @@ sidebar_position: 0
 
 ### **Walnut Pi 2 Introduction**
 
+- [WalnutPi Introduction](./intro/intro.md)
 - [Product Specifications](./intro/hw-parameter.md)
 - [Downloads](./intro/download.md)
 
 ### **Getting Started**
 
 - [Hardware Details](./getting_start/hw-detail.md)
-- [Walnut Pi 2B Peripheral Assembly](./getting_start/1b-peripherals.md)
+- [Walnut Pi 2B Peripheral Assembly](./getting_start/2b-peripherals.md)
+- [Walnut Pi CM2 Peripheral Assembly](./getting_start/cm2-peripherals.md)
 - [System Image Burning](./getting_start/os-install.md)
 - [Power On](./getting_start/start_up.md)
 
