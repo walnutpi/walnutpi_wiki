@@ -70,6 +70,7 @@ sidebar_position: 0
     - [有源蜂鸣器](./python/gpio/active_buzzer.md) 
     - [UART（串口通讯）](./python/gpio/uart.md) 
     - [I2C（OLED显示屏）](./python/gpio/i2c_oled.md) 
+    - [ADC（电压测量）](./python/gpio/adc.md) 
     - [PWM](./python/gpio/pwm.md) 
 - **传感器**
     - [人体感应传感器](./python/sensor/human_induction.md) 

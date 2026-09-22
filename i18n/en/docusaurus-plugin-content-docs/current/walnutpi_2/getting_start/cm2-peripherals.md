@@ -91,6 +91,22 @@ The CM2 IO baseboard features an RTC lithium battery holder, suitable for 3V 203
 
 ![img](./img/cm2-peripherals/17.png)
 
+- To enable charging, use the following command. The default charging voltage is 2.9V. (Before enabling, please confirm that the battery in use is rechargeable.)
+
+```bash
+sudo set-rtc charge enable
+```
+
+You can also configure it via /boot/config.txt.
+
+```bash
+rtc_charge=enable
+```
+
+![img](./img/cm2-peripherals/rtc2.png)
+
+The configuration takes effect after a reboot.
+
 ## NVMe SSD
 
 The CM2 IO baseboard supports 4 SSD sizes: 2230/2242/2260/2280. Simply install it using the standoff screws included with the baseboard. [NVMe SSD Usage Tutorial >>](../os_software/nvme.md)

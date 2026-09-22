@@ -20,6 +20,12 @@ sidebar_position: 5
 
 ![mipi_lcd](./img/mipi_lcd/mipi_lcd1.png)
 
+:::tip
+如果使用的是CM2 IO底板，请将排线金手指朝上插入。
+
+![mipi_lcd](./img/mipi_lcd/CM2-IO.png)
+:::
+
 ### 开启LCD显示功能
 
 核桃派系统已经带了相关显示屏驱动，桌面版和无桌面版均支持。使用下面指令即可开启显示桌面：（该指令支持TAB键补全）

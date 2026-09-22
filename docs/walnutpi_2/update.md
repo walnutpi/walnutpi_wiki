@@ -4,6 +4,12 @@ sidebar_position: 50
 
 # 更新说明
 
+## 2026-9-21
+
+- 新增 **Python嵌入式编程** -- **GPIO基础实验**
+
+    - [ADC（电压测量）](./python/gpio/adc.md) 
+
 ## 2026-9-17
 
 - 新增 [核桃派CM2产品参数](./intro/hw-parameter.md#核桃派cm2)。 

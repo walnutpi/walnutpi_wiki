@@ -84,7 +84,7 @@ aplay -D hw:audiocodec /usr/share/sounds/alsa/Noise.wav
 
 ![audio3](./img/audio/audio3.png)
 
-## 录音
+## USB麦克风
 
 核桃派可以使用USB麦克风作为录音输入设备。本教程使用下面这款常见的树莓派USB麦克风：
 
@@ -164,4 +164,70 @@ alsamixer
 如果是你使用的是桌面版，可以直接在右下角音频图标调整麦克风音量。
 ![audio](./img/audio/mic9.png)
 :::
+
+## 板载麦克风
+
+只有[核桃派CM2计算模块](../intro/hw-parameter.md#核桃派cm2)有引出麦克风接口。
+
+:::tip 提示
+需要使用V1.8.0以上版本镜像。
+:::
+
+![audio](./img/audio/mic11.png)
+
+底板引出的是MIC1
+
+![audio](./img/audio/mic12.png)
+
+通过下面指令可以列出麦克风设备：
+
+```bash
+arecord -l
+```
+![audio](./img/audio/mic13.png)
+
+### 录音测试
+
+可以通过下面指令录音：
+
+```bash
+arecord -D "plughw:0,0" -f S16_LE -r 16000 -d 10 -t wav test.wav
+```
+
+- -D: 设备名称，从上面`arecode -l`可以看到这里是card2,device0,可使用："plughw:2,0"；
+- -f：录音格式，S16_LE表示16位；
+- -r: 采样率，16000表示16KHz;
+- -d: 录音时长，10表示10秒；
+- -t: 录音格式, wav表示wav格式；
+- test.wav 表示在当前路径下生成test.wav文件。
+
+录完后在当前目录可以看到生成test.wav文件：
+
+![audio](./img/audio/mic8.png)
+
+可以使用下面指令通过背面音频口播放：
+
+```bash
+aplay -D hw:audiocodec test.wav
+```
+
+### 调整麦克风音量
+
+麦克风音量可以通过以下方式调整：
+
+输入下面命令：
+```bash
+alsamixer
+```
+
+在弹出界面按F6，选择`audiocodec`。
+
+![audio](./img/audio/mic14.png)
+
+用鼠标或者键盘左右键选择调整`ADC1`和`ADC1 Gain`，然后按上下键调整麦克风音量大小。设置完直接按ESE退出即可。
+
+![audio](./img/audio/mic15.png)
+
+再次执行上面的录音播放指令，可以听到产生的音频音量变化。
+
 

@@ -8,7 +8,7 @@ Walnut Pi 2 is based on the Allwinner T527 octa-core 64-bit Cortex-A55 high-perf
 
 ## Walnut Pi 2B
 
-[Buy Now >>](https://item.taobao.com/item.htm?id=884822853972)
+[Buy Now >>](https://www.aliexpress.com/item/1005008529154262.html)
 
 ### Overview
 
@@ -48,7 +48,7 @@ Walnut Pi 2 is based on the Allwinner T527 octa-core 64-bit Cortex-A55 high-perf
 
 ## Walnut Pi CM2
 
-[Buy Now >>](https://item.taobao.com/item.htm?id=1083412062313)
+[Buy Now >>](https://www.aliexpress.com/item/1005013243909284.html)
 
 ### Overview
 

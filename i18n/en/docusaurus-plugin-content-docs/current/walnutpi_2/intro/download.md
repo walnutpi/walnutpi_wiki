@@ -29,7 +29,7 @@ Forward the group files to your own device or another QQ account within the grou
 
 Users outside of China can use this method to download:
 
-https://github.com/walnutpi/WalnutPi_2_image/releases
+https://github.com/walnutpi/walnutpi-2/releases
 
 ![download](./img/download/download2.png)
 
@@ -46,11 +46,9 @@ Supporting software, example source code, schematics, chip datasheets, and more 
 
 ### GitHub Download
 
-Users outside of China can use this method to download:
+Users outside of China can browse the GitHub repository and download it as a package:
 
-https://github.com/walnutpi/WalnutPi_2_resource/releases
-
-![download](./img/download/download4.png)
+https://github.com/walnutpi/walnutpi-2
 
 ### Resource Package Overview
 

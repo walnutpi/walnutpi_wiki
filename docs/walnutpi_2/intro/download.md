@@ -29,7 +29,7 @@ sidebar_position: 3
 
 海外地区用户可以使用此方式下载：
 
-https://github.com/walnutpi/WalnutPi_2_image/releases
+https://github.com/walnutpi/walnutpi-2/releases
 
 ![download](./img/download/download2.png)
 
@@ -46,11 +46,9 @@ https://github.com/walnutpi/WalnutPi_2_image/releases
 
 ### Github下载
 
-海外地区用户可以使用此方式下载：
+海外地区用户可以在github仓库浏览并打包下载：
 
-https://github.com/walnutpi/WalnutPi_2_resource/releases
-
-![download](./img/download/download4.png)
+https://github.com/walnutpi/walnutpi-2
 
 ### 资料包介绍
 

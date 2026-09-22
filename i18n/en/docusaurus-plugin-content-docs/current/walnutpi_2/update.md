@@ -4,6 +4,12 @@ sidebar_position: 50
 
 # Changelog
 
+## 2026-9-21
+
+- Added **Python Embedded Programming** -- **GPIO Basic Experiments**
+
+    - [ADC (Voltage Measurement)](./python/gpio/adc.md)
+
 ## 2026-9-17
 
 - Added [Walnut Pi CM2 Product Specifications](./intro/hw-parameter.md#walnut-pi-cm2).

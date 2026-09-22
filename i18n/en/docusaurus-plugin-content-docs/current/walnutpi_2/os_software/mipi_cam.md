@@ -42,6 +42,12 @@ First, connect the camera to the Walnut Pi 2B's MIPI CSI interface. Ensure the g
 
 Then power on the Walnut Pi system. The system will automatically load the relevant drivers upon detecting the camera connection.
 
+:::::tip
+If you are using the CM2 IO baseboard, please insert the ribbon cable with the gold fingers facing up.
+
+![mipi_lcd](./img/mipi_cam/CM2-IO.png)
+:::::
+
 ## Getting Device Information
 
 First, use `v4l2-ctl` to view the current MIPI camera device information. Install v4l—most Walnut Pi software can be installed via `sudo apt install`:

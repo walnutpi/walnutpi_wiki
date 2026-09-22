@@ -6,7 +6,7 @@ sidebar_position: 3
 
 ## 散热
 
-核桃派CM2基于全志T527 八核高性能处理器，模块体积小，接HDMI显示下温度可达70℃以上，引出建议增加散热措施。
+核桃派CM2基于全志T527 八核高性能处理器，模块体积小，接HDMI显示下温度可达70℃以上，因此建议增加散热措施。
 
 - 单底板导热贴：降10-15℃；
 - 单散热片：降10-15℃；
@@ -91,6 +91,23 @@ sidebar_position: 3
 CM2 IO底板带RTC锂电池座，适用于3V的2032尺寸电池。可配置充电功能，适合可充电的3V锂电池。
 
 ![img](./img/cm2-peripherals/17.png)
+
+
+- 充电开启方式，使用以下指令可以开启充电，默认2.9V。（开启前请确认使用的电池具备可充电功能）
+
+```bash
+sudo set-rtc charge enable
+```
+
+也可以通过/boot/config.txt 配置。
+
+```bash
+rtc_charge=enable
+```
+
+![img](./img/cm2-peripherals/rtc2.png)
+
+配置完成后重启生效。
 
 ## NVMe固态硬盘
 

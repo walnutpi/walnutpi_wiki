@@ -70,6 +70,7 @@ sidebar_position: 0
     - [Active Buzzer](./python/gpio/active_buzzer.md) 
     - [UART (Serial Communication)](./python/gpio/uart.md) 
     - [I2C (OLED Display)](./python/gpio/i2c_oled.md) 
+    - [ADC (Voltage Measurement)](./python/gpio/adc.md) 
     - [PWM](./python/gpio/pwm.md) 
 - **Sensors**
     - [PIR Motion Sensor](./python/sensor/human_induction.md) 
