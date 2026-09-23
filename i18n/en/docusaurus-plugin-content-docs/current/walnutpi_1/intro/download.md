@@ -27,7 +27,7 @@ In the QQ group, forwarding group files to your own device or another QQ account
 
 Users in overseas regions can use this method to download:
 
-https://github.com/walnutpi/walnutpi-build/releases
+https://github.com/walnutpi/walnutpi-1/releases
 
 ![download](./img/download/download2.png)
 
@@ -43,9 +43,11 @@ WalnutPi tutorial companion software, example source code, schematics, chip data
 
 ![download](./img/download/download3.png)
 
-### Overseas Download
+### GitHub Download
 
-- [Click to download](https://walnutpi-1258570164.cos.ap-guangzhou.myqcloud.com/%E6%A0%B8%E6%A1%83%E6%B4%BE%E9%85%8D%E5%A5%97%E8%B5%84%E6%96%99%E5%8C%85%E4%B8%8B%E8%BD%BD/WalnutPi_1_Resources_2024-7-23.rar)
+Users in overseas regions can browse and download the package from the GitHub repository:
+
+https://github.com/walnutpi/walnutpi-1
 
 ### Package Contents
 

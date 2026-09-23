@@ -27,7 +27,7 @@ sidebar_position: 3
 
 海外地区用户可以使用此方式下载：
 
-https://github.com/walnutpi/walnutpi-build/releases
+https://github.com/walnutpi/walnutpi-1/releases
 
 ![download](./img/download/download2.png)
 
@@ -43,9 +43,12 @@ https://github.com/walnutpi/walnutpi-build/releases
 
 ![download](./img/download/download3.png)
 
-### 海外地区下载
+### Github下载
 
-- [点击下载](https://walnutpi-1258570164.cos.ap-guangzhou.myqcloud.com/%E6%A0%B8%E6%A1%83%E6%B4%BE%E9%85%8D%E5%A5%97%E8%B5%84%E6%96%99%E5%8C%85%E4%B8%8B%E8%BD%BD/WalnutPi_1_Resources_2024-7-23.rar)
+海外地区用户可以在github仓库浏览并打包下载：
+
+https://github.com/walnutpi/walnutpi-1
+
 
 ### 资料包介绍
 
