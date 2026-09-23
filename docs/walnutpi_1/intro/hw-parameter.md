@@ -8,6 +8,8 @@ sidebar_position: 2
 
 ## 核桃派1B
 
+[点击购买>>](https://item.taobao.com/item.htm?id=737448151745)
+
 ### 功能描述
 
 **1G/2G/4G LPDDR4内存版本:**
@@ -41,12 +43,18 @@ sidebar_position: 2
 | 尺寸  | 85 x 56 x 21mm  (长宽为PCB尺寸) |
 | 重量  | 38克 （裸板）|
 
+### GPIO引脚图
+
+![img](./img/hw-parameter/1b_pinout.jpg)
+
 ### 尺寸图
 
 ![size](./img/hw-parameter/1b4.png)
 
 
 ## 核桃派ZeroW
+
+[点击购买>>](https://item.taobao.com/item.htm?id=774931970015)
 
 ### 功能描述
 
@@ -72,12 +80,18 @@ sidebar_position: 2
 | 尺寸  | 65 x 30 x 5mm  (长宽为PCB尺寸) |
 | 重量  | 8.5克 （裸板）|
 
+### GPIO引脚图
+
+![img](./img/hw-parameter/zerow_pinout.jpg)
+
 ### 尺寸图
 
 ![size](./img/hw-parameter/zerow2.png)
 
 
 ## 核桃派CM1
+
+[点击购买>>](https://item.taobao.com/item.htm?id=815964051316)
 
 ### 功能描述
 
@@ -110,6 +124,10 @@ sidebar_position: 2
 |  :---:  | ---  |
 | 尺寸  | 55 x 40 x 5mm |
 | 重量  | 8.5克 （裸板）|
+
+### GPIO引脚图
+
+![img](./img/hw-parameter/cm1_pinout.png)
 
 ### 尺寸图
 

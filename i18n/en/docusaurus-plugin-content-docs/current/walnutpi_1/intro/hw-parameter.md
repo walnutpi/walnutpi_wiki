@@ -8,6 +8,8 @@ WalnutPi 1st generation is based on the Allwinner H616/H618 quad-core 64-bit Cor
 
 ## WalnutPi 1B
 
+[Click to Buy>>](https://www.aliexpress.com/item/1005006129955506.html)
+
 ### Feature Overview
 
 **1G/2G/4G LPDDR4 RAM Versions:**
@@ -41,12 +43,18 @@ WalnutPi 1st generation is based on the Allwinner H616/H618 quad-core 64-bit Cor
 | Dimensions  | 85 x 56 x 21mm (PCB size) |
 | Weight  | 38g (bare board) |
 
-### Dimensions
+### GPIO Pinout
+
+![gpio](./img/hw-parameter/1b_pinout.jpg)
+
+### Size
 
 ![size](./img/hw-parameter/1b4.png)
 
 
 ## WalnutPi ZeroW
+
+[Click to Buy>>](https://www.aliexpress.com/item/1005007401281722.html)
 
 ### Feature Overview
 
@@ -72,12 +80,18 @@ WalnutPi 1st generation is based on the Allwinner H616/H618 quad-core 64-bit Cor
 | Dimensions  | 65 x 30 x 5mm (PCB size) |
 | Weight  | 8.5g (bare board) |
 
-### Dimensions
+### GPIO Pinout
+
+![gpio](./img/hw-parameter/zerow_pinout.jpg)
+
+### Size
 
 ![size](./img/hw-parameter/zerow2.png)
 
 
 ## WalnutPi CM1
+
+[Click to Buy>>](https://www.aliexpress.com/item/1005007653683565.html)
 
 ### Feature Overview
 
@@ -111,7 +125,11 @@ WalnutPi 1st generation is based on the Allwinner H616/H618 quad-core 64-bit Cor
 | Dimensions  | 55 x 40 x 5mm |
 | Weight  | 8.5g (bare board) |
 
-### Dimensions
+### GPIO Pinout
+
+![gpio](./img/hw-parameter/cm1_pinout.png)
+
+### Size
 
 ![walnutpi](./img/hw-parameter/cm1_3.png)
 
